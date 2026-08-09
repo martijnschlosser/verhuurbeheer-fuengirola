@@ -46,7 +46,7 @@ const team = [
     name: "Sophie",
     role: "Backoffice",
     languages: "NL · EN · ES",
-    image: "/sophie-fuengirola.webp",
+    image: siteConfig.assets.sophie,
     alt: "Sophie, Nederlandstalig aanspreekpunt en backoffice bij Verhuurbeheer Spanje",
   },
   {
@@ -163,6 +163,13 @@ const relatedBySlug: Record<string, string[]> = {
     "zelf-verhuren-of-verhuurbeheer",
   ],
 };
+
+Object.assign(relatedBySlug, {
+  "tweede-woning-winterklaar-fuengirola": ["tweede-woning-beheer-fuengirola","sleutelbeheer-fuengirola","vastgoedbeheer-fuengirola","kosten-verhuurbeheer-fuengirola","zelf-verhuren-of-verhuurbeheer"],
+  "tweede-woning-beheer-fuengirola": ["tweede-woning-winterklaar-fuengirola","sleutelbeheer-fuengirola","vastgoedbeheer-fuengirola","kosten-verhuurbeheer-fuengirola","zelf-verhuren-of-verhuurbeheer"],
+  "sleutelbeheer-fuengirola": ["tweede-woning-winterklaar-fuengirola","tweede-woning-beheer-fuengirola","vastgoedbeheer-fuengirola","kosten-verhuurbeheer-fuengirola","zelf-verhuren-of-verhuurbeheer"],
+  "vastgoedbeheer-fuengirola": ["tweede-woning-winterklaar-fuengirola","tweede-woning-beheer-fuengirola","sleutelbeheer-fuengirola","kosten-verhuurbeheer-fuengirola","zelf-verhuren-of-verhuurbeheer"],
+});
 
 const contentVisualBySlug: Record<string, { src: string; alt: string }> = {
   "vakantieverhuur-fuengirola": {
@@ -823,7 +830,7 @@ export default async function ContentRoute({
         <section className="blog-lead">
           <div className="blog-lead-person">
             <img
-              src="/sophie-fuengirola.webp"
+              src={siteConfig.assets.sophie}
               alt="Sophie van Verhuurbeheer Fuengirola"
               width={1088}
               height={1100}
