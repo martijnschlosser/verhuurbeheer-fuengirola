@@ -22,6 +22,7 @@ export const siteConfig = {
     hero: "/fuengirola-hero.webp",
     social: "/luxe-woning-fuengirola-zeezicht.webp",
     signup: "/zonnig-terras-zeezicht-fuengirola.webp",
+    sophie: "/sophie-fuengirola.webp",
   },
   domain: "https://verhuurbeheerfuengirola.nl",
   contact: { email: "contact@verhuurbeheerspanje.nl", whatsapp: "31852128105" },
