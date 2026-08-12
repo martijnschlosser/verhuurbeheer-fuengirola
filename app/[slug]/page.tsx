@@ -178,6 +178,13 @@ Object.assign(relatedBySlug, {
   "tweede-woning-beheer-fuengirola": ["noodtoegang-sleutelhouder-fuengirola", ...(relatedBySlug["tweede-woning-beheer-fuengirola"] ?? []).filter((slug) => slug !== "noodtoegang-sleutelhouder-fuengirola")].slice(0, 6),
 });
 
+Object.assign(relatedBySlug, {
+  "inventaris-eigen-gebruik-verhuur-fuengirola": ["appartement-verhuren-fuengirola","vastgoedbeheer-fuengirola","tweede-woning-beheer-fuengirola","tweede-woning-winterklaar-fuengirola","kosten-verhuurbeheer-fuengirola"],
+  "appartement-verhuren-fuengirola": ["inventaris-eigen-gebruik-verhuur-fuengirola", ...(relatedBySlug["appartement-verhuren-fuengirola"] ?? []).filter((slug) => slug !== "inventaris-eigen-gebruik-verhuur-fuengirola")].slice(0, 6),
+  "vastgoedbeheer-fuengirola": ["inventaris-eigen-gebruik-verhuur-fuengirola", ...(relatedBySlug["vastgoedbeheer-fuengirola"] ?? []).filter((slug) => slug !== "inventaris-eigen-gebruik-verhuur-fuengirola")].slice(0, 6),
+  "tweede-woning-beheer-fuengirola": ["inventaris-eigen-gebruik-verhuur-fuengirola", ...(relatedBySlug["tweede-woning-beheer-fuengirola"] ?? []).filter((slug) => slug !== "inventaris-eigen-gebruik-verhuur-fuengirola")].slice(0, 6),
+});
+
 const contentVisualBySlug: Record<string, { src: string; alt: string }> = {
   "vakantieverhuur-fuengirola": {
     src: "/luxe-woning-fuengirola-zeezicht.webp",
