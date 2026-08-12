@@ -27,6 +27,73 @@ export const contentPages:ContentPage[]=[
 ,
 {"slug":"tweede-woning-winterklaar-fuengirola","type":"gids","eyebrow":"Praktische gids voor eigenaren","title":"Je tweede woning in Fuengirola winterklaar en gecontroleerd houden","seoTitle":"Tweede woning Fuengirola winterklaar maken | Checklist","description":"Checklist voor eigenaren die hun tweede woning in Fuengirola na de zomer leeg achterlaten: controle, sleutelbeheer, ventilatie en onderhoud.","intro":"Ook aan de Costa del Sol kan een woning na het zomerseizoen maanden minder worden gebruikt. Een vaste afsluitcheck en lokale opvolging helpen om de woning verzorgd te houden en klaar te maken voor een volgend eigen verblijf of nieuwe verhuurperiode.","sections":[{"title":"Sluit de zomerperiode bewust af","paragraphs":["Controleer na het laatste verblijf inventaris, apparatuur, ramen, schuifpuien, zonwering, kranen en zichtbare lekkages. Laat kleine gebreken meteen vastleggen, zodat ze niet pas bij de volgende aankomst aan het licht komen.","Bij een appartement in Los Boliches of Fuengirola Centro spelen portaal, lift en parkeer- of toegangsmiddelen mee. Voor een woning in Torreblanca of Carvajal verdienen terras, buitenruimte en bereikbaarheid extra aandacht."],"bullets":["Woning en inventaris nalopen","Water, stroom en apparatuur bewust instellen","Ramen, deuren en zonwering controleren","Sleutels, passen en codes actualiseren"]},{"title":"Spreek wintercontroles concreet af","paragraphs":["Een algemene afspraak om ‘af en toe te kijken’ is te vaag. Leg vast welke punten worden gecontroleerd, met welke frequentie en hoe je terugkoppeling ontvangt.","Denk aan zichtbare vocht- of lekkagesporen, ongebruikelijke geuren, stroom, water, ramen en deuren. De checklist wordt afgestemd op de woning; niet iedere installatie vraagt dezelfde handeling."]},{"title":"Gebruik sleutelbeheer voor echte lokale opvolging","paragraphs":["Een veilig beheerde sleutel maakt het mogelijk een monteur, schoonmaker of andere leverancier toegang te geven wanneer jij niet in Spanje bent. De sleutelbeheerder moet daarbij werken met toestemming en een duidelijke opdracht.","Wanneer een melding van de comunidad of een buur binnenkomt, kan iemand ter plaatse eerst beoordelen wat er werkelijk speelt voordat jij kosten goedkeurt."]},{"title":"Plan de heropening vóór je reis","paragraphs":["Laat enkele dagen vóór aankomst controleren of toegang, water, stroom, internet en belangrijke apparatuur functioneren. Eventuele schoonmaak, linnen of onderhoud kan dan nog worden uitgevoerd.","Verhuur je de woning opnieuw, controleer dan ook kalender, inventaris, foto’s en gasteninformatie. Zo begint het nieuwe seizoen met actuele informatie en een verzorgde woning."]}],"faqs":[["Moet een woning in Fuengirola winterklaar worden gemaakt?","Een vaste seizoens- en leegstandscheck is verstandig wanneer de woning langere tijd weinig wordt gebruikt."],["Kan sleutelbeheer zonder vakantieverhuur?","Ja, sleutelbeheer en woningcontroles kunnen volledig los van verhuur."],["Wat controleren jullie tijdens leegstand?","De controlepunten worden per woning afgesproken en kunnen onder meer toegang, lekkages, ramen, deuren, water en stroom omvatten."],["Kunnen leveranciers binnen als ik niet in Spanje ben?","Ja, wanneer sleutelbeheer en jouw toestemming of opdracht duidelijk zijn vastgelegd."],["Kan de woning vóór aankomst worden schoongemaakt?","Ja, controle en schoonmaak kunnen vooraf worden gepland."]]}
 ,
-{"slug":"noodtoegang-sleutelhouder-fuengirola","type":"gids","eyebrow":"Praktische gids voor eigenaren","title":"Noodtoegang en sleutelbeheer voor je woning in Fuengirola","seoTitle":"Noodtoegang woning Fuengirola | Sleutelbeheer","description":"Regel veilige noodtoegang voor je tweede woning in Fuengirola: sleutelhouder, bevoegdheden, leveranciers, rapportage en controle na afloop.","intro":"Wanneer je niet in Spanje bent, kan een lekkage, stroomprobleem of comunidadmelding snelle toegang vragen. Een sleutel bij een bekende is nuttig, maar echte noodtoegang vereist ook duidelijke bevoegdheden, bereikbaarheid en terugkoppeling.","sections":[{"title":"Bepaal vooraf wat een noodsituatie is","paragraphs":["Denk aan actief water, rook- of alarmsignaal, een opengebroken deur, ernstige stormschade of een melding waarbij de comunidad direct toegang nodig heeft. Leg vast welke situaties onmiddellijk handelen rechtvaardigen.","Een defecte lamp of regulier onderhoud is geen noodsituatie. Door urgentieniveaus te onderscheiden, blijft de eigenaar beslissen over normaal werk terwijl echte schade niet onnodig lang doorgaat."],"bullets":["Wie mag noodtoegang aanvragen?","Welke handelingen mogen direct worden uitgevoerd?","Welke kostenlimiet geldt zonder voorafgaand akkoord?","Hoe en wanneer wordt de eigenaar geïnformeerd?"]},{"title":"Bewaar sleutels traceerbaar en compleet","paragraphs":["Label sleutels zonder het volledige adres zichtbaar te maken en registreer uitgifte en teruggave. Controleer ook garagezenders, toegangspassen en eventuele aparte sleutel voor technische ruimtes.","In Los Boliches, Torreblanca, Carvajal en het centrum van Fuengirola kunnen toegangsroutes verschillen. Een correcte instructie voorkomt tijdverlies wanneer snel handelen nodig is."]},{"title":"Koppel toegang aan een gerichte woningcontrole","paragraphs":["Na het openen moet iemand vastleggen wat zichtbaar is, welke noodmaatregel is genomen en welke specialist nodig kan zijn. Foto’s geven de eigenaar en leverancier een feitelijke uitgangspositie.","Na herstel volgt een eindcontrole: is de water- of stroomvoorziening correct hersteld, zijn ramen en deuren gesloten en is de sleutel terug? Zonder die stap blijft onduidelijk of de woning werkelijk veilig is achtergelaten."]},{"title":"Test de procedure voordat er iets gebeurt","paragraphs":["Controleer periodiek of sleutels passen, codes actueel zijn en contactpersonen bereikbaar blijven. Werk wijzigingen na een nieuw slot, andere garagezender of wisseling van comunidadbeheerder meteen bij.","Combineer noodtoegang met regulier tweede-woningbeheer. De beheerder kent de woning dan al en hoeft in een urgente situatie niet eerst basisinformatie te verzamelen."]}],"faqs":[["Wie mag mijn woning in een noodsituatie openen?","Alleen een vooraf aangewezen sleutelhouder of partij met duidelijke toestemming en een geldige aanleiding."],["Kan de comunidad altijd toegang eisen?","Dat hangt af van de situatie en gebouwafspraken. Vraag om een duidelijke melding en laat toegang gecontroleerd plaatsvinden."],["Word ik direct geïnformeerd?","De meldingsroute en urgentieniveaus worden vooraf afgesproken."],["Kan een monteur zonder begeleiding naar binnen?","Dat kan alleen wanneer je dit toestaat; begeleide toegang biedt doorgaans meer controle."],["Kan noodtoegang zonder verhuurbeheer?","Ja, sleutelbeheer en woningcontrole kunnen afzonderlijk worden ingericht."]]}
+{"slug":"noodtoegang-sleutelhouder-fuengirola","type":"gids","eyebrow":"Praktische gids voor eigenaren","title":"Noodtoegang en sleutelbeheer voor je woning in Fuengirola","seoTitle":"Noodtoegang woning Fuengirola | Sleutelbeheer","description":"Regel veilige noodtoegang voor je tweede woning in Fuengirola: sleutelhouder, bevoegdheden, leveranciers, rapportage en controle na afloop.","intro":"Wanneer je niet in Spanje bent, kan een lekkage, stroomprobleem of comunidadmelding snelle toegang vragen. Een sleutel bij een bekende is nuttig, maar echte noodtoegang vereist ook duidelijke bevoegdheden, bereikbaarheid en terugkoppeling.","sections":[{"title":"Bepaal vooraf wat een noodsituatie is","paragraphs":["Denk aan actief water, rook- of alarmsignaal, een opengebroken deur, ernstige stormschade of een melding waarbij de comunidad direct toegang nodig heeft. Leg vast welke situaties onmiddellijk handelen rechtvaardigen.","Een defecte lamp of regulier onderhoud is geen noodsituatie. Door urgentieniveaus te onderscheiden, blijft de eigenaar beslissen over normaal werk terwijl echte schade niet onnodig lang doorgaat."],"bullets":["Wie mag noodtoegang aanvragen?","Welke handelingen mogen direct worden uitgevoerd?","Welke kostenlimiet geldt zonder voorafgaand akkoord?","Hoe en wanneer wordt de eigenaar geïnformeerd?"]},{"title":"Bewaar sleutels traceerbaar en compleet","paragraphs":["Label sleutels zonder het volledige adres zichtbaar te maken en registreer uitgifte en teruggave. Controleer ook garagezenders, toegangspassen en eventuele aparte sleutel voor technische ruimtes.","In Los Boliches, Torreblanca, Carvajal en het centrum van Fuengirola kunnen toegangsroutes verschillen. Een correcte instructie voorkomt tijdverlies wanneer snel handelen nodig is."]},{"title":"Koppel toegang aan een gerichte woningcontrole","paragraphs":["Na het openen moet iemand vastleggen wat zichtbaar is, welke noodmaatregel is genomen en welke specialist nodig kan zijn. Foto’s geven de eigenaar en leverancier een feitelijke uitgangspositie.","Na herstel volgt een eindcontrole: is de water- of stroomvoorziening correct hersteld, zijn ramen en deuren gesloten en is de sleutel terug? Zonder die stap blijft onduidelijk of de woning werkelijk veilig is achtergelaten."]},{"title":"Test de procedure voordat er iets gebeurt","paragraphs":["Controleer periodiek of sleutels passen, codes actueel zijn en contactpersonen bereikbaar blijven. Werk wijzigingen na een nieuw slot, andere garagezender of wisseling van comunidadbeheerder meteen bij.","Combineer noodtoegang met regulier tweede-woningbeheer. De beheerder kent de woning dan al en hoeft in een urgente situatie niet eerst basisinformatie te verzamelen."]}],"faqs":[["Wie mag mijn woning in een noodsituatie openen?","Alleen een vooraf aangewezen sleutelhouder of partij met duidelijke toestemming en een geldige aanleiding."],["Kan de comunidad altijd toegang eisen?","Dat hangt af van de situatie en gebouwafspraken. Vraag om een duidelijke melding en laat toegang gecontroleerd plaatsvinden."],["Word ik direct geïnformeerd?","De meldingsroute en urgentieniveaus worden vooraf afgesproken."],["Kan een monteur zonder begeleiding naar binnen?","Dat kan alleen wanneer je dit toestaat; begeleide toegang biedt doorgaans meer controle."],["Kan noodtoegang zonder verhuurbeheer?","Ja, sleutelbeheer en woningcontrole kunnen afzonderlijk worden ingericht."]]},
+{
+  "slug": "inventaris-eigen-gebruik-verhuur-fuengirola",
+  "type": "gids",
+  "eyebrow": "Praktische gids voor eigenaren",
+  "title": "Inventaris beheren bij eigen gebruik en verhuur in Fuengirola",
+  "seoTitle": "Inventaris woning Fuengirola | Eigen gebruik en verhuur",
+  "description": "Beheer inventaris en privéspullen in je woning in Fuengirola bij afwisselend eigen gebruik en verhuur met vaste lijsten, opslag en controles.",
+  "intro": "Wanneer een tweede woning zowel privé als voor verhuur wordt gebruikt, ontstaan snel discussies over wat aanwezig hoort te zijn en wat privé blijft. Een duidelijke inventaris maakt schoonmaak, controle en voorbereiding voorspelbaar.",
+  "sections": [
+    {
+      "title": "Scheid gastinventaris van privébezit",
+      "paragraphs": [
+        "Bepaal welke keukenartikelen, linnengoed, apparatuur en buitenitems bij verhuur beschikbaar zijn. Berg persoonlijke documenten, kleding en waardevolle spullen apart en afsluitbaar op.",
+        "In appartementen in Los Boliches en Fuengirola Centro is bergruimte vaak beperkt. In Torreblanca of Carvajal kunnen terras- en strandartikelen juist extra opslag vragen."
+      ],
+      "bullets": [
+        "Vaste gastinventaris",
+        "Privékast of afgesloten berging",
+        "Linnen per bedtype",
+        "Terras-, zwembad- en keukenartikelen"
+      ]
+    },
+    {
+      "title": "Werk met aantallen en conditie",
+      "paragraphs": [
+        "Noteer niet alleen dat iets aanwezig is, maar hoeveel en in welke staat. Maak foto’s van kostbare of kwetsbare onderdelen en leg vervangingsafspraken vast.",
+        "Controleer na eigen verblijf en gastenwissel dezelfde kernpunten. Zo is zichtbaar wanneer iets ontbreekt of door normale slijtage vervangen moet worden."
+      ]
+    },
+    {
+      "title": "Koppel inventaris aan schoonmaak en onderhoud",
+      "paragraphs": [
+        "Een schoonmaker kan ontbrekende handzeep, beschadigd textiel of servies signaleren, maar moet weten wat de norm is. Gebruik daarom één actuele lijst in plaats van losse berichten.",
+        "Technische defecten horen in een onderhoudsroute, niet als stille inventarisafwijking. Laat de eigenaar beslissen over niet-reguliere vervanging."
+      ]
+    },
+    {
+      "title": "Bereid wissels tussen privé en verhuur bewust voor",
+      "paragraphs": [
+        "Plan vóór verhuur welke privéspullen worden opgeborgen en welke gastinventaris wordt aangevuld. Vóór eigen aankomst kunnen persoonlijke voorkeuren weer worden klaargezet.",
+        "Een lokale beheerder kan de wissel controleren en rapporteren. Daarmee blijft de woning bruikbaar zonder dat privé- en verhuurgebruik door elkaar lopen."
+      ]
+    }
+  ],
+  "faqs": [
+    [
+      "Moet iedere vork op de inventarislijst?",
+      "Werk praktisch: tel essentiële en kostbare onderdelen en groepeer eenvoudige gebruiksartikelen."
+    ],
+    [
+      "Wie controleert inventaris na gasten?",
+      "Dat kan onderdeel zijn van schoonmaak- of beheercontrole."
+    ],
+    [
+      "Waar bewaar ik privéspullen?",
+      "Gebruik een duidelijk afgesloten kast of berging die niet voor gasten toegankelijk is."
+    ],
+    [
+      "Wie betaalt normale slijtage?",
+      "Leg vervanging en goedkeuring vooraf in de beheerafspraken vast."
+    ],
+    [
+      "Kan inventarisbeheer zonder vakantieverhuur?",
+      "Ja, het kan ook helpen bij eigen gebruik, midterm of langetermijnverhuur."
+    ]
+  ]
+}
 ];
 export const contentBySlug=Object.fromEntries(contentPages.map(p=>[p.slug,p]));
