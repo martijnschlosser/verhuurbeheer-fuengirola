@@ -1,0 +1,53 @@
+name: VBS SEO Engine
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: daily or weekly
+        required: true
+        default: daily
+  schedule:
+    - cron: "17 4 * * *"
+    - cron: "47 5 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vbs-seo-engine
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: seo-engine
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm test
+      - name: Determine mode
+        id: mode
+        shell: bash
+        run: |
+          MODE="${{ github.event.inputs.mode }}"
+          if [ -z "$MODE" ]; then
+            if [ "${{ github.event.schedule }}" = "47 5 * * 1" ]; then MODE="weekly"; else MODE="daily"; fi
+          fi
+          echo "value=$MODE" >> "$GITHUB_OUTPUT"
+      - name: Collect, analyze and write dashboard
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GA4_PROPERTIES_JSON: ${{ secrets.GA4_PROPERTIES_JSON }}
+          SEO_SHEET_ID: ${{ secrets.SEO_SHEET_ID }}
+          GOOGLE_ADS_CLIENT_ID: ${{ secrets.GOOGLE_ADS_CLIENT_ID }}
+          GOOGLE_ADS_CLIENT_SECRET: ${{ secrets.GOOGLE_ADS_CLIENT_SECRET }}
+          GOOGLE_ADS_REFRESH_TOKEN: ${{ secrets.GOOGLE_ADS_REFRESH_TOKEN }}
+          GOOGLE_ADS_CUSTOMER_ID: ${{ secrets.GOOGLE_ADS_CUSTOMER_ID }}
+          GOOGLE_ADS_DEVELOPER_TOKEN: ${{ secrets.GOOGLE_ADS_DEVELOPER_TOKEN }}
+        run: npm run ${{ steps.mode.outputs.value }}
