@@ -1,0 +1,11 @@
+{
+  "name": "vbs-seo-engine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "daily": "node src/run.js daily",
+    "weekly": "node src/run.js weekly"
+  }
+}
