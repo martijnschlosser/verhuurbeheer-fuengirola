@@ -1,6 +1,11 @@
 name: VBS SEO Engine
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "seo-engine/**"
+      - ".github/workflows/vbs-seo-engine.yml"
   workflow_dispatch:
     inputs:
       mode:
