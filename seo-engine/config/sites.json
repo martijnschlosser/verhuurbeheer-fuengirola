@@ -1,0 +1,52 @@
+[
+  {
+    "city": "Costa del Sol",
+    "domain": "verhuurbeheerspanje.nl",
+    "gsc": "sc-domain:verhuurbeheerspanje.nl"
+  },
+  {
+    "city": "Estepona",
+    "domain": "verhuurbeheerestepona.nl",
+    "gsc": "sc-domain:verhuurbeheerestepona.nl"
+  },
+  {
+    "city": "Mijas",
+    "domain": "verhuurbeheermijas.nl",
+    "gsc": "sc-domain:verhuurbeheermijas.nl"
+  },
+  {
+    "city": "Alhaurín el Grande",
+    "domain": "verhuurbeheeralhaurinelgrande.nl",
+    "gsc": "sc-domain:verhuurbeheeralhaurinelgrande.nl"
+  },
+  {
+    "city": "Casares",
+    "domain": "verhuurbeheercasares.nl",
+    "gsc": "sc-domain:verhuurbeheercasares.nl"
+  },
+  {
+    "city": "Fuengirola",
+    "domain": "verhuurbeheerfuengirola.nl",
+    "gsc": "sc-domain:verhuurbeheerfuengirola.nl"
+  },
+  {
+    "city": "Málaga",
+    "domain": "verhuurbeheermalaga.nl",
+    "gsc": "sc-domain:verhuurbeheermalaga.nl"
+  },
+  {
+    "city": "San Pedro",
+    "domain": "verhuurbeheersanpedro.nl",
+    "gsc": "sc-domain:verhuurbeheersanpedro.nl"
+  },
+  {
+    "city": "Torremolinos",
+    "domain": "verhuurbeheertorremolinos.nl",
+    "gsc": "sc-domain:verhuurbeheertorremolinos.nl"
+  },
+  {
+    "city": "Marbella",
+    "domain": "verhuurbeheermarbella.nl",
+    "gsc": "sc-domain:verhuurbeheermarbella.nl"
+  }
+]
