@@ -8,7 +8,26 @@ const credentials = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_JSON || "{}");
 const sheetId = process.env.SEO_SHEET_ID || "1kPCMn1D2zJeKjh-YiewppGqNqezbU8Dz1xXUMeowpdM";
 const ga4 = JSON.parse(process.env.GA4_PROPERTIES_JSON || "{}");
 const required = ["client_email", "private_key"];
-for (const key of required) if (!credentials[key]) throw new Error(`Missing GOOGLE_SERVICE_ACCOUNT_JSON.${key}`);
+const missingCredentials = required.filter(key => !credentials[key]);
+if (missingCredentials.length) {
+  const publicHealth = [];
+  for (const site of sites) {
+    for (const path of ["/", "/robots.txt", "/sitemap.xml"]) {
+      try {
+        const response = await fetch(`https://${site.domain}${path}`, { redirect: "follow" });
+        publicHealth.push({ domain: site.domain, path, ok: response.ok, status: response.status, url: response.url });
+      } catch (error) {
+        publicHealth.push({ domain: site.domain, path, ok: false, error: error.message });
+      }
+    }
+  }
+  console.log(JSON.stringify({
+    mode: "public-health-only",
+    reason: `Missing GOOGLE_SERVICE_ACCOUNT_JSON: ${missingCredentials.join(", ")}`,
+    publicHealth
+  }));
+  process.exit(0);
+}
 
 const iso = date => date.toISOString().slice(0, 10);
 const end = new Date(Date.now() - 3 * 86400000);
