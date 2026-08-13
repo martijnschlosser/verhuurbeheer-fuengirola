@@ -26,7 +26,7 @@ export async function serviceToken(credentials, scopes) {
   signer.update(`${header}.${payload}`);
   const signature = signer.sign(credentials.private_key, "base64url");
   const result = await postForm("https://oauth2.googleapis.com/token", {
-    grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
+    grant_type: "urn:ietf:params:grant-type:jwt-bearer",
     assertion: `${header}.${payload}.${signature}`
   });
   return result.access_token;
@@ -49,6 +49,20 @@ async function googleJson(url, token, init = {}) {
   });
   if (!response.ok) throw new Error(`Google API ${response.status}: ${await response.text()}`);
   return response.status === 204 ? null : response.json();
+}
+
+export async function ensureSheets(token, spreadsheetId, requiredTitles) {
+  const meta = await googleJson(
+    `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?fields=sheets.properties.title`,
+    token
+  );
+  const existing = new Set((meta.sheets || []).map(x => x.properties.title));
+  const missing = requiredTitles.filter(title => !existing.has(title));
+  if (!missing.length) return;
+  await googleJson(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}:batchUpdate`, token, {
+    method: "POST",
+    body: JSON.stringify({ requests: missing.map(title => ({ addSheet: { properties: { title } } })) })
+  });
 }
 
 export async function fetchGsc(token, siteUrl, startDate, endDate) {
@@ -87,8 +101,7 @@ export async function keywordIdeas(token, customerId, developerToken, keywords, 
         language: "languageConstants/1010",
         geoTargetConstants: ["geoTargetConstants/2724"],
         keywordPlanNetwork: "GOOGLE_SEARCH",
-        keywordSeed: { keywords },
-        urlSeed: { url: pageUrl }
+        keywordAndUrlSeed: { keywords, url: pageUrl }
       })
     }
   );
