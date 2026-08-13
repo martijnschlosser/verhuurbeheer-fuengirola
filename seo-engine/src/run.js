@@ -1,5 +1,5 @@
 import fs from "node:fs/promises";
-import { appendSheet, fetchGa4, fetchGsc, keywordIdeas, refreshToken, serviceToken } from "./google.js";
+import { appendSheet, ensureSheets, fetchGa4, fetchGsc, keywordIdeas, refreshToken, serviceToken } from "./google.js";
 import { actionFor, scoreOpportunity } from "./scoring.js";
 
 const mode = process.argv[2] || "daily";
@@ -19,6 +19,8 @@ const token = await serviceToken(credentials, [
   "https://www.googleapis.com/auth/analytics.readonly",
   "https://www.googleapis.com/auth/spreadsheets"
 ]);
+
+await ensureSheets(token, sheetId, ["GSC Data", "GA4 Data", "Indexatie", "Content Opportunities", "Keyword Planner"]);
 
 const gscRows = [], gaRows = [], healthRows = [], opportunities = [];
 for (const site of sites) {
