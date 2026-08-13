@@ -14,7 +14,7 @@ if (missingCredentials.length) {
   for (const site of sites) {
     for (const path of ["/", "/robots.txt", "/sitemap.xml"]) {
       try {
-        const response = await fetch(`https://${site.domain}${path}`, { redirect: "follow" });
+        const response = await fetch(`https://${site.domain}${path}`, { redirect: "follow", signal: AbortSignal.timeout(15000) });
         publicHealth.push({ domain: site.domain, path, ok: response.ok, status: response.status, url: response.url });
       } catch (error) {
         publicHealth.push({ domain: site.domain, path, ok: false, error: error.message });
@@ -72,7 +72,7 @@ for (const site of sites) {
 
   for (const path of ["/", "/robots.txt", "/sitemap.xml"]) {
     try {
-      const response = await fetch(`https://${site.domain}${path}`, { redirect: "follow" });
+      const response = await fetch(`https://${site.domain}${path}`, { redirect: "follow", signal: AbortSignal.timeout(15000) });
       healthRows.push([checkedAt, site.domain, path, response.ok ? "OK" : "FOUT", response.status, response.url]);
     } catch (error) {
       healthRows.push([checkedAt, site.domain, path, "FOUT", error.message.slice(0, 300)]);
