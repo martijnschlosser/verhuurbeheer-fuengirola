@@ -26,7 +26,7 @@ export async function serviceToken(credentials, scopes) {
   signer.update(`${header}.${payload}`);
   const signature = signer.sign(credentials.private_key, "base64url");
   const result = await postForm("https://oauth2.googleapis.com/token", {
-    grant_type: "urn:ietf:params:grant-type:jwt-bearer",
+    grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
     assertion: `${header}.${payload}.${signature}`
   });
   return result.access_token;
