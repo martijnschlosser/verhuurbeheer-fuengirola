@@ -30,8 +30,8 @@ const worker = {
     const url = new URL(request.url);
 
     const isPublicDomain =
-      url.hostname === "verhuurbeheerestepona.nl" ||
-      url.hostname === "www.verhuurbeheerestepona.nl";
+      url.hostname === "verhuurbeheerfuengirola.nl" ||
+      url.hostname === "www.verhuurbeheerfuengirola.nl";
     const forwardedProto = request.headers.get("x-forwarded-proto");
     const cfVisitor = request.headers.get("cf-visitor");
     const originalRequestWasHttp =
@@ -40,7 +40,7 @@ const worker = {
       cfVisitor?.includes('"scheme":"http"') === true;
     if (isPublicDomain && (originalRequestWasHttp || url.hostname.startsWith("www."))) {
       url.protocol = "https:";
-      url.hostname = "verhuurbeheerestepona.nl";
+      url.hostname = "verhuurbeheerfuengirola.nl";
       return Response.redirect(url.toString(), 301);
     }
 
