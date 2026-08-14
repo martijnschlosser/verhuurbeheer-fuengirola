@@ -1,4 +1,5 @@
 name: Deploy Cloudflare Worker
+# Every main-branch push publishes the verified artifact.
 
 on:
   push:
