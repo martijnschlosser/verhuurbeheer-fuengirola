@@ -13,6 +13,7 @@ import {
 import {
   absoluteUrl,
   emailHref,
+  leadFormAction,
   siteConfig,
   whatsappHref,
 } from "../site-config";
@@ -22,105 +23,105 @@ const homepageTeam = [
     name: "Martijn",
     role: "Responsable de relaciones",
     image: "/martijn-verhuurbeheer-fuengirola.webp",
-    alt: "Martijn, relationship manager at Verhuurbeheer Spanje on the Costa del Sol",
+    alt: "Martijn, responsable de relaciones de Verhuurbeheer España en la Costa del Sol",
   },
   {
     name: "Geert",
     role: "Responsable de obras",
     image: "/geert-vastgoedbeheer-fuengirola.webp",
-    alt: "Geert, construction and property management manager at Verhuurbeheer Spanje",
+    alt: "Geert, responsable de obras y gestión de propiedades de Verhuurbeheer España",
   },
   {
     name: "Sophie",
     role: "Operaciones",
     image: "/sophie-fuengirola.webp",
-    alt: "Sophie, owner support contact at Verhuurbeheer Spanje",
+    alt: "Sophie, contactoo de propietarios de Verhuurbeheer España",
   },
   {
     name: "Päivi",
     role: "Administración",
     image: "/paivi-administratie-verhuurbeheer.webp",
-    alt: "Päivi from the administration team at Verhuurbeheer Spanje",
+    alt: "Päivi del equipo administrativo de Verhuurbeheer España",
   },
 ];
 
 const services = [
   {
     title: "Gestión de alquiler vacacional",
-    slug: "vakantieverhuur-fuengirola",
+    slug: "gestion-alquiler-vacacional",
     price: siteConfig.pricing.holidayRental,
     icon: BedDouble,
-    text: "We create the property presentation, manage pricing and calendars, and coordinate guest communication and local changeovers.",
+    text: "Creamos la presentación de la vivienda, gestionamos precios y calendarios, y coordinamos la comunicación con huéspedes y los cambios locales.",
   },
   {
     title: "Alquiler de temporada",
-    slug: "midterm-verhuur-fuengirola",
+    slug: "alquiler-temporada",
     price: siteConfig.pricing.midterm,
     icon: CalendarDays,
-    text: "A flexible option for seasonal and temporary residents, with screening, clear agreements and a personal handover.",
+    text: "Una opción flexible para alquileres de temporada, con selección, acuerdos claros y entrega personal.",
   },
   {
     title: "Alquiler de larga duración",
-    slug: "langetermijnverhuur-fuengirola",
+    slug: "alquiler-larga-duracion",
     price: siteConfig.pricing.longterm,
     icon: KeyRound,
-    text: "We find a suitable long-term tenant and manage viewings, selection, the agreement, deposit and key handover.",
+    text: "Buscamos un inquilino adecuado y gestionamos visitas, selección, contrato, fianza y entrega de llaves.",
   },
   {
     title: "Gestión de propiedades",
-    slug: "vastgoedbeheer-fuengirola",
-    price: "Tailored",
+    slug: "gestion-de-propiedades",
+    price: "A medida",
     icon: ShieldCheck,
-    text: "We also look after non-rental properties through inspections, key holding, contractor access and practical follow-up.",
+    text: "También cuidamos viviendas sin alquiler mediante revisiones, custodia de llaves, acceso de proveedores y seguimiento práctico.",
   },
   {
     title: "Limpieza y mantenimiento",
-    slug: "schoonmaak-onderhoud-fuengirola",
-    price: "After property assessment",
+    slug: "limpieza-mantenimiento",
+    price: "Tras valorar la vivienda",
     icon: Sparkles,
-    text: "Local teams handle changeover cleaning and linen, while issues, minor repairs and maintenance are followed up promptly.",
+    text: "Los equipos locales realizan la limpieza y la ropa de cama, y gestionan con rapidez las incidencias, reparaciones menores y mantenimiento.",
   },
   {
     title: "Reforma y decoración",
-    slug: "renovatie-inrichting-fuengirola",
-    price: "Tailored quote",
+    slug: "reformas-decoracion",
+    price: "Presupuesto personalizado",
     icon: Hammer,
-    text: "From a focused refresh to complete furnishing or renovation, tailored to durable use and a strong rental presentation.",
+    text: "Desde una mejora concreta hasta el mobiliario o reforma completa, adaptados a un uso duradero y una buena presentación para el alquiler.",
   },
 ];
 
 const faqs = [
   [
-    "How much does holiday rental management in Fuengirola cost?",
-    "Full-service holiday rental management starts at 18% of realised rental income. After assessing the property, we clearly define what is included and which rate fits the home.",
+    "¿Cuánto cuesta la gestión de alquiler vacacional en Fuengirola?",
+    "La gestión integral de alquiler vacacional parte del 18 % de los ingresos obtenidos. Tras valorar la vivienda, definimos claramente qué incluye el servicio y qué tarifa corresponde.",
   ],
   [
-    "How much do mid-term and long-term rental services cost?",
-    "Tenant sourcing, screening and placement carry a one-off fee equal to one month’s rent. Ongoing management can be agreed separately.",
+    "How much do mid-term and long-term rental services?",
+    "La búsqueda, selección y colocación del inquilino tiene una tarifa única equivalente a un mes de alquiler. La gestión continua puede contratarse por separado.",
   ],
   [
-    "Are cleaning costs deducted from rental income?",
-    "Standard departure cleaning and laundry are charged to the guest. Deep cleaning, damage repairs and technical maintenance are separate.",
+    "¿Los costes de limpieza se descuentan de los ingresos?",
+    "La limpieza estándar de salida y lavandería se cobra al huésped. Las limpiezas profundas, daños y mantenimiento técnico se facturan aparte.",
   ],
   [
-    "Can I continue using my own property?",
-    "Of course. We block your own stays in advance and align the rental strategy with the periods when you want to visit Fuengirola.",
+    "¿Puedo seguir usando mi propia vivienda?",
+    "Por supuesto. Bloqueamos tus estancias con antelación y adaptamos la estrategia a los periodos en que quieras visitar Fuengirola.",
   ],
   [
-    "Which rental platforms will list my property?",
-    "We select the channels that fit the property and target guests, including Airbnb and Booking.com. Central calendar management prevents double bookings.",
+    "¿En qué plataformas se anunciará mi vivienda?",
+    "Seleccionamos los canales adecuados para la vivienda y el huésped objetivo, incluidos Airbnb y Booking.com. El calendario central evita reservas dobles.",
   ],
   [
-    "Do you provide property management without rentals?",
-    "Yes. Without rentals, we can still provide inspections, key holding, property access and maintenance coordination.",
+    "¿Ofrecéis gestión de propiedades sin alquiler?",
+    "Sí. Sin alquiler también ofrecemos revisiones, custodia de llaves, acceso a la vivienda y coordinación del mantenimiento.",
   ],
   [
-    "Which areas of Fuengirola do you cover?",
-    "We support owners in Fuengirola Pueblo, Los Boliches, La Cala de Fuengirola, Carvajal, Miramar, Fuengirola Golf, El Castillo and Miraflores. Every property and location is assessed individually.",
+    "¿En qué zonas de Fuengirola trabajáis?",
+    "Ayudamos a propietarios en Fuengirola Pueblo, Los Boliches, La Cala de Fuengirola, Carvajal, Miramar, Fuengirola Golf, El Castillo and Miraflores. Cada vivienda y ubicación se valora individualmente.",
   ],
   [
-    "Do I need a rental licence for holiday rentals in Fuengirola?",
-    "Tourist rentals must meet current regional, municipal and registration requirements. Have the situation checked before listing the property on booking platforms.",
+    "¿Necesito licencia turística para alquilar vacacionalmente en Fuengirola?",
+    "El alquiler turístico debe cumplir los requisitos regionales, municipales y registrales vigentes. Comprueba la situación antes de publicar la vivienda.",
   ],
 ];
 
@@ -131,9 +132,9 @@ function LocalizedHome() {
     "@type": ["Organization", "ProfessionalService"],
     "@id": `${siteConfig.domain}/es/#organization`,
     name: siteConfig.brand.name,
-    legalName: siteConfig.brand.legalName,
+    legalNombre: siteConfig.brand.legalNombre,
     description:
-      "Full-service property management, holiday rental management and second-home care for owners in Fuengirola.",
+      "Gestión integral de propiedades, alquiler vacacional y cuidado de segundas residencias para propietarios en Fuengirola.",
     parentOrganization: {
       "@type": "Organization",
       name: "Verhuurbeheer Spanje",
@@ -152,7 +153,7 @@ function LocalizedHome() {
       { "@type": "City", name: "Fuengirola" },
       { "@type": "City", name: "Benalmádena" },
     ],
-    email: siteConfig.contact.email,
+    email: siteConfig.contacto.email,
     url: absoluteUrl("/es/"),
     logo: absoluteUrl("/vbs-logo-fuengirola.webp"),
     image: absoluteUrl("/terras-zonsondergang-fuengirola.webp"),
@@ -163,14 +164,14 @@ function LocalizedHome() {
     ],
     knowsLanguage: ["nl", "en", "es"],
     knowsAbout: [
-      "Property Management Fuengirola",
-      "Holiday rental management",
+      "Gestión de propiedades Fuengirola",
+      "Gestión de alquiler vacacional",
       "Gestión de propiedades",
-      "Second-home management",
-      "Mid-term rentals",
+      "Gestión de segundas residencias",
+      "Alquiler de temporada",
       "Alquiler de larga duración",
-      "Key holding",
-      "Cleaning and maintenance",
+      "Custodia de llaves",
+      "Limpieza y mantenimiento",
     ],
   };
   const websiteSchema = {
@@ -205,48 +206,48 @@ function LocalizedHome() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <header className="site-header">
+      <header classNombre="site-header">
         <a
-          className="logo-lockup"
+          classNombre="logo-lockup"
           href="/"
-          aria-label="Property Management Fuengirola – Home"
+          aria-label="Gestión de propiedades Fuengirola – Home"
         >
           <img
             src="/vbs-logo-fuengirola.webp"
-            alt="Property Management Fuengirola logo"
+            alt="Gestión de propiedades Fuengirola logo"
             width="54"
             height="54"
           />
         </a>
         <nav>
           <a href="/">Home</a>
-          <details className="services-menu">
+          <details classNombre="services-menu">
             <summary>Servicios</summary>
             <div>
-              <a href="/vakantieverhuur-fuengirola/">Gestión de alquiler vacacional</a>
-              <a href="/midterm-verhuur-fuengirola/">
+              <a href="/es/gestion-alquiler-vacacional/">Gestión de alquiler vacacional</a>
+              <a href="/es/alquiler-temporada/">
                 Alquiler de temporada
               </a>
-              <a href="/langetermijnverhuur-fuengirola/">Alquiler de larga duración</a>
-              <a href="/vastgoedbeheer-fuengirola/">Gestión de propiedades</a>
-              <a href="/schoonmaak-onderhoud-fuengirola/">
+              <a href="/es/alquiler-larga-duracion/">Alquiler de larga duración</a>
+              <a href="/es/gestion-de-propiedades/">Gestión de propiedades</a>
+              <a href="/es/limpieza-mantenimiento/">
                 Limpieza y mantenimiento
               </a>
-              <a href="/renovatie-inrichting-fuengirola/">
+              <a href="/es/reformas-decoracion/">
                 Reforma y decoración
               </a>
-              <a href="/verhuurlicentie-fuengirola/">Licencia de alquiler</a>
+              <a href="/es/licencia-turistica/">Licencia de alquiler</a>
             </div>
           </details>
           <a href="/werkwijze/">Cómo trabajamos</a>
           <a href="/over-ons/">Quiénes somos</a>
           <a href="/blog/">Guías</a>
-          <a href="/contact/">Contact</a>
+          <a href="/es/#contacto">Contacto</a>
         </nav>
-        <a className="btn btn-small header-cta" href="/woning-aanmelden/">
+        <a classNombre="btn btn-small header-cta" href="/es/#contacto">
           Registrar vivienda
         </a>
-        <details className="mobile-menu">
+        <details classNombre="mobile-menu">
           <summary aria-label="Open menu">
             <span></span>
             <span></span>
@@ -255,76 +256,76 @@ function LocalizedHome() {
           <div>
             <a href="/">Home</a>
             <b>Servicios</b>
-            <a href="/vakantieverhuur-fuengirola/">Gestión de alquiler vacacional</a>
-            <a href="/midterm-verhuur-fuengirola/">Alquiler de temporada</a>
-            <a href="/langetermijnverhuur-fuengirola/">Alquiler de larga duración</a>
-            <a href="/vastgoedbeheer-fuengirola/">Gestión de propiedades</a>
-            <a href="/schoonmaak-onderhoud-fuengirola/">Limpieza y mantenimiento</a>
-            <a href="/renovatie-inrichting-fuengirola/">Reforma y decoración</a>
-            <a href="/verhuurlicentie-fuengirola/">Licencia de alquiler</a>
+            <a href="/es/gestion-alquiler-vacacional/">Gestión de alquiler vacacional</a>
+            <a href="/es/alquiler-temporada/">Alquiler de temporada</a>
+            <a href="/es/alquiler-larga-duracion/">Alquiler de larga duración</a>
+            <a href="/es/gestion-de-propiedades/">Gestión de propiedades</a>
+            <a href="/es/limpieza-mantenimiento/">Limpieza y mantenimiento</a>
+            <a href="/es/reformas-decoracion/">Reforma y decoración</a>
+            <a href="/es/licencia-turistica/">Licencia de alquiler</a>
             <b>Company</b>
             <a href="/werkwijze/">Cómo trabajamos</a>
             <a href="/over-ons/">Quiénes somos</a>
-            <a href="/blog/">Guides & knowledge base</a>
-            <a href="/contact/">Contact</a>
-            <a href="/woning-aanmelden/">Registrar vivienda</a>
+            <a href="/blog/">Guías y recursos</a>
+            <a href="/es/#contacto">Contacto</a>
+            <a href="/es/#contacto">Registrar vivienda</a>
           </div>
         </details>
       </header>
 
-      <section className="hero" id="top">
-        <div className="hero-overlay"></div>
-        <div className="hero-inner">
-          <p className="kicker">
+      <section classNombre="hero" id="top">
+        <div classNombre="hero-overlay"></div>
+        <div classNombre="hero-inner">
+          <p classNombre="kicker">
             Para propietarios en la Costa del Sol
           </p>
           <h1>Disfruta de tu segunda residencia en Fuengirola. Nosotros nos ocupamos del resto.</h1>
           <p>
-            From Los Boliches and La Cala to Fuengirola Pueblo, we combine smart rental management with trusted local people. You have one clear contact for bookings, guests, cleaning, maintenance and the day-to-day care of your property.
+            Desde Los Boliches and La Cala to Fuengirola Pueblo, combinamos una gestión inteligente con profesionales locales de confianza. Tienes un único contactoo para reservas, huéspedes, limpieza, mantenimiento y cuidado diario de la vivienda.
           </p>
-          <div className="actions">
-            <a className="btn hero-cta" href="/woning-aanmelden/">
+          <div classNombre="actions">
+            <a classNombre="btn hero-cta" href="/es/#contacto">
               Registrar mi vivienda
             </a>
-            <a className="link-light" href="#diensten">
-              View all services →
+            <a classNombre="link-light" href="#diensten">
+              Ver todos los servicios →
             </a>
           </div>
         </div>
-        <div className="hero-stats">
+        <div classNombre="hero-stats">
           <span>
             <CheckCircle2 aria-hidden="true" />
-            <b>Airbnb &amp; Booking</b> in your own name
+            <b>Airbnb &amp; Booking</b> a tu nombre
           </span>
           <span>
             <CheckCircle2 aria-hidden="true" />
-            <b>Dedicated</b> contact
+            <b>Personal</b> contacto
           </span>
           <span>
             <CheckCircle2 aria-hidden="true" />
-            <b>Local service</b> in Fuengirola and the surrounding area
+            <b>Servicio local</b> in Fuengirola y alrededores
           </span>
         </div>
       </section>
 
       <section
-        className="property-showcase"
-        aria-label="Homes and property in Fuengirola"
+        classNombre="property-showcase"
+        aria-label="Viviendas y propiedades en Fuengirola"
       >
-        <figure className="showcase-wide">
+        <figure classNombre="showcase-wide">
           <img
             src="/villa-zwembad-fuengirola.webp"
-            alt="Modern villa in Fuengirola with terrace, pool and sea views"
+            alt="Villa moderna en Fuengirola con terraza, piscina y vistas al mar"
             width="1536"
             height="1024"
             loading="eager"
           />
-          <figcaption>Homes with character and rental potential</figcaption>
+          <figcaption>Viviendas con carácter y potencial de alquiler</figcaption>
         </figure>
         <figure>
           <img
             src="/villa-zwembad-fuengirola.webp"
-            alt="Holiday home on the Fuengirola coast"
+            alt="Vivienda vacacional en la costa de Fuengirola"
             width="1800"
             height="1118"
             loading="lazy"
@@ -333,7 +334,7 @@ function LocalizedHome() {
         <figure>
           <img
             src="/terras-zonsondergang-fuengirola.webp"
-            alt="Luxury holiday home in Fuengirola with sea views"
+            alt="Vivienda vacacional de lujo en Fuengirola con vistas al mar"
             width="1600"
             height="1200"
             loading="lazy"
@@ -341,22 +342,22 @@ function LocalizedHome() {
         </figure>
       </section>
 
-      <section className="services" id="diensten">
-        <div className="section-head">
-          <p className="kicker orange">Nuestros servicios</p>
+      <section classNombre="services" id="diensten">
+        <div classNombre="section-head">
+          <p classNombre="kicker orange">Nuestros servicios</p>
           <h2>Un equipo local para alquiler y cuidado de la vivienda</h2>
           <p>
-            No disconnected suppliers. We coordinate rentals, guest service, cleaning, inspections and maintenance as one team.
+            Sin proveedores desconectados: coordinamos alquileres, atención al huésped, limpieza, revisiones y mantenimiento como un solo equipo.
           </p>
         </div>
-        <div className="service-grid">
+        <div classNombre="service-grid">
           {services.map((s, i) => (
-            <a className="service-card" href={`/${s.slug}/`} key={s.slug}>
-              <div className="service-card-top">
-                <span className="service-icon">
+            <a classNombre="service-card" href={`/es/${s.slug}/`} key={s.slug}>
+              <div classNombre="service-card-top">
+                <span classNombre="service-icon">
                   <s.icon aria-hidden="true" />
                 </span>
-                <span className="number">0{i + 1}</span>
+                <span classNombre="number">0{i + 1}</span>
               </div>
               <h3>{s.title}</h3>
               <p>{s.text}</p>
@@ -367,48 +368,48 @@ function LocalizedHome() {
         </div>
       </section>
 
-      <aside className="license-note">
+      <aside classNombre="license-note">
         <ShieldCheck aria-hidden="true" />
         <div>
-          <b>Planning holiday rentals? Check the requirements in time.</b>
+          <b>¿Quieres alquilar vacacionalmente? Comprueba los requisitos a tiempo.</b>
           <p>
-            See which registration and licensing requirements may apply to your property.
+            Consulta qué requisitos de registro y licencia pueden aplicarse a tu vivienda.
           </p>
         </div>
-        <a href="/verhuurlicentie-fuengirola/">Read about rental licensing →</a>
+        <a href="/es/licencia-turistica/">Leer sobre la licencia turística →</a>
       </aside>
 
-      <section className="rental-band">
+      <section classNombre="rental-band">
         <div>
-          <p className="kicker">¿Qué modalidad de alquiler encaja?</p>
+          <p classNombre="kicker">¿Qué modalidad de alquiler encaja?</p>
           <h2>La modalidad adecuada empieza con tus objetivos.</h2>
           <p>
-            Whether you want to visit regularly, maximise returns or prefer a long-term tenant, we compare the options and create an approach that fits your property and plans.
+            Tanto si quieres visitar con frecuencia, maximizar la rentabilidad o prefieres un inquilino estable, comparamos las opciones y creamos un enfoque adecuado para tu vivienda y tus planes.
           </p>
         </div>
-        <div className="rental-options">
-          <a href="/vakantieverhuur-fuengirola/">
-            <small>Short stays</small>
+        <div classNombre="rental-options">
+          <a href="/es/gestion-alquiler-vacacional/">
+            <small>Estancias cortas</small>
             <b>Gestión de alquiler vacacional</b>
-            <span>From 18% →</span>
+            <span>Desde 18% →</span>
           </a>
-          <a href="/midterm-verhuur-fuengirola/">
-            <small>Temporary stays</small>
-            <b>Mid-term</b>
-            <span>One month’s rent →</span>
+          <a href="/es/alquiler-temporada/">
+            <small>Estancias temporales</small>
+            <b>Temporada</b>
+            <span>Un mes de alquiler →</span>
           </a>
-          <a href="/langetermijnverhuur-fuengirola/">
-            <small>Long-term tenant</small>
-            <b>Langetermijn</b>
-            <span>One month’s rent →</span>
+          <a href="/es/alquiler-larga-duracion/">
+            <small>Inquilino de larga duración</small>
+            <b>Larga duración</b>
+            <span>Un mes de alquiler →</span>
           </a>
         </div>
       </section>
 
-      <section className="process" id="werkwijze">
-        <div className="section-head left">
-          <p className="kicker orange">Cómo trabajamos</p>
-          <h2>How we prepare your property for a strong start</h2>
+      <section classNombre="process" id="werkwijze">
+        <div classNombre="section-head left">
+          <p classNombre="kicker orange">Cómo trabajamos</p>
+          <h2>Cómo preparamos tu vivienda para empezar con fuerza</h2>
         </div>
         <ol>
           <li>
@@ -416,7 +417,7 @@ function LocalizedHome() {
             <div>
               <h3>Primera conversación</h3>
               <p>
-                We first map out the property, location, personal use and financial expectations.
+                Primero analizamos la vivienda, la ubicación, el uso personal y las expectativas económicas.
               </p>
             </div>
           </li>
@@ -425,7 +426,7 @@ function LocalizedHome() {
             <div>
               <h3>Revisión y propuesta</h3>
               <p>
-                We then inspect the property and provide a clear proposal without vague responsibilities or costs.
+                Después revisamos la vivienda y presentamos una propuesta clara, sin responsabilidades ni costes ambiguos.
               </p>
             </div>
           </li>
@@ -434,7 +435,7 @@ function LocalizedHome() {
             <div>
               <h3>Preparación</h3>
               <p>
-                We arrange the presentation, booking channels, pricing strategy, guest information, access and agreements with the local team.
+                Preparamos la presentación, canales de reserva, estrategia de precios, información para huéspedes, accesos y acuerdos con el equipo local.
               </p>
             </div>
           </li>
@@ -443,22 +444,22 @@ function LocalizedHome() {
             <div>
               <h3>Lanzamiento y seguimiento</h3>
               <p>
-                Once everything is ready, we manage operations and keep you informed about bookings and important property matters.
+                Cuando todo está listo, gestionamos la operativa y te informamos sobre reservas y asuntos importantes de la vivienda.
               </p>
             </div>
           </li>
         </ol>
       </section>
 
-      <section className="regions compact-regions" id="regios">
-        <div className="section-head">
-          <p className="kicker orange">Cobertura local</p>
+      <section classNombre="regions compact-regions" id="regios">
+        <div classNombre="section-head">
+          <p classNombre="kicker orange">Cobertura local</p>
           <h2>Conocimiento local en todo Fuengirola</h2>
           <p>
-            From coastal apartments and golf townhouses to hillside villas, we work throughout Fuengirola Pueblo, La Cala de Fuengirola, Los Boliches, Carvajal, Miraflores, Miramar and Fuengirola Golf.
+            Desdeal apartments and golf townhouses to hillside villas, we work throughout Fuengirola Pueblo, La Cala de Fuengirola, Los Boliches, Carvajal, Miraflores, Miramar and Fuengirola Golf.
           </p>
         </div>
-        <div className="area-list" aria-label="Areas covered around Fuengirola">
+        <div classNombre="area-list" aria-label="Zonas atendidas alrededor de Fuengirola">
           <b>Fuengirola Pueblo</b>
           <b>Los Boliches</b>
           <b>La Cala de Fuengirola</b>
@@ -470,18 +471,18 @@ function LocalizedHome() {
         </div>
       </section>
 
-      <section className="home-team">
-        <div className="home-team-copy">
-          <p className="kicker orange">Nuestro equipo</p>
-          <h2>Personal contact with people who know Fuengirola.</h2>
+      <section classNombre="home-team">
+        <div classNombre="home-team-copy">
+          <p classNombre="kicker orange">Nuestro equipo</p>
+          <h2>Personal contacto with people who know Fuengirola.</h2>
           <p>
-            Your contact knows your arrangements and our local team knows the property. Communication, administration and practical follow-up remain part of one process.
+            Your contacto knows your arrangements and our local team knows the property. Communication, administration and practical follow-up remain part of one process.
           </p>
-          <a className="dark-link" href="/over-ons/">
-            Meet the full team →
+          <a classNombre="dark-link" href="/over-ons/">
+            Conoce a todo el equipo →
           </a>
         </div>
-        <div className="home-team-grid">
+        <div classNombre="home-team-grid">
           {homepageTeam.map((person) => (
             <article key={person.name}>
               <img src={person.image} alt={person.alt} loading="lazy" />
@@ -494,42 +495,42 @@ function LocalizedHome() {
         </div>
       </section>
 
-      <section className="knowledge compact-knowledge" id="kennisbank">
-        <div className="section-head">
-          <p className="kicker orange">Guíass &amp; advies</p>
+      <section classNombre="knowledge compact-knowledge" id="kennisbank">
+        <div classNombre="section-head">
+          <p classNombre="kicker orange">Guías y consejos</p>
           <h2>Guías prácticas para propietarios</h2>
           <p>
-            Clear guidance on costs, rental strategy, regulations and property management in Fuengirola.
+            Información clara sobre costes, estrategia de alquiler, normativa y gestión de propiedades en Fuengirola.
           </p>
         </div>
-        <div className="knowledge-grid">
-          <a href="/kosten-verhuurbeheer-fuengirola/">
-            <small>Costs</small>
-            <h3>What does property management cost?</h3>
-            <span>Read guide →</span>
+        <div classNombre="knowledge-grid">
+          <a href="/es/costes-de-gestion/">
+            <small>Costes</small>
+            <h3>What does property management?</h3>
+            <span>Leer guía →</span>
           </a>
-          <a href="/dynamische-prijzen-vakantiewoning/">
-            <small>Returns</small>
-            <h3>Dynamic pricing</h3>
-            <span>Read guide →</span>
+          <a href="/es/gestion-alquiler-vacacional/">
+            <small>Rentabilidad</small>
+            <h3>Precios dinámicos</h3>
+            <span>Leer guía →</span>
           </a>
-          <a href="/zelf-verhuren-of-verhuurbeheer/">
-            <small>Decision guide</small>
-            <h3>Self-manage or outsource?</h3>
-            <span>Read guide →</span>
+          <a href="/es/gestion-de-propiedades/">
+            <small>Guía de decisión</small>
+            <h3>¿Gestionar por tu cuenta o delegar?</h3>
+            <span>Leer guía →</span>
           </a>
         </div>
-        <a className="knowledge-all" href="/blog/">
-          View all guides and articles →
+        <a classNombre="knowledge-all" href="/blog/">
+          Ver todas las guías y artículos →
         </a>
       </section>
 
-      <section className="faq">
+      <section classNombre="faq">
         <div>
-          <p className="kicker orange">Preguntas frecuentes</p>
+          <p classNombre="kicker orange">Preguntas frecuentes</p>
           <h2>Respuestas claras</h2>
           <p>
-            Key questions about our services and fees in Fuengirola.
+            Preguntas clave sobre nuestros servicios y tarifas en Fuengirola.
           </p>
         </div>
         <div>
@@ -545,25 +546,28 @@ function LocalizedHome() {
         </div>
       </section>
 
-      <section className="contact" id="contact">
+      <section classNombre="contacto" id="contacto">
         <div>
-          <p className="kicker">Previsión de alquiler gratuita</p>
+          <p classNombre="kicker">Previsión de alquiler gratuita</p>
           <h2>Recibe una previsión de alquiler para tu vivienda en Fuengirola</h2>
           <p>
-            Tell us where the property is, what type it is and how you want to use it. We will then discuss which approach and rental model are realistic.
+            Cuéntanos dónde está la vivienda, qué tipo es y cómo quieres utilizarla. Después hablaremos del enfoque y modalidad de alquiler realistas.
           </p>
           <p>
             <a href={emailHref}>
-              {siteConfig.contact.email}
+              {siteConfig.contacto.email}
             </a>
             <br />
           </p>
         </div>
         <form
-          action={emailHref}
+          action={leadFormAction}
           method="post"
-          encType="text/plain"
         >
+          <input type="hidden" name="_subject" value={`Nieuwe aanvraag via ${siteConfig.brand.name} (ES)`} />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value={absoluteUrl(`/es/bedankt/`)} />
+          <input type="hidden" name="bron_taal" value="es" />
           <label>
             Nombre
             <input name="naam" required />
@@ -577,20 +581,20 @@ function LocalizedHome() {
             <select name="type">
               <option>Apartamento</option>
               <option>Villa</option>
-              <option>Townhouse</option>
-              <option>Anders</option>
+              <option>Adosado</option>
+              <option>Otro</option>
             </select>
           </label>
           <label>
             Modalidad de alquiler
             <select name="verhuurvorm">
               <option>Gestión de alquiler vacacional</option>
-              <option>Mid-term</option>
-              <option>Langetermijn</option>
+              <option>Temporada</option>
+              <option>Larga duración</option>
               <option>Gestión de propiedades</option>
             </select>
           </label>
-          <label className="wide">
+          <label classNombre="wide">
             ¿La vivienda ya tiene licencia de alquiler?
             <select name="verhuurlicentie" defaultValue="">
               <option value="" disabled>
@@ -599,28 +603,28 @@ function LocalizedHome() {
               <option>Sí</option>
               <option>No</option>
               <option>En trámite</option>
-              <option>Not applicable / I don’t know</option>
+              <option>No corresponde / No lo sé</option>
             </select>
           </label>
-          <label className="wide">
+          <label classNombre="wide">
             Ubicación y breve descripción
             <textarea name="woning" rows={4} />
           </label>
-          <button className="btn wide form-cta" type="submit">
+          <button classNombre="btn wide form-cta" type="submit">
             Solicitar previsión →
           </button>
-          <small className="wide privacy-note">
-            We process your data according to our{" "}
-            <a href="/privacy policy/">privacy policy</a>.
+          <small classNombre="wide privacy-note">
+            Tratamos tus datos conforme a nuestra{" "}
+            <a href="/política de privacidad/">política de privacidad</a>.
           </small>
         </form>
       </section>
-      <footer className="site-footer">
-        <div className="footer-brand">
-          <a className="logo-lockup" href="/" aria-label="Home">
+      <footer classNombre="site-footer">
+        <div classNombre="footer-brand">
+          <a classNombre="logo-lockup" href="/" aria-label="Home">
             <img
               src="/vbs-logo-fuengirola.webp"
-              alt="Property Management Fuengirola"
+              alt="Gestión de propiedades Fuengirola"
               width={640}
               height={640}
               sizes="54px"
@@ -630,13 +634,13 @@ function LocalizedHome() {
             </span>
           </a>
           <p>
-            Property Management Fuengirola is part of{" "}
+            Gestión de propiedades Fuengirola forma parte de{" "}
             <a href="https://www.verhuurbeheerspanje.nl/">
               Verhuurbeheer Spanje
             </a>
             .
           </p>
-          <div className="social-links">
+          <div classNombre="social-links">
             <a
               href={siteConfig.social.instagram}
               target="_blank"
@@ -657,24 +661,24 @@ function LocalizedHome() {
         </div>
         <div>
           <b>Servicios</b>
-          <a href="/vakantieverhuur-fuengirola/">Gestión de alquiler vacacional</a>
-          <a href="/midterm-verhuur-fuengirola/">Alquiler de temporada</a>
-          <a href="/langetermijnverhuur-fuengirola/">Alquiler de larga duración</a>
-          <a href="/vastgoedbeheer-fuengirola/">Gestión de propiedades</a>
-          <a href="/verhuurlicentie-fuengirola/">Licencia de alquiler</a>
+          <a href="/es/gestion-alquiler-vacacional/">Gestión de alquiler vacacional</a>
+          <a href="/es/alquiler-temporada/">Alquiler de temporada</a>
+          <a href="/es/alquiler-larga-duracion/">Alquiler de larga duración</a>
+          <a href="/es/gestion-de-propiedades/">Gestión de propiedades</a>
+          <a href="/es/licencia-turistica/">Licencia de alquiler</a>
         </div>
         <div>
           <b>Más</b>
           <a href="/werkwijze/">Cómo trabajamos</a>
           <a href="/over-ons/">Quiénes somos</a>
           <a href="/blog/">Guías</a>
-          <a href="/contact/">Contact</a>
-          <a href="/privacy policy/">Política de privacidad</a>
+          <a href="/es/#contacto">Contacto</a>
+          <a href="/política de privacidad/">Política de privacidad</a>
           <a href="/cookieverklaring/">Política de cookies</a>
           <CookiePreferencesButton />
         </div>
         <div>
-          <b>Contact</b>
+          <b>Contacto</b>
           <a href={whatsappHref()}>
             WhatsApp
           </a>
@@ -683,18 +687,18 @@ function LocalizedHome() {
         </div>
       </footer>
       <a
-        className="whatsapp-float"
+        classNombre="whatsapp-float"
         href={whatsappHref()}
-        aria-label="Contacto por WhatsApp"
+        aria-label="Contactoo por WhatsApp"
       >
         WhatsApp
       </a>
-      <a className="to-top" href="#top" aria-label="Volver arriba">
+      <a classNombre="to-top" href="#top" aria-label="Volver arriba">
         ↑
       </a>
     </main>
   );
 }
 
-export const metadata = { robots: { index: false, follow: true }, keywords: ["gestión de propiedades Fuengirola","gestión de alquiler vacacional Fuengirola","gestión de Airbnb Fuengirola","custodia de llaves Fuengirola","revisión de viviendas Fuengirola","gestión de segunda residencia Fuengirola","mantenimiento de viviendas Fuengirola","administración de propiedades Fuengirola"], title: "Gestión de Propiedades en Fuengirola | Alquiler Vacacional y Llaves", description: "Gestión local de propiedades en Fuengirola: alquiler vacacional, gestión de Airbnb, custodia de llaves, revisiones, limpieza y mantenimiento.", alternates: { canonical: "/es/", languages: { "nl-NL": "/", en: "/en/", es: "/es/", "x-default": "/" } }, openGraph: { locale: "es_ES", url: "/es/", type: "website" as const } };
+export const metadata = { robots: { index: true, follow: true }, keywords: ["gestión de propiedades Fuengirola","gestión de alquiler vacacional Fuengirola","gestión de Airbnb Fuengirola","custodia de llaves Fuengirola","revisión de viviendas Fuengirola","gestión de segunda residencia Fuengirola","mantenimiento de viviendas Fuengirola","administración de propiedades Fuengirola"], title: "Gestión de Propiedades en Fuengirola | Alquiler Vacacional y Llaves", description: "Gestión local de propiedades en Fuengirola: alquiler vacacional, gestión de Airbnb, custodia de llaves, revisiones, limpieza y mantenimiento.", alternates: { canonical: "/es/", languages: { "nl-NL": "/", "en-GB": "/en/", "es-ES": "/es/", "x-default": "/" } }, openGraph: { locale: "es_ES", url: "/es/", type: "website" as const } };
 export default LocalizedHome;
