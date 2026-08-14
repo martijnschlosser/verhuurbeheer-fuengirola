@@ -18,7 +18,16 @@ export type LocalizedService = {
 
 const city = siteConfig.location.city;
 const areaList = siteConfig.location.areas.slice(0, 5).join(", ");
-const citySlug = siteConfig.template.citySlug;
+export const citySlug = ({
+  Estepona: "estepona",
+  Mijas: "mijas",
+  Torremolinos: "torremolinos",
+  "San Pedro de Alcántara": "san-pedro",
+  Casares: "casares",
+  "Alhaurín el Grande": "alhaurin-el-grande",
+  Málaga: "malaga",
+  Fuengirola: "fuengirola",
+} as Record<string, string>)[city] ?? city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 const paths = {
   holiday: [
@@ -204,3 +213,4 @@ export function localizedPath(service: LocalizedService, locale: "nl" | PublicLo
   if (locale === "nl") return `/${service.nlSlug}/`;
   return `/${locale}/${locale === "en" ? service.enSlug : service.esSlug}/`;
 }
+
