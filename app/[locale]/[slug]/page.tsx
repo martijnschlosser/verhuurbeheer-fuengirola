@@ -1,7 +1,9 @@
+
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
   findLocalizedService,
+  citySlug,
   localizedPath,
   localizedServices,
   type PublicLocale,
@@ -47,7 +49,7 @@ const cityNetwork: Record<string, { name: string; url: string }[]> = {
   torremolinos: [{ name: "Málaga", url: "https://verhuurbeheermalaga.nl/" }, { name: "Fuengirola", url: "https://verhuurbeheerfuengirola.nl/" }],
   "san-pedro": [{ name: "Estepona", url: "https://verhuurbeheerestepona.nl/" }, { name: "Casares", url: "https://verhuurbeheercasares.nl/" }],
   casares: [{ name: "Estepona", url: "https://verhuurbeheerestepona.nl/" }, { name: "San Pedro de Alcántara", url: "https://verhuurbeheersanpedro.nl/" }],
-  alhaurin: [{ name: "Málaga", url: "https://verhuurbeheermalaga.nl/" }, { name: "Mijas", url: "https://verhuurbeheermijas.nl/" }],
+  "alhaurin-el-grande": [{ name: "Málaga", url: "https://verhuurbeheermalaga.nl/" }, { name: "Mijas", url: "https://verhuurbeheermijas.nl/" }],
   malaga: [{ name: "Torremolinos", url: "https://verhuurbeheertorremolinos.nl/" }, { name: "Fuengirola", url: "https://verhuurbeheerfuengirola.nl/" }],
   fuengirola: [{ name: "Mijas", url: "https://verhuurbeheermijas.nl/" }, { name: "Torremolinos", url: "https://verhuurbeheertorremolinos.nl/" }],
 };
@@ -109,7 +111,7 @@ export default async function LocalizedServicePage({
   const copy = labels[locale];
   const canonical = localizedPath(service, locale);
   const related = localizedServices[locale].filter((item) => item.key !== service.key).slice(0, 4);
-  const nearbyCities = cityNetwork[siteConfig.template.citySlug] ?? [];
+  const nearbyCities = cityNetwork[citySlug] ?? [];
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -192,3 +194,4 @@ export default async function LocalizedServicePage({
     </main>
   );
 }
+
