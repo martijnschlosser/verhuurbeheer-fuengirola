@@ -55,7 +55,19 @@ const worker = {
       }, allowedWidths);
     }
 
-    return handler.fetch(request, env, ctx);
+    const response = await handler.fetch(request, env, ctx);
+    const locale = url.pathname === "/en" || url.pathname.startsWith("/en/")
+      ? "en"
+      : url.pathname === "/es" || url.pathname.startsWith("/es/")
+        ? "es"
+        : null;
+    if (locale && response.headers.get("content-type")?.includes("text/html")) {
+      const headers = new Headers(response.headers);
+      headers.delete("content-length");
+      const html = (await response.text()).replace('<html lang="nl"', `<html lang="${locale}"`);
+      return new Response(html, { status: response.status, statusText: response.statusText, headers });
+    }
+    return response;
   },
 };
 
