@@ -35,7 +35,7 @@ const homepageTeam = [
     name: "Sophie",
     role: "Operaciones",
     image: "/sophie-fuengirola.webp",
-    alt: "Sophie, contactoo de propietarios de Verhuurbeheer España",
+    alt: "Sophie, contacto de propietarios de Verhuurbeheer España",
   },
   {
     name: "Päivi",
@@ -96,7 +96,7 @@ const faqs = [
     "La gestión integral de alquiler vacacional parte del 18 % de los ingresos obtenidos. Tras valorar la vivienda, definimos claramente qué incluye el servicio y qué tarifa corresponde.",
   ],
   [
-    "How much do mid-term and long-term rental services?",
+    "¿Cuánto cuestan los servicios de alquiler de temporada y larga duración?",
     "La búsqueda, selección y colocación del inquilino tiene una tarifa única equivalente a un mes de alquiler. La gestión continua puede contratarse por separado.",
   ],
   [
@@ -117,7 +117,7 @@ const faqs = [
   ],
   [
     "¿En qué zonas de Fuengirola trabajáis?",
-    "Ayudamos a propietarios en Fuengirola Pueblo, Los Boliches, La Cala de Fuengirola, Carvajal, Miramar, Fuengirola Golf, El Castillo and Miraflores. Cada vivienda y ubicación se valora individualmente.",
+    "Ayudamos a propietarios en Fuengirola Pueblo, Los Boliches, La Cala de Fuengirola, Carvajal, Miramar, Fuengirola Golf, El Castillo y Miraflores. Cada vivienda y ubicación se valora individualmente.",
   ],
   [
     "¿Necesito licencia turística para alquilar vacacionalmente en Fuengirola?",
@@ -132,7 +132,7 @@ function LocalizedHome() {
     "@type": ["Organization", "ProfessionalService"],
     "@id": `${siteConfig.domain}/es/#organization`,
     name: siteConfig.brand.name,
-    legalNombre: siteConfig.brand.legalNombre,
+    legalName: siteConfig.brand.legalName,
     description:
       "Gestión integral de propiedades, alquiler vacacional y cuidado de segundas residencias para propietarios en Fuengirola.",
     parentOrganization: {
@@ -153,7 +153,7 @@ function LocalizedHome() {
       { "@type": "City", name: "Fuengirola" },
       { "@type": "City", name: "Benalmádena" },
     ],
-    email: siteConfig.contacto.email,
+    email: siteConfig.contact.email,
     url: absoluteUrl("/es/"),
     logo: absoluteUrl("/vbs-logo-fuengirola.webp"),
     image: absoluteUrl("/terras-zonsondergang-fuengirola.webp"),
@@ -206,9 +206,9 @@ function LocalizedHome() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <header classNombre="site-header">
+      <header className="site-header">
         <a
-          classNombre="logo-lockup"
+          className="logo-lockup"
           href="/"
           aria-label="Gestión de propiedades Fuengirola – Home"
         >
@@ -221,7 +221,7 @@ function LocalizedHome() {
         </a>
         <nav>
           <a href="/">Home</a>
-          <details classNombre="services-menu">
+          <details className="services-menu">
             <summary>Servicios</summary>
             <div>
               <a href="/es/gestion-alquiler-vacacional/">Gestión de alquiler vacacional</a>
@@ -242,12 +242,12 @@ function LocalizedHome() {
           <a href="/werkwijze/">Cómo trabajamos</a>
           <a href="/over-ons/">Quiénes somos</a>
           <a href="/blog/">Guías</a>
-          <a href="/es/#contacto">Contacto</a>
+          <a href="/es/#contact">Contacto</a>
         </nav>
-        <a classNombre="btn btn-small header-cta" href="/es/#contacto">
+        <a className="btn btn-small header-cta" href="/es/#contact">
           Registrar vivienda
         </a>
-        <details classNombre="mobile-menu">
+        <details className="mobile-menu">
           <summary aria-label="Open menu">
             <span></span>
             <span></span>
@@ -267,32 +267,32 @@ function LocalizedHome() {
             <a href="/werkwijze/">Cómo trabajamos</a>
             <a href="/over-ons/">Quiénes somos</a>
             <a href="/blog/">Guías y recursos</a>
-            <a href="/es/#contacto">Contacto</a>
-            <a href="/es/#contacto">Registrar vivienda</a>
+            <a href="/es/#contact">Contacto</a>
+            <a href="/es/#contact">Registrar vivienda</a>
           </div>
         </details>
       </header>
 
-      <section classNombre="hero" id="top">
-        <div classNombre="hero-overlay"></div>
-        <div classNombre="hero-inner">
-          <p classNombre="kicker">
+      <section className="hero" id="top">
+        <div className="hero-overlay"></div>
+        <div className="hero-inner">
+          <p className="kicker">
             Para propietarios en la Costa del Sol
           </p>
           <h1>Disfruta de tu segunda residencia en Fuengirola. Nosotros nos ocupamos del resto.</h1>
           <p>
-            Desde Los Boliches and La Cala to Fuengirola Pueblo, combinamos una gestión inteligente con profesionales locales de confianza. Tienes un único contactoo para reservas, huéspedes, limpieza, mantenimiento y cuidado diario de la vivienda.
+            Desde Los Boliches y La Cala to Fuengirola Pueblo, combinamos una gestión inteligente con profesionales locales de confianza. Tienes un único contacto para reservas, huéspedes, limpieza, mantenimiento y cuidado diario de la vivienda.
           </p>
-          <div classNombre="actions">
-            <a classNombre="btn hero-cta" href="/es/#contacto">
+          <div className="actions">
+            <a className="btn hero-cta" href="/es/#contact">
               Registrar mi vivienda
             </a>
-            <a classNombre="link-light" href="#diensten">
+            <a className="link-light" href="#diensten">
               Ver todos los servicios →
             </a>
           </div>
         </div>
-        <div classNombre="hero-stats">
+        <div className="hero-stats">
           <span>
             <CheckCircle2 aria-hidden="true" />
             <b>Airbnb &amp; Booking</b> a tu nombre
@@ -309,10 +309,10 @@ function LocalizedHome() {
       </section>
 
       <section
-        classNombre="property-showcase"
+        className="property-showcase"
         aria-label="Viviendas y propiedades en Fuengirola"
       >
-        <figure classNombre="showcase-wide">
+        <figure className="showcase-wide">
           <img
             src="/villa-zwembad-fuengirola.webp"
             alt="Villa moderna en Fuengirola con terraza, piscina y vistas al mar"
@@ -342,22 +342,22 @@ function LocalizedHome() {
         </figure>
       </section>
 
-      <section classNombre="services" id="diensten">
-        <div classNombre="section-head">
-          <p classNombre="kicker orange">Nuestros servicios</p>
+      <section className="services" id="diensten">
+        <div className="section-head">
+          <p className="kicker orange">Nuestros servicios</p>
           <h2>Un equipo local para alquiler y cuidado de la vivienda</h2>
           <p>
             Sin proveedores desconectados: coordinamos alquileres, atención al huésped, limpieza, revisiones y mantenimiento como un solo equipo.
           </p>
         </div>
-        <div classNombre="service-grid">
+        <div className="service-grid">
           {services.map((s, i) => (
-            <a classNombre="service-card" href={`/es/${s.slug}/`} key={s.slug}>
-              <div classNombre="service-card-top">
-                <span classNombre="service-icon">
+            <a className="service-card" href={`/es/${s.slug}/`} key={s.slug}>
+              <div className="service-card-top">
+                <span className="service-icon">
                   <s.icon aria-hidden="true" />
                 </span>
-                <span classNombre="number">0{i + 1}</span>
+                <span className="number">0{i + 1}</span>
               </div>
               <h3>{s.title}</h3>
               <p>{s.text}</p>
@@ -368,7 +368,7 @@ function LocalizedHome() {
         </div>
       </section>
 
-      <aside classNombre="license-note">
+      <aside className="license-note">
         <ShieldCheck aria-hidden="true" />
         <div>
           <b>¿Quieres alquilar vacacionalmente? Comprueba los requisitos a tiempo.</b>
@@ -379,15 +379,15 @@ function LocalizedHome() {
         <a href="/es/licencia-turistica/">Leer sobre la licencia turística →</a>
       </aside>
 
-      <section classNombre="rental-band">
+      <section className="rental-band">
         <div>
-          <p classNombre="kicker">¿Qué modalidad de alquiler encaja?</p>
+          <p className="kicker">¿Qué modalidad de alquiler encaja?</p>
           <h2>La modalidad adecuada empieza con tus objetivos.</h2>
           <p>
             Tanto si quieres visitar con frecuencia, maximizar la rentabilidad o prefieres un inquilino estable, comparamos las opciones y creamos un enfoque adecuado para tu vivienda y tus planes.
           </p>
         </div>
-        <div classNombre="rental-options">
+        <div className="rental-options">
           <a href="/es/gestion-alquiler-vacacional/">
             <small>Estancias cortas</small>
             <b>Gestión de alquiler vacacional</b>
@@ -406,9 +406,9 @@ function LocalizedHome() {
         </div>
       </section>
 
-      <section classNombre="process" id="werkwijze">
-        <div classNombre="section-head left">
-          <p classNombre="kicker orange">Cómo trabajamos</p>
+      <section className="process" id="werkwijze">
+        <div className="section-head left">
+          <p className="kicker orange">Cómo trabajamos</p>
           <h2>Cómo preparamos tu vivienda para empezar con fuerza</h2>
         </div>
         <ol>
@@ -451,15 +451,15 @@ function LocalizedHome() {
         </ol>
       </section>
 
-      <section classNombre="regions compact-regions" id="regios">
-        <div classNombre="section-head">
-          <p classNombre="kicker orange">Cobertura local</p>
+      <section className="regions compact-regions" id="regios">
+        <div className="section-head">
+          <p className="kicker orange">Cobertura local</p>
           <h2>Conocimiento local en todo Fuengirola</h2>
           <p>
-            Desdeal apartments and golf townhouses to hillside villas, we work throughout Fuengirola Pueblo, La Cala de Fuengirola, Los Boliches, Carvajal, Miraflores, Miramar and Fuengirola Golf.
+            Desdeal apartments y golf townhouses to hillside villas, we work throughout Fuengirola Pueblo, La Cala de Fuengirola, Los Boliches, Carvajal, Miraflores, Miramar y Fuengirola Golf.
           </p>
         </div>
-        <div classNombre="area-list" aria-label="Zonas atendidas alrededor de Fuengirola">
+        <div className="area-list" aria-label="Zonas atendidas alrededor de Fuengirola">
           <b>Fuengirola Pueblo</b>
           <b>Los Boliches</b>
           <b>La Cala de Fuengirola</b>
@@ -471,18 +471,18 @@ function LocalizedHome() {
         </div>
       </section>
 
-      <section classNombre="home-team">
-        <div classNombre="home-team-copy">
-          <p classNombre="kicker orange">Nuestro equipo</p>
-          <h2>Personal contacto with people who know Fuengirola.</h2>
+      <section className="home-team">
+        <div className="home-team-copy">
+          <p className="kicker orange">Nuestro equipo</p>
+          <h2>Contacto personal con profesionales que conocen Fuengirola.</h2>
           <p>
-            Your contacto knows your arrangements and our local team knows the property. Communication, administration and practical follow-up remain part of one process.
+            Tu persona de contacto conoce los acuerdos y nuestro equipo local conoce la vivienda. Comunicación, administración y seguimiento práctico forman parte de un único proceso.
           </p>
-          <a classNombre="dark-link" href="/over-ons/">
+          <a className="dark-link" href="/over-ons/">
             Conoce a todo el equipo →
           </a>
         </div>
-        <div classNombre="home-team-grid">
+        <div className="home-team-grid">
           {homepageTeam.map((person) => (
             <article key={person.name}>
               <img src={person.image} alt={person.alt} loading="lazy" />
@@ -495,18 +495,18 @@ function LocalizedHome() {
         </div>
       </section>
 
-      <section classNombre="knowledge compact-knowledge" id="kennisbank">
-        <div classNombre="section-head">
-          <p classNombre="kicker orange">Guías y consejos</p>
+      <section className="knowledge compact-knowledge" id="kennisbank">
+        <div className="section-head">
+          <p className="kicker orange">Guías y consejos</p>
           <h2>Guías prácticas para propietarios</h2>
           <p>
             Información clara sobre costes, estrategia de alquiler, normativa y gestión de propiedades en Fuengirola.
           </p>
         </div>
-        <div classNombre="knowledge-grid">
+        <div className="knowledge-grid">
           <a href="/es/costes-de-gestion/">
             <small>Costes</small>
-            <h3>What does property management?</h3>
+            <h3>¿Cuánto cuesta la gestión de propiedades?</h3>
             <span>Leer guía →</span>
           </a>
           <a href="/es/gestion-alquiler-vacacional/">
@@ -520,14 +520,14 @@ function LocalizedHome() {
             <span>Leer guía →</span>
           </a>
         </div>
-        <a classNombre="knowledge-all" href="/blog/">
+        <a className="knowledge-all" href="/blog/">
           Ver todas las guías y artículos →
         </a>
       </section>
 
-      <section classNombre="faq">
+      <section className="faq">
         <div>
-          <p classNombre="kicker orange">Preguntas frecuentes</p>
+          <p className="kicker orange">Preguntas frecuentes</p>
           <h2>Respuestas claras</h2>
           <p>
             Preguntas clave sobre nuestros servicios y tarifas en Fuengirola.
@@ -546,16 +546,16 @@ function LocalizedHome() {
         </div>
       </section>
 
-      <section classNombre="contacto" id="contacto">
+      <section className="contact" id="contact">
         <div>
-          <p classNombre="kicker">Previsión de alquiler gratuita</p>
+          <p className="kicker">Previsión de alquiler gratuita</p>
           <h2>Recibe una previsión de alquiler para tu vivienda en Fuengirola</h2>
           <p>
             Cuéntanos dónde está la vivienda, qué tipo es y cómo quieres utilizarla. Después hablaremos del enfoque y modalidad de alquiler realistas.
           </p>
           <p>
             <a href={emailHref}>
-              {siteConfig.contacto.email}
+              {siteConfig.contact.email}
             </a>
             <br />
           </p>
@@ -566,7 +566,7 @@ function LocalizedHome() {
         >
           <input type="hidden" name="_subject" value={`Nieuwe aanvraag via ${siteConfig.brand.name} (ES)`} />
           <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value={absoluteUrl(`/es/bedankt/`)} />
+          <input type="hidden" name="_next" value={absoluteUrl(`/bedankt/?lang=es`)} />
           <input type="hidden" name="bron_taal" value="es" />
           <label>
             Nombre
@@ -594,7 +594,7 @@ function LocalizedHome() {
               <option>Gestión de propiedades</option>
             </select>
           </label>
-          <label classNombre="wide">
+          <label className="wide">
             ¿La vivienda ya tiene licencia de alquiler?
             <select name="verhuurlicentie" defaultValue="">
               <option value="" disabled>
@@ -606,22 +606,22 @@ function LocalizedHome() {
               <option>No corresponde / No lo sé</option>
             </select>
           </label>
-          <label classNombre="wide">
+          <label className="wide">
             Ubicación y breve descripción
             <textarea name="woning" rows={4} />
           </label>
-          <button classNombre="btn wide form-cta" type="submit">
+          <button className="btn wide form-cta" type="submit">
             Solicitar previsión →
           </button>
-          <small classNombre="wide privacy-note">
+          <small className="wide privacy-note">
             Tratamos tus datos conforme a nuestra{" "}
             <a href="/política de privacidad/">política de privacidad</a>.
           </small>
         </form>
       </section>
-      <footer classNombre="site-footer">
-        <div classNombre="footer-brand">
-          <a classNombre="logo-lockup" href="/" aria-label="Home">
+      <footer className="site-footer">
+        <div className="footer-brand">
+          <a className="logo-lockup" href="/" aria-label="Home">
             <img
               src="/vbs-logo-fuengirola.webp"
               alt="Gestión de propiedades Fuengirola"
@@ -640,7 +640,7 @@ function LocalizedHome() {
             </a>
             .
           </p>
-          <div classNombre="social-links">
+          <div className="social-links">
             <a
               href={siteConfig.social.instagram}
               target="_blank"
@@ -672,7 +672,7 @@ function LocalizedHome() {
           <a href="/werkwijze/">Cómo trabajamos</a>
           <a href="/over-ons/">Quiénes somos</a>
           <a href="/blog/">Guías</a>
-          <a href="/es/#contacto">Contacto</a>
+          <a href="/es/#contact">Contacto</a>
           <a href="/política de privacidad/">Política de privacidad</a>
           <a href="/cookieverklaring/">Política de cookies</a>
           <CookiePreferencesButton />
@@ -687,13 +687,13 @@ function LocalizedHome() {
         </div>
       </footer>
       <a
-        classNombre="whatsapp-float"
+        className="whatsapp-float"
         href={whatsappHref()}
-        aria-label="Contactoo por WhatsApp"
+        aria-label="Contacto por WhatsApp"
       >
         WhatsApp
       </a>
-      <a classNombre="to-top" href="#top" aria-label="Volver arriba">
+      <a className="to-top" href="#top" aria-label="Volver arriba">
         ↑
       </a>
     </main>
