@@ -566,7 +566,7 @@ function LocalizedHome() {
         >
           <input type="hidden" name="_subject" value={`Nieuwe aanvraag via ${siteConfig.brand.name} (EN)`} />
           <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value={absoluteUrl(`/en/bedankt/`)} />
+          <input type="hidden" name="_next" value={absoluteUrl(`/bedankt/?lang=en`)} />
           <input type="hidden" name="bron_taal" value="en" />
           <label>
             Name
