@@ -13,6 +13,7 @@ import {
 import {
   absoluteUrl,
   emailHref,
+  leadFormAction,
   siteConfig,
   whatsappHref,
 } from "../site-config";
@@ -47,42 +48,42 @@ const homepageTeam = [
 const services = [
   {
     title: "Holiday rental management",
-    slug: "vakantieverhuur-fuengirola",
+    slug: "holiday-rental-management",
     price: siteConfig.pricing.holidayRental,
     icon: BedDouble,
     text: "We create the property presentation, manage pricing and calendars, and coordinate guest communication and local changeovers.",
   },
   {
     title: "Seasonal and mid-term rentals",
-    slug: "midterm-verhuur-fuengirola",
+    slug: "mid-term-rental",
     price: siteConfig.pricing.midterm,
     icon: CalendarDays,
     text: "A flexible option for seasonal and temporary residents, with screening, clear agreements and a personal handover.",
   },
   {
     title: "Long-term rentals",
-    slug: "langetermijnverhuur-fuengirola",
+    slug: "long-term-rental",
     price: siteConfig.pricing.longterm,
     icon: KeyRound,
     text: "We find a suitable long-term tenant and manage viewings, selection, the agreement, deposit and key handover.",
   },
   {
     title: "Property management",
-    slug: "vastgoedbeheer-fuengirola",
+    slug: "property-management",
     price: "Tailored",
     icon: ShieldCheck,
     text: "We also look after non-rental properties through inspections, key holding, contractor access and practical follow-up.",
   },
   {
     title: "Cleaning & maintenance",
-    slug: "schoonmaak-onderhoud-fuengirola",
+    slug: "cleaning-maintenance",
     price: "After property assessment",
     icon: Sparkles,
     text: "Local teams handle changeover cleaning and linen, while issues, minor repairs and maintenance are followed up promptly.",
   },
   {
     title: "Renovation & furnishing",
-    slug: "renovatie-inrichting-fuengirola",
+    slug: "renovation-furnishing",
     price: "Tailored quote",
     icon: Hammer,
     text: "From a focused refresh to complete furnishing or renovation, tailored to durable use and a strong rental presentation.",
@@ -223,27 +224,27 @@ function LocalizedHome() {
           <details className="services-menu">
             <summary>Services</summary>
             <div>
-              <a href="/vakantieverhuur-fuengirola/">Holiday rental management</a>
-              <a href="/midterm-verhuur-fuengirola/">
+              <a href="/en/holiday-rental-management/">Holiday rental management</a>
+              <a href="/en/mid-term-rental/">
                 Seasonal and mid-term rentals
               </a>
-              <a href="/langetermijnverhuur-fuengirola/">Long-term rentals</a>
-              <a href="/vastgoedbeheer-fuengirola/">Property management</a>
-              <a href="/schoonmaak-onderhoud-fuengirola/">
+              <a href="/en/long-term-rental/">Long-term rentals</a>
+              <a href="/en/property-management/">Property management</a>
+              <a href="/en/cleaning-maintenance/">
                 Cleaning & maintenance
               </a>
-              <a href="/renovatie-inrichting-fuengirola/">
+              <a href="/en/renovation-furnishing/">
                 Renovation & furnishing
               </a>
-              <a href="/verhuurlicentie-fuengirola/">Rental licence</a>
+              <a href="/en/rental-licence/">Rental licence</a>
             </div>
           </details>
           <a href="/werkwijze/">How we work</a>
           <a href="/over-ons/">About us</a>
           <a href="/blog/">Guides</a>
-          <a href="/contact/">Contact</a>
+          <a href="/en/#contact">Contact</a>
         </nav>
-        <a className="btn btn-small header-cta" href="/woning-aanmelden/">
+        <a className="btn btn-small header-cta" href="/en/#contact">
           List your property
         </a>
         <details className="mobile-menu">
@@ -255,19 +256,19 @@ function LocalizedHome() {
           <div>
             <a href="/">Home</a>
             <b>Services</b>
-            <a href="/vakantieverhuur-fuengirola/">Holiday rental management</a>
-            <a href="/midterm-verhuur-fuengirola/">Seasonal and mid-term rentals</a>
-            <a href="/langetermijnverhuur-fuengirola/">Long-term rentals</a>
-            <a href="/vastgoedbeheer-fuengirola/">Property management</a>
-            <a href="/schoonmaak-onderhoud-fuengirola/">Cleaning & maintenance</a>
-            <a href="/renovatie-inrichting-fuengirola/">Renovation & furnishing</a>
-            <a href="/verhuurlicentie-fuengirola/">Rental licence</a>
+            <a href="/en/holiday-rental-management/">Holiday rental management</a>
+            <a href="/en/mid-term-rental/">Seasonal and mid-term rentals</a>
+            <a href="/en/long-term-rental/">Long-term rentals</a>
+            <a href="/en/property-management/">Property management</a>
+            <a href="/en/cleaning-maintenance/">Cleaning & maintenance</a>
+            <a href="/en/renovation-furnishing/">Renovation & furnishing</a>
+            <a href="/en/rental-licence/">Rental licence</a>
             <b>Company</b>
             <a href="/werkwijze/">How we work</a>
             <a href="/over-ons/">About us</a>
             <a href="/blog/">Guides & knowledge base</a>
-            <a href="/contact/">Contact</a>
-            <a href="/woning-aanmelden/">List your property</a>
+            <a href="/en/#contact">Contact</a>
+            <a href="/en/#contact">List your property</a>
           </div>
         </details>
       </header>
@@ -283,7 +284,7 @@ function LocalizedHome() {
             From Los Boliches and La Cala to Fuengirola Pueblo, we combine smart rental management with trusted local people. You have one clear contact for bookings, guests, cleaning, maintenance and the day-to-day care of your property.
           </p>
           <div className="actions">
-            <a className="btn hero-cta" href="/woning-aanmelden/">
+            <a className="btn hero-cta" href="/en/#contact">
               List your property
             </a>
             <a className="link-light" href="#diensten">
@@ -351,7 +352,7 @@ function LocalizedHome() {
         </div>
         <div className="service-grid">
           {services.map((s, i) => (
-            <a className="service-card" href={`/${s.slug}/`} key={s.slug}>
+            <a className="service-card" href={`/en/${s.slug}/`} key={s.slug}>
               <div className="service-card-top">
                 <span className="service-icon">
                   <s.icon aria-hidden="true" />
@@ -375,7 +376,7 @@ function LocalizedHome() {
             See which registration and licensing requirements may apply to your property.
           </p>
         </div>
-        <a href="/verhuurlicentie-fuengirola/">Read about rental licensing →</a>
+        <a href="/en/rental-licence/">Read about rental licensing →</a>
       </aside>
 
       <section className="rental-band">
@@ -387,17 +388,17 @@ function LocalizedHome() {
           </p>
         </div>
         <div className="rental-options">
-          <a href="/vakantieverhuur-fuengirola/">
+          <a href="/en/holiday-rental-management/">
             <small>Short stays</small>
             <b>Holiday rental management</b>
             <span>From 18% →</span>
           </a>
-          <a href="/midterm-verhuur-fuengirola/">
+          <a href="/en/mid-term-rental/">
             <small>Temporary stays</small>
             <b>Mid-term</b>
             <span>One month’s rent →</span>
           </a>
-          <a href="/langetermijnverhuur-fuengirola/">
+          <a href="/en/long-term-rental/">
             <small>Long-term tenant</small>
             <b>Langetermijn</b>
             <span>One month’s rent →</span>
@@ -503,17 +504,17 @@ function LocalizedHome() {
           </p>
         </div>
         <div className="knowledge-grid">
-          <a href="/kosten-verhuurbeheer-fuengirola/">
+          <a href="/en/management-costs/">
             <small>Costs</small>
             <h3>What does property management cost?</h3>
             <span>Read guide →</span>
           </a>
-          <a href="/dynamische-prijzen-vakantiewoning/">
+          <a href="/en/holiday-rental-management/">
             <small>Returns</small>
             <h3>Dynamic pricing</h3>
             <span>Read guide →</span>
           </a>
-          <a href="/zelf-verhuren-of-verhuurbeheer/">
+          <a href="/en/property-management/">
             <small>Decision guide</small>
             <h3>Self-manage or outsource?</h3>
             <span>Read guide →</span>
@@ -560,10 +561,13 @@ function LocalizedHome() {
           </p>
         </div>
         <form
-          action={emailHref}
+          action={leadFormAction}
           method="post"
-          encType="text/plain"
         >
+          <input type="hidden" name="_subject" value={`Nieuwe aanvraag via ${siteConfig.brand.name} (EN)`} />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value={absoluteUrl(`/en/bedankt/`)} />
+          <input type="hidden" name="bron_taal" value="en" />
           <label>
             Name
             <input name="naam" required />
@@ -657,18 +661,18 @@ function LocalizedHome() {
         </div>
         <div>
           <b>Services</b>
-          <a href="/vakantieverhuur-fuengirola/">Holiday rental management</a>
-          <a href="/midterm-verhuur-fuengirola/">Seasonal and mid-term rentals</a>
-          <a href="/langetermijnverhuur-fuengirola/">Long-term rentals</a>
-          <a href="/vastgoedbeheer-fuengirola/">Property management</a>
-          <a href="/verhuurlicentie-fuengirola/">Rental licence</a>
+          <a href="/en/holiday-rental-management/">Holiday rental management</a>
+          <a href="/en/mid-term-rental/">Seasonal and mid-term rentals</a>
+          <a href="/en/long-term-rental/">Long-term rentals</a>
+          <a href="/en/property-management/">Property management</a>
+          <a href="/en/rental-licence/">Rental licence</a>
         </div>
         <div>
           <b>More</b>
           <a href="/werkwijze/">How we work</a>
           <a href="/over-ons/">About us</a>
           <a href="/blog/">Guides</a>
-          <a href="/contact/">Contact</a>
+          <a href="/en/#contact">Contact</a>
           <a href="/privacy policy/">Privacy policy</a>
           <a href="/cookieverklaring/">Cookie policy</a>
           <CookiePreferencesButton />
@@ -696,5 +700,5 @@ function LocalizedHome() {
   );
 }
 
-export const metadata = { robots: { index: false, follow: true }, keywords: ["property management Fuengirola","holiday rental management Fuengirola","Airbnb management Fuengirola","key holding Fuengirola","home checks Fuengirola","second home management Fuengirola","villa management Fuengirola","apartment management Fuengirola"], title: "Property Management Fuengirola | Holiday Rental & Key Holding", description: "Local property management in Fuengirola for international owners: holiday rental management, Airbnb management, key holding, home checks, cleaning and maintenance.", alternates: { canonical: "/en/", languages: { "nl-NL": "/", en: "/en/", es: "/es/", "x-default": "/" } }, openGraph: { locale: "en_GB", url: "/en/", type: "website" as const } };
+export const metadata = { robots: { index: true, follow: true }, keywords: ["property management Fuengirola","holiday rental management Fuengirola","Airbnb management Fuengirola","key holding Fuengirola","home checks Fuengirola","second home management Fuengirola","villa management Fuengirola","apartment management Fuengirola"], title: "Property Management Fuengirola | Holiday Rental & Key Holding", description: "Local property management in Fuengirola for international owners: holiday rental management, Airbnb management, key holding, home checks, cleaning and maintenance.", alternates: { canonical: "/en/", languages: { "nl-NL": "/", "en-GB": "/en/", "es-ES": "/es/", "x-default": "/" } }, openGraph: { locale: "en_GB", url: "/en/", type: "website" as const } };
 export default LocalizedHome;
