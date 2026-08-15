@@ -57,8 +57,8 @@ const cityNetwork: Record<string, { name: string; url: string }[]> = {
 export function generateStaticParams() {
   return (["en", "es"] as const).flatMap((locale) =>
     localizedServices[locale].map((service) => ({
-      locale,
-      slug: locale === "en" ? service.enSlug : service.esSlug,
+      slug: locale,
+      localizedSlug: locale === "en" ? service.enSlug : service.esSlug,
     })),
   );
 }
@@ -66,11 +66,11 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: string; slug: string }>;
+  params: Promise<{ slug: string; localizedSlug: string }>;
 }): Promise<Metadata> {
-  const { locale, slug } = await params;
+  const { slug: locale, localizedSlug } = await params;
   if (locale !== "en" && locale !== "es") return {};
-  const service = findLocalizedService(locale, slug);
+  const service = findLocalizedService(locale, localizedSlug);
   if (!service) return {};
   const canonical = localizedPath(service, locale);
   return {
@@ -101,12 +101,12 @@ export async function generateMetadata({
 export default async function LocalizedServicePage({
   params,
 }: {
-  params: Promise<{ locale: string; slug: string }>;
+  params: Promise<{ slug: string; localizedSlug: string }>;
 }) {
-  const { locale: rawLocale, slug } = await params;
+  const { slug: rawLocale, localizedSlug } = await params;
   if (rawLocale !== "en" && rawLocale !== "es") notFound();
   const locale = rawLocale as PublicLocale;
-  const service = findLocalizedService(locale, slug);
+  const service = findLocalizedService(locale, localizedSlug);
   if (!service) notFound();
   const copy = labels[locale];
   const canonical = localizedPath(service, locale);
@@ -194,4 +194,3 @@ export default async function LocalizedServicePage({
     </main>
   );
 }
-
