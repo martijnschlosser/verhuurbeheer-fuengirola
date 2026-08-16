@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CookiePreferencesButton } from "../CookieConsent";
 import {
   BedDouble,
@@ -93,7 +94,7 @@ const services = [
 const faqs = [
   [
     "¿Cuánto cuesta la gestión de alquiler vacacional en Fuengirola?",
-    "La gestión integral de alquiler vacacional parte del 18 % de los ingresos obtenidos. Tras valorar la vivienda, definimos claramente qué incluye el servicio y qué tarifa corresponde.",
+    "La tarifa de gestión integral del alquiler vacacional es el 20 % del precio bruto de las noches vendidas, sin incluir el IVA aplicable.",
   ],
   [
     "¿Cuánto cuestan los servicios de alquiler de temporada y larga duración?",
@@ -207,7 +208,7 @@ function LocalizedHome() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <header className="site-header">
-        <a
+        <Link
           className="logo-lockup"
           href="/"
           aria-label="Gestión de propiedades Fuengirola – Home"
@@ -218,35 +219,35 @@ function LocalizedHome() {
             width="54"
             height="54"
           />
-        </a>
+        </Link>
         <nav>
-          <a href="/">Home</a>
+          <Link href="/">Home</Link>
           <details className="services-menu">
             <summary>Servicios</summary>
             <div>
-              <a href="/es/gestion-alquiler-vacacional/">Gestión de alquiler vacacional</a>
-              <a href="/es/alquiler-temporada/">
+              <Link href="/es/gestion-alquiler-vacacional/">Gestión de alquiler vacacional</Link>
+              <Link href="/es/alquiler-temporada/">
                 Alquiler de temporada
-              </a>
-              <a href="/es/alquiler-larga-duracion/">Alquiler de larga duración</a>
-              <a href="/es/gestion-de-propiedades/">Gestión de propiedades</a>
-              <a href="/es/limpieza-mantenimiento/">
+              </Link>
+              <Link href="/es/alquiler-larga-duracion/">Alquiler de larga duración</Link>
+              <Link href="/es/gestion-de-propiedades/">Gestión de propiedades</Link>
+              <Link href="/es/limpieza-mantenimiento/">
                 Limpieza y mantenimiento
-              </a>
-              <a href="/es/reformas-decoracion/">
+              </Link>
+              <Link href="/es/reformas-decoracion/">
                 Reforma y decoración
-              </a>
-              <a href="/es/licencia-turistica/">Licencia de alquiler</a>
+              </Link>
+              <Link href="/es/licencia-turistica/">Licencia de alquiler</Link>
             </div>
           </details>
-          <a href="/werkwijze/">Cómo trabajamos</a>
-          <a href="/over-ons/">Quiénes somos</a>
-          <a href="/blog/">Guías</a>
-          <a href="/es/#contact">Contacto</a>
+          <Link href="/werkwijze/">Cómo trabajamos</Link>
+          <Link href="/over-ons/">Quiénes somos</Link>
+          <Link href="/blog/">Guías</Link>
+          <Link href="/es/#contact">Contacto</Link>
         </nav>
-        <a className="btn btn-small header-cta" href="/es/#contact">
+        <Link className="btn btn-small header-cta" href="/es/#contact">
           Registrar vivienda
-        </a>
+        </Link>
         <details className="mobile-menu">
           <summary aria-label="Open menu">
             <span></span>
@@ -254,21 +255,21 @@ function LocalizedHome() {
             <span></span>
           </summary>
           <div>
-            <a href="/">Home</a>
+            <Link href="/">Home</Link>
             <b>Servicios</b>
-            <a href="/es/gestion-alquiler-vacacional/">Gestión de alquiler vacacional</a>
-            <a href="/es/alquiler-temporada/">Alquiler de temporada</a>
-            <a href="/es/alquiler-larga-duracion/">Alquiler de larga duración</a>
-            <a href="/es/gestion-de-propiedades/">Gestión de propiedades</a>
-            <a href="/es/limpieza-mantenimiento/">Limpieza y mantenimiento</a>
-            <a href="/es/reformas-decoracion/">Reforma y decoración</a>
-            <a href="/es/licencia-turistica/">Licencia de alquiler</a>
+            <Link href="/es/gestion-alquiler-vacacional/">Gestión de alquiler vacacional</Link>
+            <Link href="/es/alquiler-temporada/">Alquiler de temporada</Link>
+            <Link href="/es/alquiler-larga-duracion/">Alquiler de larga duración</Link>
+            <Link href="/es/gestion-de-propiedades/">Gestión de propiedades</Link>
+            <Link href="/es/limpieza-mantenimiento/">Limpieza y mantenimiento</Link>
+            <Link href="/es/reformas-decoracion/">Reforma y decoración</Link>
+            <Link href="/es/licencia-turistica/">Licencia de alquiler</Link>
             <b>Company</b>
-            <a href="/werkwijze/">Cómo trabajamos</a>
-            <a href="/over-ons/">Quiénes somos</a>
-            <a href="/blog/">Guías y recursos</a>
-            <a href="/es/#contact">Contacto</a>
-            <a href="/es/#contact">Registrar vivienda</a>
+            <Link href="/werkwijze/">Cómo trabajamos</Link>
+            <Link href="/over-ons/">Quiénes somos</Link>
+            <Link href="/blog/">Guías y recursos</Link>
+            <Link href="/es/#contact">Contacto</Link>
+            <Link href="/es/#contact">Registrar vivienda</Link>
           </div>
         </details>
       </header>
@@ -284,12 +285,12 @@ function LocalizedHome() {
             Desde Los Boliches y La Cala hasta Fuengirola Pueblo, combinamos una gestión inteligente con profesionales locales de confianza. Tienes un único contacto para reservas, huéspedes, limpieza, mantenimiento y cuidado diario de la vivienda.
           </p>
           <div className="actions">
-            <a className="btn hero-cta" href="/es/#contact">
+            <Link className="btn hero-cta" href="/es/#contact">
               Registrar mi vivienda
-            </a>
-            <a className="link-light" href="#diensten">
+            </Link>
+            <Link className="link-light" href="#diensten">
               Ver todos los servicios →
-            </a>
+            </Link>
           </div>
         </div>
         <div className="hero-stats">
@@ -352,7 +353,7 @@ function LocalizedHome() {
         </div>
         <div className="service-grid">
           {services.map((s, i) => (
-            <a className="service-card" href={`/es/${s.slug}/`} key={s.slug}>
+            <Link className="service-card" href={`/es/${s.slug}/`} key={s.slug}>
               <div className="service-card-top">
                 <span className="service-icon">
                   <s.icon aria-hidden="true" />
@@ -363,7 +364,7 @@ function LocalizedHome() {
               <p>{s.text}</p>
               <strong>{s.price}</strong>
               <em>Ver servicio →</em>
-            </a>
+            </Link>
           ))}
         </div>
       </section>
@@ -376,7 +377,7 @@ function LocalizedHome() {
             Consulta qué requisitos de registro y licencia pueden aplicarse a tu vivienda.
           </p>
         </div>
-        <a href="/es/licencia-turistica/">Leer sobre la licencia turística →</a>
+        <Link href="/es/licencia-turistica/">Leer sobre la licencia turística →</Link>
       </aside>
 
       <section className="rental-band">
@@ -388,21 +389,21 @@ function LocalizedHome() {
           </p>
         </div>
         <div className="rental-options">
-          <a href="/es/gestion-alquiler-vacacional/">
+          <Link href="/es/gestion-alquiler-vacacional/">
             <small>Estancias cortas</small>
             <b>Gestión de alquiler vacacional</b>
-            <span>Desde el 18 % →</span>
-          </a>
-          <a href="/es/alquiler-temporada/">
+            <span>20 % sin IVA →</span>
+          </Link>
+          <Link href="/es/alquiler-temporada/">
             <small>Estancias temporales</small>
             <b>Temporada</b>
             <span>Un mes de alquiler →</span>
-          </a>
-          <a href="/es/alquiler-larga-duracion/">
+          </Link>
+          <Link href="/es/alquiler-larga-duracion/">
             <small>Inquilino de larga duración</small>
             <b>Larga duración</b>
             <span>Un mes de alquiler →</span>
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -478,9 +479,9 @@ function LocalizedHome() {
           <p>
             Tu persona de contacto conoce los acuerdos y nuestro equipo local conoce la vivienda. Comunicación, administración y seguimiento práctico forman parte de un único proceso.
           </p>
-          <a className="dark-link" href="/over-ons/">
+          <Link className="dark-link" href="/over-ons/">
             Conoce a todo el equipo →
-          </a>
+          </Link>
         </div>
         <div className="home-team-grid">
           {homepageTeam.map((person) => (
@@ -504,25 +505,25 @@ function LocalizedHome() {
           </p>
         </div>
         <div className="knowledge-grid">
-          <a href="/es/costes-de-gestion/">
+          <Link href="/es/costes-de-gestion/">
             <small>Costes</small>
             <h3>¿Cuánto cuesta la gestión de propiedades?</h3>
             <span>Leer guía →</span>
-          </a>
-          <a href="/es/gestion-alquiler-vacacional/">
+          </Link>
+          <Link href="/es/gestion-alquiler-vacacional/">
             <small>Rentabilidad</small>
             <h3>Precios dinámicos</h3>
             <span>Leer guía →</span>
-          </a>
-          <a href="/es/gestion-de-propiedades/">
+          </Link>
+          <Link href="/es/gestion-de-propiedades/">
             <small>Guía de decisión</small>
             <h3>¿Gestionar por tu cuenta o delegar?</h3>
             <span>Leer guía →</span>
-          </a>
+          </Link>
         </div>
-        <a className="knowledge-all" href="/blog/">
+        <Link className="knowledge-all" href="/blog/">
           Ver todas las guías y artículos →
-        </a>
+        </Link>
       </section>
 
       <section className="faq">
@@ -554,9 +555,9 @@ function LocalizedHome() {
             Cuéntanos dónde está la vivienda, qué tipo es y cómo quieres utilizarla. Después hablaremos del enfoque y modalidad de alquiler realistas.
           </p>
           <p>
-            <a href={emailHref}>
+            <Link href={emailHref}>
               {siteConfig.contact.email}
-            </a>
+            </Link>
             <br />
           </p>
         </div>
@@ -615,13 +616,13 @@ function LocalizedHome() {
           </button>
           <small className="wide privacy-note">
             Tratamos tus datos conforme a nuestra{" "}
-            <a href="/política de privacidad/">política de privacidad</a>.
+            <Link href="/política de privacidad/">política de privacidad</Link>.
           </small>
         </form>
       </section>
       <footer className="site-footer">
         <div className="footer-brand">
-          <a className="logo-lockup" href="/" aria-label="Home">
+          <Link className="logo-lockup" href="/" aria-label="Home">
             <img
               src="/vbs-logo-fuengirola.webp"
               alt="Gestión de propiedades Fuengirola"
@@ -632,70 +633,70 @@ function LocalizedHome() {
             <span>
               Verhuurbeheer <b>Fuengirola</b>
             </span>
-          </a>
+          </Link>
           <p>
             Gestión de propiedades Fuengirola forma parte de{" "}
-            <a href="https://www.verhuurbeheerspanje.nl/">
+            <Link href="https://www.verhuurbeheerspanje.nl/">
               Verhuurbeheer Spanje
-            </a>
+            </Link>
             .
           </p>
           <div className="social-links">
-            <a
+            <Link
               href={siteConfig.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Verhuurbeheer Spanje op Instagram"
             >
               <Instagram aria-hidden="true" /> Instagram
-            </a>
-            <a
+            </Link>
+            <Link
               href={siteConfig.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Verhuurbeheer Spanje op Facebook"
             >
               <Facebook aria-hidden="true" /> Facebook
-            </a>
+            </Link>
           </div>
         </div>
         <div>
           <b>Servicios</b>
-          <a href="/es/gestion-alquiler-vacacional/">Gestión de alquiler vacacional</a>
-          <a href="/es/alquiler-temporada/">Alquiler de temporada</a>
-          <a href="/es/alquiler-larga-duracion/">Alquiler de larga duración</a>
-          <a href="/es/gestion-de-propiedades/">Gestión de propiedades</a>
-          <a href="/es/licencia-turistica/">Licencia de alquiler</a>
+          <Link href="/es/gestion-alquiler-vacacional/">Gestión de alquiler vacacional</Link>
+          <Link href="/es/alquiler-temporada/">Alquiler de temporada</Link>
+          <Link href="/es/alquiler-larga-duracion/">Alquiler de larga duración</Link>
+          <Link href="/es/gestion-de-propiedades/">Gestión de propiedades</Link>
+          <Link href="/es/licencia-turistica/">Licencia de alquiler</Link>
         </div>
         <div>
           <b>Más</b>
-          <a href="/werkwijze/">Cómo trabajamos</a>
-          <a href="/over-ons/">Quiénes somos</a>
-          <a href="/blog/">Guías</a>
-          <a href="/es/#contact">Contacto</a>
-          <a href="/política de privacidad/">Política de privacidad</a>
-          <a href="/cookieverklaring/">Política de cookies</a>
+          <Link href="/werkwijze/">Cómo trabajamos</Link>
+          <Link href="/over-ons/">Quiénes somos</Link>
+          <Link href="/blog/">Guías</Link>
+          <Link href="/es/#contact">Contacto</Link>
+          <Link href="/política de privacidad/">Política de privacidad</Link>
+          <Link href="/cookieverklaring/">Política de cookies</Link>
           <CookiePreferencesButton />
         </div>
         <div>
           <b>Contacto</b>
-          <a href={whatsappHref()}>
+          <Link href={whatsappHref()}>
             WhatsApp
-          </a>
-          <a href={emailHref}>E-mail</a>
+          </Link>
+          <Link href={emailHref}>E-mail</Link>
           <small>© 2026 · Fuengirola · Costa del Sol</small>
         </div>
       </footer>
-      <a
+      <Link
         className="whatsapp-float"
         href={whatsappHref()}
         aria-label="Contacto por WhatsApp"
       >
         WhatsApp
-      </a>
-      <a className="to-top" href="#top" aria-label="Volver arriba">
+      </Link>
+      <Link className="to-top" href="#top" aria-label="Volver arriba">
         ↑
-      </a>
+      </Link>
     </main>
   );
 }
