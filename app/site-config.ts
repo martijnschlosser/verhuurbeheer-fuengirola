@@ -26,14 +26,14 @@ export const siteConfig = {
   },
   domain: "https://verhuurbeheerfuengirola.nl",
   contact: { email: "contact@verhuurbeheerspanje.nl", whatsapp: "31852128105" },
-  pricing: { holidayRental: "Vanaf 18%", midterm: "Eenmalig 1 maand huur", longterm: "Eenmalig 1 maand huur" },
+  pricing: { holidayRental: "20% excl. btw", midterm: "Eenmalig 1 maand huur", longterm: "Eenmalig 1 maand huur" },
   social: {
     instagram: "https://www.instagram.com/verhuurbeheer_spanje/",
     facebook: "https://www.facebook.com/verhuurbeheerspanje/",
   },
   seo: {
     title: "Verhuurbeheer Fuengirola | Voor Nederlandse eigenaren",
-    description: "Fullservice verhuurbeheer in Fuengirola voor Nederlandse eigenaren. Vakantieverhuur vanaf 18%, midterm, langetermijn en lokaal vastgoedbeheer.",
+    description: "Fullservice verhuurbeheer in Fuengirola voor Nederlandse eigenaren. Vakantieverhuur voor 20% exclusief toepasselijke btw, midterm, langetermijn en lokaal vastgoedbeheer.",
     primaryKeywords: [
       "verhuurbeheer Fuengirola",
       "Nederlandse verhuurmakelaar Fuengirola",
