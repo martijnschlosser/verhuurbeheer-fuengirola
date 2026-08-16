@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { contentBySlug, contentPages } from "../content";
 import { CookiePreferencesButton } from "../CookieConsent";
@@ -7,7 +8,7 @@ import { absoluteUrl, emailHref, leadFormAction, leadHref, leadSubject, siteConf
 import { FormSubmit } from "../FormSubmit";
 
 const seoH1BySlug: Record<string, string> = {
-  "vakantieverhuur-fuengirola": "Vakantieverhuur in Fuengirola vanaf 18%",
+  "vakantieverhuur-fuengirola": "Vakantieverhuur in Fuengirola voor 20% excl. btw",
   "midterm-verhuur-fuengirola": "Midterm verhuur in Fuengirola",
   "langetermijnverhuur-fuengirola": "Langetermijnverhuur in Fuengirola",
   "vastgoedbeheer-fuengirola": "Vastgoedbeheer in Fuengirola",
@@ -434,41 +435,41 @@ export default async function ContentRoute({
         />
       )}
       <header className="content-header">
-        <a
+        <Link
           className="brand"
           href="/"
           aria-label="Verhuurbeheer Fuengirola – naar Home"
         >
           <span className="brand-mark">●</span>
-        </a>
+        </Link>
         <nav>
-          <a href="/">Home</a>
+          <Link href="/">Home</Link>
           <details className="services-menu">
             <summary>Diensten</summary>
             <div>
-              <a href="/vakantieverhuur-fuengirola/">Vakantieverhuur</a>
-              <a href="/midterm-verhuur-fuengirola/">
+              <Link href="/vakantieverhuur-fuengirola/">Vakantieverhuur</Link>
+              <Link href="/midterm-verhuur-fuengirola/">
                 Seizoens- en midtermverhuur
-              </a>
-              <a href="/langetermijnverhuur-fuengirola/">Langetermijnverhuur</a>
-              <a href="/vastgoedbeheer-fuengirola/">Vastgoedbeheer</a>
-              <a href="/schoonmaak-onderhoud-fuengirola/">
+              </Link>
+              <Link href="/langetermijnverhuur-fuengirola/">Langetermijnverhuur</Link>
+              <Link href="/vastgoedbeheer-fuengirola/">Vastgoedbeheer</Link>
+              <Link href="/schoonmaak-onderhoud-fuengirola/">
                 Schoonmaak & onderhoud
-              </a>
-              <a href="/renovatie-inrichting-fuengirola/">
+              </Link>
+              <Link href="/renovatie-inrichting-fuengirola/">
                 Renovatie & inrichting
-              </a>
-              <a href="/verhuurlicentie-fuengirola/">Verhuurlicentie</a>
+              </Link>
+              <Link href="/verhuurlicentie-fuengirola/">Verhuurlicentie</Link>
             </div>
           </details>
-          <a href="/werkwijze/">Werkwijze</a>
-          <a href="/over-ons/">Over ons</a>
-          <a href="/blog/">Blog</a>
-          <a href="/contact/">Contact</a>
+          <Link href="/werkwijze/">Werkwijze</Link>
+          <Link href="/over-ons/">Over ons</Link>
+          <Link href="/blog/">Blog</Link>
+          <Link href="/contact/">Contact</Link>
         </nav>
-        <a className="button button-outline header-cta" href={leadHref}>
+        <Link className="button button-outline header-cta" href={leadHref}>
           Woning aanmelden
-        </a>
+        </Link>
         <details className="mobile-menu">
           <summary aria-label="Menu openen">
             <span></span>
@@ -476,26 +477,26 @@ export default async function ContentRoute({
             <span></span>
           </summary>
           <div>
-            <a href="/">Home</a>
+            <Link href="/">Home</Link>
             <b>Diensten</b>
-            <a href="/vakantieverhuur-fuengirola/">Vakantieverhuur</a>
-            <a href="/midterm-verhuur-fuengirola/">Seizoens- en midtermverhuur</a>
-            <a href="/langetermijnverhuur-fuengirola/">Langetermijnverhuur</a>
-            <a href="/vastgoedbeheer-fuengirola/">Vastgoedbeheer</a>
-            <a href="/schoonmaak-onderhoud-fuengirola/">Schoonmaak & onderhoud</a>
-            <a href="/renovatie-inrichting-fuengirola/">Renovatie & inrichting</a>
-            <a href="/verhuurlicentie-fuengirola/">Verhuurlicentie</a>
+            <Link href="/vakantieverhuur-fuengirola/">Vakantieverhuur</Link>
+            <Link href="/midterm-verhuur-fuengirola/">Seizoens- en midtermverhuur</Link>
+            <Link href="/langetermijnverhuur-fuengirola/">Langetermijnverhuur</Link>
+            <Link href="/vastgoedbeheer-fuengirola/">Vastgoedbeheer</Link>
+            <Link href="/schoonmaak-onderhoud-fuengirola/">Schoonmaak & onderhoud</Link>
+            <Link href="/renovatie-inrichting-fuengirola/">Renovatie & inrichting</Link>
+            <Link href="/verhuurlicentie-fuengirola/">Verhuurlicentie</Link>
             <b>Bedrijf</b>
-            <a href="/werkwijze/">Werkwijze</a>
-            <a href="/over-ons/">Over ons</a>
-            <a href="/blog/">Blog & kennisbank</a>
-            <a href="/contact/">Contact</a>
-            <a href="/woning-aanmelden/">Woning aanmelden</a>
+            <Link href="/werkwijze/">Werkwijze</Link>
+            <Link href="/over-ons/">Over ons</Link>
+            <Link href="/blog/">Blog & kennisbank</Link>
+            <Link href="/contact/">Contact</Link>
+            <Link href="/woning-aanmelden/">Woning aanmelden</Link>
           </div>
         </details>
       </header>
       <div className="breadcrumb">
-        <a href="/">Home</a>
+        <Link href="/">Home</Link>
         <span>›</span>
         <span>
           {page.type === "gids"
@@ -513,9 +514,9 @@ export default async function ContentRoute({
           <h1>{displayTitle}</h1>
           <p>{page.intro}</p>
           {page.slug !== "contact" && page.slug !== "woning-aanmelden" && (
-            <a className="button button-primary" href="/woning-aanmelden/">
+            <Link className="button button-primary" href="/woning-aanmelden/">
               Bespreek je woning →
-            </a>
+            </Link>
           )}
         </div>
         <aside>
@@ -568,7 +569,7 @@ export default async function ContentRoute({
             <label>Waar kunnen we bij helpen?<select name="dienst" defaultValue=""><option value="" disabled>Kies een dienst</option><option>Vakantieverhuur</option><option>Seizoens- en midtermverhuur</option><option>Langetermijnverhuur</option><option>Vastgoedbeheer</option><option>Schoonmaak & onderhoud</option><option>Renovatie & inrichting</option><option>Ik wil graag advies</option></select></label>
             <label className="wide">Vertel kort iets over je woning en wensen <small>(optioneel)</small><textarea name="bericht" rows={4} placeholder="Bijvoorbeeld: aantal slaapkamers, eigen gebruik en gewenste startdatum" /></label>
             <button className="btn wide form-cta" type="submit">Woning vrijblijvend aanmelden →</button>
-            <small className="wide privacy-note"><CheckCircle2 aria-hidden="true" /> Je gegevens worden veilig verwerkt volgens onze <a href="/privacyverklaring/">privacyverklaring</a>.</small>
+            <small className="wide privacy-note"><CheckCircle2 aria-hidden="true" /> Je gegevens worden veilig verwerkt volgens onze <Link href="/privacyverklaring/">privacyverklaring</Link>.</small>
           </FormSubmit>
         </section>
       )}
@@ -582,13 +583,13 @@ export default async function ContentRoute({
               contact met je op.
             </p>
             <div className="contact-options">
-              <a href={emailHref}>
+              <Link href={emailHref}>
                 <span>
                   <Mail aria-hidden="true" />
                 </span>
                 <small>E-mail</small>
                 <strong>{siteConfig.contact.email}</strong>
-              </a>
+              </Link>
             </div>
           </div>
           <form
@@ -661,7 +662,7 @@ export default async function ContentRoute({
             </button>
             <small className="wide privacy-note">
               Wij verwerken je gegevens volgens onze{" "}
-              <a href="/privacyverklaring/">privacyverklaring</a>.
+              <Link href="/privacyverklaring/">privacyverklaring</Link>.
             </small>
           </form>
         </section>
@@ -675,7 +676,7 @@ export default async function ContentRoute({
             <p className="eyebrow">Nieuw &amp; belangrijk</p>
             <h2>Uitgelicht voor woningeigenaren</h2>
           </div>
-          <a className="featured-article" href={`/${featuredBlog.slug}/`}>
+          <Link className="featured-article" href={`/${featuredBlog.slug}/`}>
             <img
               src={featuredBlogVisual!.src}
               alt={featuredBlogVisual!.alt}
@@ -692,7 +693,7 @@ export default async function ContentRoute({
               <p>{featuredBlog.description}</p>
               <b>Lees het artikel →</b>
             </div>
-          </a>
+          </Link>
           <div className="blog-list-heading">
             <p className="eyebrow">Alle artikelen</p>
             <h2>Praktische kennis over je woning in Spanje</h2>
@@ -701,7 +702,7 @@ export default async function ContentRoute({
             {blogArticles.slice(1).map((article) => {
               const visual = blogVisual(article);
               return (
-                <a
+                <Link
                   className="blog-card"
                   href={`/${article.slug}/`}
                   key={article.slug}
@@ -715,7 +716,7 @@ export default async function ContentRoute({
                     <p>{article.description}</p>
                     <b>Lees verder →</b>
                   </div>
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -766,20 +767,20 @@ export default async function ContentRoute({
             Regels kunnen wijzigen. Controleer je situatie altijd aan de hand
             van de actuele informatie van de bevoegde instanties.
           </p>
-          <a
+          <Link
             href="https://www.juntadeandalucia.es/organismos/turismoyandaluciaexterior/areas/registro-turismo/establecimientos-servicios/paginas/viviendas-turisticas.html"
             target="_blank"
             rel="noopener noreferrer"
           >
             Junta de Andalucía: viviendas de uso turístico →
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-26931"
             target="_blank"
             rel="noopener noreferrer"
           >
             BOE: Registro Único de Arrendamientos →
-          </a>
+          </Link>
         </aside>
       )}
       {page.slug === "over-ons" && (
@@ -831,11 +832,11 @@ export default async function ContentRoute({
           <h2>Meer voor eigenaren in Fuengirola</h2>
           <div>
             {related.map((r) => (
-              <a href={`/${r.slug}/`} key={r.slug}>
+              <Link href={`/${r.slug}/`} key={r.slug}>
                 <small>{r.type}</small>
                 <strong>{r.title}</strong>
                 <span>Lees verder →</span>
-              </a>
+              </Link>
             ))}
           </div>
         </section>
@@ -858,9 +859,9 @@ export default async function ContentRoute({
                 je woning betekent? Sophie denkt graag met je mee.
               </p>
               <strong>Sophie · Backoffice</strong>
-              <a href={whatsappHref("Hallo Sophie, ik heb een vraag over dit artikel")}>
+              <Link href={whatsappHref("Hallo Sophie, ik heb een vraag over dit artikel")}>
                 Stel je vraag via WhatsApp →
-              </a>
+              </Link>
             </div>
           </div>
           <form
@@ -918,88 +919,88 @@ export default async function ContentRoute({
             Dan bespreken we de mogelijkheden voor beheer en verhuur in
             Fuengirola.
           </p>
-          <a className="button button-primary" href="/woning-aanmelden/">
+          <Link className="button button-primary" href="/woning-aanmelden/">
             Vraag een verhuurindicatie aan →
-          </a>
+          </Link>
         </section>
       )}
       <footer className="site-footer">
         <div className="footer-brand">
-          <a className="brand" href="/" aria-label="Naar Home">
+          <Link className="brand" href="/" aria-label="Naar Home">
             <span className="brand-mark">●</span>
             <span>
               Verhuurbeheer <b>Fuengirola</b>
             </span>
-          </a>
+          </Link>
           <p>
             Verhuurbeheer Fuengirola is onderdeel van{" "}
-            <a href="https://www.verhuurbeheerspanje.nl/">
+            <Link href="https://www.verhuurbeheerspanje.nl/">
               Verhuurbeheer Spanje
-            </a>
+            </Link>
             .
           </p>
           <div className="social-links">
-            <a
+            <Link
               href={siteConfig.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Verhuurbeheer Spanje op Instagram"
             >
               <Instagram aria-hidden="true" /> Instagram
-            </a>
-            <a
+            </Link>
+            <Link
               href={siteConfig.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Verhuurbeheer Spanje op Facebook"
             >
               <Facebook aria-hidden="true" /> Facebook
-            </a>
+            </Link>
           </div>
         </div>
         <div>
           <b>Diensten</b>
-          <a href="/vakantieverhuur-fuengirola/">Vakantieverhuur</a>
-          <a href="/midterm-verhuur-fuengirola/">Seizoens- en midtermverhuur</a>
-          <a href="/langetermijnverhuur-fuengirola/">Langetermijnverhuur</a>
-          <a href="/vastgoedbeheer-fuengirola/">Vastgoedbeheer</a>
-          <a href="/verhuurlicentie-fuengirola/">Verhuurlicentie</a>
-          <a href="/nederlandse-verhuurmakelaar-fuengirola/">Nederlandse verhuurmakelaar</a>
-          <a href="/sleutelbeheer-fuengirola/">Sleutelbeheer</a>
-          <a href="/appartement-verhuren-fuengirola/">Appartement verhuren</a>
-          <a href="/villa-verhuren-fuengirola/">Villa verhuren</a>
-          <a href="/airbnb-beheer-fuengirola/">Airbnb & Booking beheer</a>
-          <a href="/tweede-woning-beheer-fuengirola/">Tweede woning beheer</a>
+          <Link href="/vakantieverhuur-fuengirola/">Vakantieverhuur</Link>
+          <Link href="/midterm-verhuur-fuengirola/">Seizoens- en midtermverhuur</Link>
+          <Link href="/langetermijnverhuur-fuengirola/">Langetermijnverhuur</Link>
+          <Link href="/vastgoedbeheer-fuengirola/">Vastgoedbeheer</Link>
+          <Link href="/verhuurlicentie-fuengirola/">Verhuurlicentie</Link>
+          <Link href="/nederlandse-verhuurmakelaar-fuengirola/">Nederlandse verhuurmakelaar</Link>
+          <Link href="/sleutelbeheer-fuengirola/">Sleutelbeheer</Link>
+          <Link href="/appartement-verhuren-fuengirola/">Appartement verhuren</Link>
+          <Link href="/villa-verhuren-fuengirola/">Villa verhuren</Link>
+          <Link href="/airbnb-beheer-fuengirola/">Airbnb & Booking beheer</Link>
+          <Link href="/tweede-woning-beheer-fuengirola/">Tweede woning beheer</Link>
         </div>
         <div>
           <b>Meer</b>
-          <a href="/werkwijze/">Werkwijze</a>
-          <a href="/over-ons/">Over ons</a>
-          <a href="/blog/">Blog</a>
-          <a href="/contact/">Contact</a>
-          <a href="/privacyverklaring/">Privacyverklaring</a>
-          <a href="/cookieverklaring/">Cookieverklaring</a>
+          <Link href="/werkwijze/">Werkwijze</Link>
+          <Link href="/over-ons/">Over ons</Link>
+          <Link href="/blog/">Blog</Link>
+          <Link href="/contact/">Contact</Link>
+          <Link href="/privacyverklaring/">Privacyverklaring</Link>
+          <Link href="/cookieverklaring/">Cookieverklaring</Link>
           <CookiePreferencesButton />
         </div>
         <div>
           <b>Contact</b>
-          <a href={whatsappHref()}>
+          <Link href={whatsappHref()}>
             WhatsApp
-          </a>
-          <a href={emailHref}>E-mail</a>
+          </Link>
+          <Link href={emailHref}>E-mail</Link>
           <small>© 2026 · Fuengirola · Costa del Sol</small>
         </div>
       </footer>
-      <a
+      <Link
         className="whatsapp-float"
         href={whatsappHref()}
         aria-label="Contact via WhatsApp"
       >
         WhatsApp
-      </a>
-      <a className="to-top" href="#top" aria-label="Terug naar boven">
+      </Link>
+      <Link className="to-top" href="#top" aria-label="Terug naar boven">
         ↑
-      </a>
+      </Link>
     </main>
   );
 }
