@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CookiePreferencesButton } from "../CookieConsent";
 import {
   BedDouble,
@@ -93,7 +94,7 @@ const services = [
 const faqs = [
   [
     "How much does holiday rental management in Fuengirola cost?",
-    "Full-service holiday rental management starts at 18% of realised rental income. After assessing the property, we clearly define what is included and which rate fits the home.",
+    "Our full-service holiday rental management fee is 20% of the gross sold nightly rate, excluding applicable VAT.",
   ],
   [
     "How much do mid-term and long-term rental services cost?",
@@ -207,7 +208,7 @@ function LocalizedHome() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <header className="site-header">
-        <a
+        <Link
           className="logo-lockup"
           href="/"
           aria-label="Property Management Fuengirola – Home"
@@ -218,35 +219,35 @@ function LocalizedHome() {
             width="54"
             height="54"
           />
-        </a>
+        </Link>
         <nav>
-          <a href="/">Home</a>
+          <Link href="/">Home</Link>
           <details className="services-menu">
             <summary>Services</summary>
             <div>
-              <a href="/en/holiday-rental-management/">Holiday rental management</a>
-              <a href="/en/mid-term-rental/">
+              <Link href="/en/holiday-rental-management/">Holiday rental management</Link>
+              <Link href="/en/mid-term-rental/">
                 Seasonal and mid-term rentals
-              </a>
-              <a href="/en/long-term-rental/">Long-term rentals</a>
-              <a href="/en/property-management/">Property management</a>
-              <a href="/en/cleaning-maintenance/">
+              </Link>
+              <Link href="/en/long-term-rental/">Long-term rentals</Link>
+              <Link href="/en/property-management/">Property management</Link>
+              <Link href="/en/cleaning-maintenance/">
                 Cleaning & maintenance
-              </a>
-              <a href="/en/renovation-furnishing/">
+              </Link>
+              <Link href="/en/renovation-furnishing/">
                 Renovation & furnishing
-              </a>
-              <a href="/en/rental-licence/">Rental licence</a>
+              </Link>
+              <Link href="/en/rental-licence/">Rental licence</Link>
             </div>
           </details>
-          <a href="/werkwijze/">How we work</a>
-          <a href="/over-ons/">About us</a>
-          <a href="/blog/">Guides</a>
-          <a href="/en/#contact">Contact</a>
+          <Link href="/werkwijze/">How we work</Link>
+          <Link href="/over-ons/">About us</Link>
+          <Link href="/blog/">Guides</Link>
+          <Link href="/en/#contact">Contact</Link>
         </nav>
-        <a className="btn btn-small header-cta" href="/en/#contact">
+        <Link className="btn btn-small header-cta" href="/en/#contact">
           List your property
-        </a>
+        </Link>
         <details className="mobile-menu">
           <summary aria-label="Open menu">
             <span></span>
@@ -254,21 +255,21 @@ function LocalizedHome() {
             <span></span>
           </summary>
           <div>
-            <a href="/">Home</a>
+            <Link href="/">Home</Link>
             <b>Services</b>
-            <a href="/en/holiday-rental-management/">Holiday rental management</a>
-            <a href="/en/mid-term-rental/">Seasonal and mid-term rentals</a>
-            <a href="/en/long-term-rental/">Long-term rentals</a>
-            <a href="/en/property-management/">Property management</a>
-            <a href="/en/cleaning-maintenance/">Cleaning & maintenance</a>
-            <a href="/en/renovation-furnishing/">Renovation & furnishing</a>
-            <a href="/en/rental-licence/">Rental licence</a>
+            <Link href="/en/holiday-rental-management/">Holiday rental management</Link>
+            <Link href="/en/mid-term-rental/">Seasonal and mid-term rentals</Link>
+            <Link href="/en/long-term-rental/">Long-term rentals</Link>
+            <Link href="/en/property-management/">Property management</Link>
+            <Link href="/en/cleaning-maintenance/">Cleaning & maintenance</Link>
+            <Link href="/en/renovation-furnishing/">Renovation & furnishing</Link>
+            <Link href="/en/rental-licence/">Rental licence</Link>
             <b>Company</b>
-            <a href="/werkwijze/">How we work</a>
-            <a href="/over-ons/">About us</a>
-            <a href="/blog/">Guides & knowledge base</a>
-            <a href="/en/#contact">Contact</a>
-            <a href="/en/#contact">List your property</a>
+            <Link href="/werkwijze/">How we work</Link>
+            <Link href="/over-ons/">About us</Link>
+            <Link href="/blog/">Guides & knowledge base</Link>
+            <Link href="/en/#contact">Contact</Link>
+            <Link href="/en/#contact">List your property</Link>
           </div>
         </details>
       </header>
@@ -284,12 +285,12 @@ function LocalizedHome() {
             From Los Boliches and La Cala to Fuengirola Pueblo, we combine smart rental management with trusted local people. You have one clear contact for bookings, guests, cleaning, maintenance and the day-to-day care of your property.
           </p>
           <div className="actions">
-            <a className="btn hero-cta" href="/en/#contact">
+            <Link className="btn hero-cta" href="/en/#contact">
               List your property
-            </a>
-            <a className="link-light" href="#diensten">
+            </Link>
+            <Link className="link-light" href="#diensten">
               View all services →
-            </a>
+            </Link>
           </div>
         </div>
         <div className="hero-stats">
@@ -352,7 +353,7 @@ function LocalizedHome() {
         </div>
         <div className="service-grid">
           {services.map((s, i) => (
-            <a className="service-card" href={`/en/${s.slug}/`} key={s.slug}>
+            <Link className="service-card" href={`/en/${s.slug}/`} key={s.slug}>
               <div className="service-card-top">
                 <span className="service-icon">
                   <s.icon aria-hidden="true" />
@@ -363,7 +364,7 @@ function LocalizedHome() {
               <p>{s.text}</p>
               <strong>{s.price}</strong>
               <em>View service →</em>
-            </a>
+            </Link>
           ))}
         </div>
       </section>
@@ -376,7 +377,7 @@ function LocalizedHome() {
             See which registration and licensing requirements may apply to your property.
           </p>
         </div>
-        <a href="/en/rental-licence/">Read about rental licensing →</a>
+        <Link href="/en/rental-licence/">Read about rental licensing →</Link>
       </aside>
 
       <section className="rental-band">
@@ -388,21 +389,21 @@ function LocalizedHome() {
           </p>
         </div>
         <div className="rental-options">
-          <a href="/en/holiday-rental-management/">
+          <Link href="/en/holiday-rental-management/">
             <small>Short stays</small>
             <b>Holiday rental management</b>
-            <span>From 18% →</span>
-          </a>
-          <a href="/en/mid-term-rental/">
+            <span>20% excl. VAT →</span>
+          </Link>
+          <Link href="/en/mid-term-rental/">
             <small>Temporary stays</small>
             <b>Mid-term</b>
             <span>One month’s rent →</span>
-          </a>
-          <a href="/en/long-term-rental/">
+          </Link>
+          <Link href="/en/long-term-rental/">
             <small>Long-term tenant</small>
             <b>Langetermijn</b>
             <span>One month’s rent →</span>
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -478,9 +479,9 @@ function LocalizedHome() {
           <p>
             Your contact knows your arrangements and our local team knows the property. Communication, administration and practical follow-up remain part of one process.
           </p>
-          <a className="dark-link" href="/over-ons/">
+          <Link className="dark-link" href="/over-ons/">
             Meet the full team →
-          </a>
+          </Link>
         </div>
         <div className="home-team-grid">
           {homepageTeam.map((person) => (
@@ -504,25 +505,25 @@ function LocalizedHome() {
           </p>
         </div>
         <div className="knowledge-grid">
-          <a href="/en/management-costs/">
+          <Link href="/en/management-costs/">
             <small>Costs</small>
             <h3>What does property management cost?</h3>
             <span>Read guide →</span>
-          </a>
-          <a href="/en/holiday-rental-management/">
+          </Link>
+          <Link href="/en/holiday-rental-management/">
             <small>Returns</small>
             <h3>Dynamic pricing</h3>
             <span>Read guide →</span>
-          </a>
-          <a href="/en/property-management/">
+          </Link>
+          <Link href="/en/property-management/">
             <small>Decision guide</small>
             <h3>Self-manage or outsource?</h3>
             <span>Read guide →</span>
-          </a>
+          </Link>
         </div>
-        <a className="knowledge-all" href="/blog/">
+        <Link className="knowledge-all" href="/blog/">
           View all guides and articles →
-        </a>
+        </Link>
       </section>
 
       <section className="faq">
@@ -554,9 +555,9 @@ function LocalizedHome() {
             Tell us where the property is, what type it is and how you want to use it. We will then discuss which approach and rental model are realistic.
           </p>
           <p>
-            <a href={emailHref}>
+            <Link href={emailHref}>
               {siteConfig.contact.email}
-            </a>
+            </Link>
             <br />
           </p>
         </div>
@@ -615,13 +616,13 @@ function LocalizedHome() {
           </button>
           <small className="wide privacy-note">
             We process your data according to our{" "}
-            <a href="/privacy policy/">privacy policy</a>.
+            <Link href="/privacy policy/">privacy policy</Link>.
           </small>
         </form>
       </section>
       <footer className="site-footer">
         <div className="footer-brand">
-          <a className="logo-lockup" href="/" aria-label="Home">
+          <Link className="logo-lockup" href="/" aria-label="Home">
             <img
               src="/vbs-logo-fuengirola.webp"
               alt="Property Management Fuengirola"
@@ -632,70 +633,70 @@ function LocalizedHome() {
             <span>
               Verhuurbeheer <b>Fuengirola</b>
             </span>
-          </a>
+          </Link>
           <p>
             Property Management Fuengirola is part of{" "}
-            <a href="https://www.verhuurbeheerspanje.nl/">
+            <Link href="https://www.verhuurbeheerspanje.nl/">
               Verhuurbeheer Spanje
-            </a>
+            </Link>
             .
           </p>
           <div className="social-links">
-            <a
+            <Link
               href={siteConfig.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Verhuurbeheer Spanje op Instagram"
             >
               <Instagram aria-hidden="true" /> Instagram
-            </a>
-            <a
+            </Link>
+            <Link
               href={siteConfig.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Verhuurbeheer Spanje op Facebook"
             >
               <Facebook aria-hidden="true" /> Facebook
-            </a>
+            </Link>
           </div>
         </div>
         <div>
           <b>Services</b>
-          <a href="/en/holiday-rental-management/">Holiday rental management</a>
-          <a href="/en/mid-term-rental/">Seasonal and mid-term rentals</a>
-          <a href="/en/long-term-rental/">Long-term rentals</a>
-          <a href="/en/property-management/">Property management</a>
-          <a href="/en/rental-licence/">Rental licence</a>
+          <Link href="/en/holiday-rental-management/">Holiday rental management</Link>
+          <Link href="/en/mid-term-rental/">Seasonal and mid-term rentals</Link>
+          <Link href="/en/long-term-rental/">Long-term rentals</Link>
+          <Link href="/en/property-management/">Property management</Link>
+          <Link href="/en/rental-licence/">Rental licence</Link>
         </div>
         <div>
           <b>More</b>
-          <a href="/werkwijze/">How we work</a>
-          <a href="/over-ons/">About us</a>
-          <a href="/blog/">Guides</a>
-          <a href="/en/#contact">Contact</a>
-          <a href="/privacy policy/">Privacy policy</a>
-          <a href="/cookieverklaring/">Cookie policy</a>
+          <Link href="/werkwijze/">How we work</Link>
+          <Link href="/over-ons/">About us</Link>
+          <Link href="/blog/">Guides</Link>
+          <Link href="/en/#contact">Contact</Link>
+          <Link href="/privacy policy/">Privacy policy</Link>
+          <Link href="/cookieverklaring/">Cookie policy</Link>
           <CookiePreferencesButton />
         </div>
         <div>
           <b>Contact</b>
-          <a href={whatsappHref()}>
+          <Link href={whatsappHref()}>
             WhatsApp
-          </a>
-          <a href={emailHref}>E-mail</a>
+          </Link>
+          <Link href={emailHref}>E-mail</Link>
           <small>© 2026 · Fuengirola · Costa del Sol</small>
         </div>
       </footer>
-      <a
+      <Link
         className="whatsapp-float"
         href={whatsappHref()}
         aria-label="Contact via WhatsApp"
       >
         WhatsApp
-      </a>
-      <a className="to-top" href="#top" aria-label="Back to top">
+      </Link>
+      <Link className="to-top" href="#top" aria-label="Back to top">
         ↑
-      </a>
+      </Link>
     </main>
   );
 }

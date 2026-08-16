@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Bedankt voor je aanvraag | Verhuurbeheer Fuengirola",
@@ -17,9 +18,9 @@ export default function BedanktPage() {
         <span className="thanks-horizon" />
       </div>
 
-      <a className="thanks-logo" href="/" aria-label="Terug naar Verhuurbeheer Fuengirola">
+      <Link className="thanks-logo" href="/" aria-label="Terug naar Verhuurbeheer Fuengirola">
         <img src="/vbs-logo-fuengirola.webp" alt="Verhuurbeheer Fuengirola" width="62" height="62" />
-      </a>
+      </Link>
 
       <section className="thanks-card">
         <p className="thanks-kicker">¡Perfecto!</p>
@@ -31,7 +32,7 @@ export default function BedanktPage() {
           <span>Muchas gracias</span>
           <span className="sun-emoji" role="img" aria-label="zon">☀️</span>
         </div>
-        <a className="thanks-button" href="/">Terug naar de website <span>→</span></a>
+        <Link className="thanks-button" href="/">Terug naar de website <span>→</span></Link>
       </section>
 
       <p className="thanks-footer">Verhuurbeheer Fuengirola · Costa del Sol</p>
