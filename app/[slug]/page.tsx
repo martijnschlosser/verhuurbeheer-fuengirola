@@ -99,7 +99,6 @@ export async function generateMetadata({
     authors: [
       {
         name: siteConfig.brand.legalName,
-        url: siteConfig.brand.parentUrl,
       },
     ],
     openGraph: {
@@ -349,7 +348,6 @@ export default async function ContentRoute({
         worksFor: {
           "@type": "Organization",
           name: siteConfig.brand.legalName,
-          url: siteConfig.brand.parentUrl,
         },
         image: absoluteUrl(person.image),
       },
@@ -934,9 +932,9 @@ export default async function ContentRoute({
           </Link>
           <p>
             Verhuurbeheer Fuengirola is onderdeel van{" "}
-            <Link href="https://www.verhuurbeheerspanje.nl/">
+            <span>
               Verhuurbeheer Spanje
-            </Link>
+            </span>
             .
           </p>
           <div className="social-links">

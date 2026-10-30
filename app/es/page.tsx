@@ -139,7 +139,6 @@ function LocalizedHome() {
     parentOrganization: {
       "@type": "Organization",
       name: "Verhuurbeheer Spanje",
-      url: "https://www.verhuurbeheerspanje.nl/",
     },
     areaServed: [
       { "@type": "City", name: "Fuengirola" },
@@ -159,7 +158,6 @@ function LocalizedHome() {
     logo: absoluteUrl("/vbs-logo-fuengirola.webp"),
     image: absoluteUrl("/terras-zonsondergang-fuengirola.webp"),
     sameAs: [
-      siteConfig.brand.parentUrl,
       siteConfig.social.instagram,
       siteConfig.social.facebook,
     ],
@@ -636,9 +634,9 @@ function LocalizedHome() {
           </Link>
           <p>
             Gestión de propiedades Fuengirola forma parte de{" "}
-            <Link href="https://www.verhuurbeheerspanje.nl/">
+            <span>
               Verhuurbeheer Spanje
-            </Link>
+            </span>
             .
           </p>
           <div className="social-links">

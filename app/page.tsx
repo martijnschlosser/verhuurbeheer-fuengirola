@@ -141,7 +141,6 @@ export default function Home() {
     parentOrganization: {
       "@type": "Organization",
       name: "Verhuurbeheer Spanje",
-      url: "https://www.verhuurbeheerspanje.nl/",
     },
     areaServed: [
       { "@type": "City", name: "Fuengirola" },
@@ -158,7 +157,6 @@ export default function Home() {
     logo: absoluteUrl("/vbs-logo-fuengirola.webp"),
     image: absoluteUrl("/luxe-woning-fuengirola-zeezicht.webp"),
     sameAs: [
-      siteConfig.brand.parentUrl,
       siteConfig.social.instagram,
       siteConfig.social.facebook,
     ],
@@ -666,9 +664,9 @@ export default function Home() {
           </Link>
           <p>
             Verhuurbeheer Fuengirola is onderdeel van{" "}
-            <Link href="https://www.verhuurbeheerspanje.nl/">
+            <span>
               Verhuurbeheer Spanje
-            </Link>
+            </span>
             .
           </p>
           <div className="social-links">
