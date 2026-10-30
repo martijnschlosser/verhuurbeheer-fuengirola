@@ -8,7 +8,6 @@ export const siteConfig = {
   },
   brand: {
     name: "Verhuurbeheer Fuengirola",
-    legalName: "Verhuurbeheer Spanje",
   },
   location: {
     city: "Fuengirola",
@@ -24,12 +23,8 @@ export const siteConfig = {
     sophie: "/sophie-fuengirola.webp",
   },
   domain: "https://verhuurbeheerfuengirola.nl",
-  contact: { email: "contact@verhuurbeheerspanje.nl", whatsapp: "31852128105" },
+  contact: { phone: "+31852128105", whatsapp: "31852128105" },
   pricing: { holidayRental: "20% excl. btw", midterm: "Eenmalig 1 maand huur", longterm: "Eenmalig 1 maand huur" },
-  social: {
-    instagram: "https://www.instagram.com/verhuurbeheer_spanje/",
-    facebook: "https://www.facebook.com/verhuurbeheerspanje/",
-  },
   seo: {
     title: "Verhuurbeheer Fuengirola | Voor Nederlandse eigenaren",
     description: "Fullservice verhuurbeheer in Fuengirola voor Nederlandse eigenaren. Vakantieverhuur voor 20% exclusief toepasselijke btw, midterm, langetermijn en lokaal vastgoedbeheer.",
@@ -69,8 +64,7 @@ export const siteConfig = {
 } as const;
 
 export const absoluteUrl = (path = "/") => `${siteConfig.domain}${path.startsWith("/") ? path : `/${path}`}`;
-export const emailHref = `mailto:${siteConfig.contact.email}`;
-export const leadFormAction = `https://formsubmit.co/${siteConfig.contact.email}`;
+export const phoneHref = `tel:${siteConfig.contact.phone}`;
 export const leadHref = siteConfig.template.leadPath;
 export const leadSubject = (context = "woningaanmelding") => `Nieuwe ${context} via ${siteConfig.brand.name}`;
 export const whatsappHref = (message = `Hallo, ik heb een vraag over verhuurbeheer in ${siteConfig.location.city}`) => `https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(message)}`;

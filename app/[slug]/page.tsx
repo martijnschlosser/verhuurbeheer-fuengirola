@@ -3,9 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { contentBySlug, contentPages } from "../content";
 import { CookiePreferencesButton } from "../CookieConsent";
-import { CheckCircle2, Facebook, Instagram, Mail } from "lucide-react";
-import { absoluteUrl, emailHref, leadFormAction, leadHref, leadSubject, siteConfig, whatsappHref } from "../site-config";
-import { FormSubmit } from "../FormSubmit";
+import { CheckCircle2, Facebook, Instagram, Phone } from "lucide-react";
+import { absoluteUrl, phoneHref, leadHref, siteConfig, whatsappHref } from "../site-config";
 
 const seoH1BySlug: Record<string, string> = {
   "vakantieverhuur-fuengirola": "Vakantieverhuur in Fuengirola voor 20% excl. btw",
@@ -34,49 +33,49 @@ const team = [
     role: "Relatiemanager",
     languages: "NL · EN · ES",
     image: "/martijn-verhuurbeheer-fuengirola.webp",
-    alt: "Martijn, relatiemanager bij Verhuurbeheer Spanje aan de Costa del Sol",
+    alt: "Martijn, relatiemanager bij Verhuurbeheer Fuengirola aan de Costa del Sol",
   },
   {
     name: "Geert",
     role: "Manager Bouw",
     languages: "NL · EN",
     image: "/geert-vastgoedbeheer-fuengirola.webp",
-    alt: "Geert, manager bouw en vastgoedbeheer bij Verhuurbeheer Spanje",
+    alt: "Geert, manager bouw en vastgoedbeheer bij Verhuurbeheer Fuengirola",
   },
   {
     name: "Sophie",
     role: "Backoffice",
     languages: "NL · EN · ES",
     image: siteConfig.assets.sophie,
-    alt: "Sophie, Nederlandstalig aanspreekpunt en backoffice bij Verhuurbeheer Spanje",
+    alt: "Sophie, Nederlandstalig aanspreekpunt en backoffice bij Verhuurbeheer Fuengirola",
   },
   {
     name: "Päivi",
     role: "Administratie",
     languages: "NL · EN · FI",
     image: "/paivi-administratie-verhuurbeheer.webp",
-    alt: "Päivi van de administratie van Verhuurbeheer Spanje",
+    alt: "Päivi van de administratie van Verhuurbeheer Fuengirola",
   },
   {
     name: "Joachim",
     role: "Marketing",
     languages: "EN · DA",
     image: "/joachim-marketing-verhuurbeheer.webp",
-    alt: "Joachim van het marketingteam van Verhuurbeheer Spanje",
+    alt: "Joachim van het marketingteam van Verhuurbeheer Fuengirola",
   },
   {
     name: "Leon",
     role: "Ambassadeur",
     languages: "NL · EN",
     image: "/leon-ambassadeur-verhuurbeheer.webp",
-    alt: "Leon, ambassadeur van Verhuurbeheer Spanje aan de Costa del Sol",
+    alt: "Leon, ambassadeur van Verhuurbeheer Fuengirola aan de Costa del Sol",
   },
   {
     name: "Jacob",
     role: "Tax & Legal",
     languages: "ES · EN",
     image: "/jacob-tax-legal-verhuurbeheer.webp",
-    alt: "Jacob van Tax & Legal bij Verhuurbeheer Spanje",
+    alt: "Jacob van Tax & Legal bij Verhuurbeheer Fuengirola",
   },
 ];
 
@@ -98,7 +97,8 @@ export async function generateMetadata({
     alternates: { canonical: `/${p.slug}/` },
     authors: [
       {
-        name: siteConfig.brand.legalName,
+        name: siteConfig.brand.name,
+        url: siteConfig.domain,
       },
     ],
     openGraph: {
@@ -337,7 +337,7 @@ export default async function ContentRoute({
   const teamSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Team Verhuurbeheer Spanje",
+    name: "Team Verhuurbeheer Fuengirola",
     itemListElement: team.map((person, index) => ({
       "@type": "ListItem",
       position: index + 1,
@@ -347,7 +347,8 @@ export default async function ContentRoute({
         jobTitle: person.role,
         worksFor: {
           "@type": "Organization",
-          name: siteConfig.brand.legalName,
+          name: siteConfig.brand.name,
+          url: siteConfig.domain,
         },
         image: absoluteUrl(person.image),
       },
@@ -541,34 +542,18 @@ export default async function ContentRoute({
           <div className="signup-story">
             <p className="kicker orange">Je woning in goede handen</p>
             <h2>Een kleine eerste stap. Daarna regelen wij de rest.</h2>
-            <p>Vertel ons kort over je woning. Binnen twee werkdagen neemt ons Nederlandstalige team persoonlijk contact met je op.</p>
+            <p>Bel ons of stuur een WhatsApp-bericht om je woning en wensen te bespreken.</p>
             <div className="signup-photo">
               <img src={siteConfig.assets.signup} alt={`Zonnig terras met zeezicht in ${siteConfig.location.city}`} width="1600" height="1067" loading="eager" />
               <span>Fuengirola · Costa del Sol</span>
             </div>
             <div className="signup-promises">
               <span><CheckCircle2 aria-hidden="true" /><b>Vrijblijvend</b><small>Je zit nergens aan vast</small></span>
-              <span><CheckCircle2 aria-hidden="true" /><b>Binnen 2 werkdagen</b><small>Persoonlijk antwoord</small></span>
+              <span><CheckCircle2 aria-hidden="true" /><b>Rechtstreeks contact</b><small>Per telefoon of WhatsApp</small></span>
               <span><CheckCircle2 aria-hidden="true" /><b>Nederlandstalig</b><small>Een helder gesprek</small></span>
             </div>
           </div>
-          <FormSubmit className="signup-form" action={leadFormAction} thankYouPath={siteConfig.template.thankYouPath}>
-            <div className="form-heading"><span>01</span><div><small>Je woning aanmelden</small><h2>Vertel ons over je woning</h2></div></div>
-            <input type="hidden" name="_subject" value={leadSubject()} />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value={absoluteUrl("/bedankt/")} />
-            <input type="hidden" name="bron_website" value={siteConfig.template.sourceWebsite} />
-            <input type="hidden" name="bron_formulier" value="Woning aanmelden" />
-            <label>Naam<input name="naam" autoComplete="name" placeholder="Je voor- en achternaam" required /></label>
-            <label>E-mailadres<input type="email" name="email" autoComplete="email" placeholder="naam@voorbeeld.nl" required /></label>
-            <label>Telefoonnummer <small>(optioneel)</small><input type="tel" name="telefoon" autoComplete="tel" placeholder="+31 of +34" /></label>
-            <label>Locatie woning<input name="locatie" placeholder="Bijv. Los Boliches, Torreblanca of Fuengirola Centro" required /></label>
-            <label>Type woning<select name="type" defaultValue=""><option value="" disabled>Kies je woningtype</option><option>Appartement</option><option>Villa</option><option>Townhouse</option><option>Anders</option></select></label>
-            <label>Waar kunnen we bij helpen?<select name="dienst" defaultValue=""><option value="" disabled>Kies een dienst</option><option>Vakantieverhuur</option><option>Seizoens- en midtermverhuur</option><option>Langetermijnverhuur</option><option>Vastgoedbeheer</option><option>Schoonmaak & onderhoud</option><option>Renovatie & inrichting</option><option>Ik wil graag advies</option></select></label>
-            <label className="wide">Vertel kort iets over je woning en wensen <small>(optioneel)</small><textarea name="bericht" rows={4} placeholder="Bijvoorbeeld: aantal slaapkamers, eigen gebruik en gewenste startdatum" /></label>
-            <button className="btn wide form-cta" type="submit">Woning vrijblijvend aanmelden →</button>
-            <small className="wide privacy-note"><CheckCircle2 aria-hidden="true" /> Je gegevens worden veilig verwerkt volgens onze <Link href="/privacyverklaring/">privacyverklaring</Link>.</small>
-          </FormSubmit>
+          <div className="contact-options"><h3>Neem rechtstreeks contact op</h3><p><a className="btn" href={`tel:${siteConfig.contact.phone}`}>Bel ons · {siteConfig.contact.phone}</a></p><p><a className="btn" href={whatsappHref()}>Stuur een WhatsApp-bericht →</a></p></div>
         </section>
       )}
       {page.slug === "contact" && (
@@ -581,88 +566,16 @@ export default async function ContentRoute({
               contact met je op.
             </p>
             <div className="contact-options">
-              <Link href={emailHref}>
+              <Link href={phoneHref}>
                 <span>
-                  <Mail aria-hidden="true" />
+                  <Phone aria-hidden="true" />
                 </span>
-                <small>E-mail</small>
-                <strong>{siteConfig.contact.email}</strong>
+                <small>Telefoon</small>
+                <strong>{siteConfig.contact.phone}</strong>
               </Link>
             </div>
           </div>
-          <form
-            action={leadFormAction}
-            method="post"
-          >
-            <input type="hidden" name="_subject" value={leadSubject("lead – contactpagina")} />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value={absoluteUrl("/bedankt/")} />
-            <input type="hidden" name="bron_website" value={siteConfig.template.sourceWebsite} />
-            <input type="hidden" name="bron_formulier" value="Contactpagina" />
-            <label>
-              Naam
-              <input name="naam" autoComplete="name" required />
-            </label>
-            <label>
-              E-mailadres
-              <input type="email" name="email" autoComplete="email" required />
-            </label>
-            <label>
-              Telefoonnummer
-              <input type="tel" name="telefoon" autoComplete="tel" />
-            </label>
-            <label>
-              Locatie woning
-              <input
-                name="locatie"
-                placeholder="Bijv. Los Boliches of Fuengirola Centro"
-                required
-              />
-            </label>
-            <label>
-              Type woning
-              <select name="type">
-                <option>Appartement</option>
-                <option>Villa</option>
-                <option>Townhouse</option>
-                <option>Anders</option>
-              </select>
-            </label>
-            <label>
-              Gewenste dienst
-              <select name="dienst">
-                <option>Vakantieverhuur</option>
-                <option>Seizoens- en midtermverhuur</option>
-                <option>Langetermijnverhuur</option>
-                <option>Vastgoedbeheer</option>
-                <option>Schoonmaak &amp; onderhoud</option>
-                <option>Renovatie &amp; inrichting</option>
-              </select>
-            </label>
-            <label className="wide">
-              Is er al een verhuurlicentie?
-              <select name="verhuurlicentie" defaultValue="">
-                <option value="" disabled>
-                  Kies een antwoord
-                </option>
-                <option>Ja</option>
-                <option>Nee</option>
-                <option>In aanvraag</option>
-                <option>Niet van toepassing / weet ik niet</option>
-              </select>
-            </label>
-            <label className="wide">
-              Je vraag of toelichting
-              <textarea name="bericht" rows={5} />
-            </label>
-            <button className="btn wide form-cta" type="submit">
-              Verstuur je aanvraag →
-            </button>
-            <small className="wide privacy-note">
-              Wij verwerken je gegevens volgens onze{" "}
-              <Link href="/privacyverklaring/">privacyverklaring</Link>.
-            </small>
-          </form>
+          <div className="contact-options"><h3>Neem rechtstreeks contact op</h3><p><a className="btn" href={`tel:${siteConfig.contact.phone}`}>Bel ons · {siteConfig.contact.phone}</a></p><p><a className="btn" href={whatsappHref()}>Stuur een WhatsApp-bericht →</a></p></div>
         </section>
       )}
       {page.slug === "blog" && featuredBlog ? (
@@ -862,50 +775,7 @@ export default async function ContentRoute({
               </Link>
             </div>
           </div>
-          <form
-            action={leadFormAction}
-            method="post"
-          >
-            <input type="hidden" name="_subject" value={leadSubject(`lead – ${page.title}`)} />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value={absoluteUrl("/bedankt/")} />
-            <input type="hidden" name="bron_website" value={siteConfig.template.sourceWebsite} />
-            <input type="hidden" name="bron_formulier" value={`Kennisbank – ${page.title}`} />
-            <input
-              type="hidden"
-              name="onderwerp"
-              value={`Vraag over: ${page.title}`}
-            />
-            <label>
-              Naam
-              <input name="naam" autoComplete="name" required />
-            </label>
-            <label>
-              E-mailadres
-              <input type="email" name="email" autoComplete="email" required />
-            </label>
-            <label>
-              Telefoonnummer
-              <input type="tel" name="telefoon" autoComplete="tel" />
-            </label>
-            <label>
-              Locatie van je woning
-              <input
-                name="locatie"
-                placeholder="Bijv. Fuengirola, Los Boliches of El Higuerón"
-              />
-            </label>
-            <label className="wide">
-              Je vraag
-              <textarea name="vraag" rows={5} required />
-            </label>
-            <button className="button button-primary wide" type="submit">
-              Verstuur je vraag →
-            </button>
-            <small className="wide">
-              Sophie neemt persoonlijk contact met je op.
-            </small>
-          </form>
+          <div className="contact-options"><h3>Neem rechtstreeks contact op</h3><p><a className="btn" href={`tel:${siteConfig.contact.phone}`}>Bel ons · {siteConfig.contact.phone}</a></p><p><a className="btn" href={whatsappHref()}>Stuur een WhatsApp-bericht →</a></p></div>
         </section>
       )}
       {page.slug !== "contact" && page.slug !== "woning-aanmelden" && (
@@ -930,31 +800,8 @@ export default async function ContentRoute({
               Verhuurbeheer <b>Fuengirola</b>
             </span>
           </Link>
-          <p>
-            Verhuurbeheer Fuengirola is onderdeel van{" "}
-            <span>
-              Verhuurbeheer Spanje
-            </span>
-            .
-          </p>
-          <div className="social-links">
-            <Link
-              href={siteConfig.social.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Verhuurbeheer Spanje op Instagram"
-            >
-              <Instagram aria-hidden="true" /> Instagram
-            </Link>
-            <Link
-              href={siteConfig.social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Verhuurbeheer Spanje op Facebook"
-            >
-              <Facebook aria-hidden="true" /> Facebook
-            </Link>
-          </div>
+          
+          
         </div>
         <div>
           <b>Diensten</b>
@@ -985,7 +832,7 @@ export default async function ContentRoute({
           <Link href={whatsappHref()}>
             WhatsApp
           </Link>
-          <Link href={emailHref}>E-mail</Link>
+          <Link href={phoneHref}>Telefoon</Link>
           <small>© 2026 · Fuengirola · Costa del Sol</small>
         </div>
       </footer>

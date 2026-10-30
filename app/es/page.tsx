@@ -13,8 +13,7 @@ import {
 } from "lucide-react";
 import {
   absoluteUrl,
-  emailHref,
-  leadFormAction,
+  phoneHref,
   siteConfig,
   whatsappHref,
 } from "../site-config";
@@ -133,13 +132,8 @@ function LocalizedHome() {
     "@type": ["Organization", "ProfessionalService"],
     "@id": `${siteConfig.domain}/es/#organization`,
     name: siteConfig.brand.name,
-    legalName: siteConfig.brand.legalName,
     description:
       "Gestión integral de propiedades, alquiler vacacional y cuidado de segundas residencias para propietarios en Fuengirola.",
-    parentOrganization: {
-      "@type": "Organization",
-      name: "Verhuurbeheer Spanje",
-    },
     areaServed: [
       { "@type": "City", name: "Fuengirola" },
       { "@type": "Place", name: "Fuengirola Pueblo" },
@@ -153,14 +147,10 @@ function LocalizedHome() {
       { "@type": "City", name: "Fuengirola" },
       { "@type": "City", name: "Benalmádena" },
     ],
-    email: siteConfig.contact.email,
+    telephone: siteConfig.contact.phone,
     url: absoluteUrl("/es/"),
     logo: absoluteUrl("/vbs-logo-fuengirola.webp"),
     image: absoluteUrl("/terras-zonsondergang-fuengirola.webp"),
-    sameAs: [
-      siteConfig.social.instagram,
-      siteConfig.social.facebook,
-    ],
     knowsLanguage: ["nl", "en", "es"],
     knowsAbout: [
       "Gestión de propiedades Fuengirola",
@@ -553,70 +543,13 @@ function LocalizedHome() {
             Cuéntanos dónde está la vivienda, qué tipo es y cómo quieres utilizarla. Después hablaremos del enfoque y modalidad de alquiler realistas.
           </p>
           <p>
-            <Link href={emailHref}>
-              {siteConfig.contact.email}
+            <Link href={phoneHref}>
+              {siteConfig.contact.phone}
             </Link>
             <br />
           </p>
         </div>
-        <form
-          action={leadFormAction}
-          method="post"
-        >
-          <input type="hidden" name="_subject" value={`Nieuwe aanvraag via ${siteConfig.brand.name} (ES)`} />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value={absoluteUrl(`/bedankt/?lang=es`)} />
-          <input type="hidden" name="bron_taal" value="es" />
-          <label>
-            Nombre
-            <input name="naam" required />
-          </label>
-          <label>
-            Correo electrónico
-            <input type="email" name="email" required />
-          </label>
-          <label>
-            Tipo de vivienda
-            <select name="type">
-              <option>Apartamento</option>
-              <option>Villa</option>
-              <option>Adosado</option>
-              <option>Otro</option>
-            </select>
-          </label>
-          <label>
-            Modalidad de alquiler
-            <select name="verhuurvorm">
-              <option>Gestión de alquiler vacacional</option>
-              <option>Temporada</option>
-              <option>Larga duración</option>
-              <option>Gestión de propiedades</option>
-            </select>
-          </label>
-          <label className="wide">
-            ¿La vivienda ya tiene licencia de alquiler?
-            <select name="verhuurlicentie" defaultValue="">
-              <option value="" disabled>
-                Selecciona una opción
-              </option>
-              <option>Sí</option>
-              <option>No</option>
-              <option>En trámite</option>
-              <option>No corresponde / No lo sé</option>
-            </select>
-          </label>
-          <label className="wide">
-            Ubicación y breve descripción
-            <textarea name="woning" rows={4} />
-          </label>
-          <button className="btn wide form-cta" type="submit">
-            Solicitar previsión →
-          </button>
-          <small className="wide privacy-note">
-            Tratamos tus datos conforme a nuestra{" "}
-            <Link href="/política de privacidad/">política de privacidad</Link>.
-          </small>
-        </form>
+        <div className="contact-options"><h3>Contacta directamente</h3><p><a className="btn" href={`tel:${siteConfig.contact.phone}`}>Llámanos · {siteConfig.contact.phone}</a></p><p><a className="btn" href={whatsappHref()}>Envía un mensaje por WhatsApp →</a></p></div>
       </section>
       <footer className="site-footer">
         <div className="footer-brand">
@@ -632,31 +565,8 @@ function LocalizedHome() {
               Verhuurbeheer <b>Fuengirola</b>
             </span>
           </Link>
-          <p>
-            Gestión de propiedades Fuengirola forma parte de{" "}
-            <span>
-              Verhuurbeheer Spanje
-            </span>
-            .
-          </p>
-          <div className="social-links">
-            <Link
-              href={siteConfig.social.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Verhuurbeheer Spanje op Instagram"
-            >
-              <Instagram aria-hidden="true" /> Instagram
-            </Link>
-            <Link
-              href={siteConfig.social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Verhuurbeheer Spanje op Facebook"
-            >
-              <Facebook aria-hidden="true" /> Facebook
-            </Link>
-          </div>
+          
+          
         </div>
         <div>
           <b>Servicios</b>
@@ -681,7 +591,7 @@ function LocalizedHome() {
           <Link href={whatsappHref()}>
             WhatsApp
           </Link>
-          <Link href={emailHref}>E-mail</Link>
+          <Link href={phoneHref}>Telefoon</Link>
           <small>© 2026 · Fuengirola · Costa del Sol</small>
         </div>
       </footer>

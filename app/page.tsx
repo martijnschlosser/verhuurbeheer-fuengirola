@@ -14,9 +14,8 @@ import {
 } from "lucide-react";
 import {
   absoluteUrl,
-  emailHref,
+  phoneHref,
   leadHref,
-  leadFormAction,
   siteConfig,
   whatsappHref,
 } from "./site-config";
@@ -26,25 +25,25 @@ const homepageTeam = [
     name: "Martijn",
     role: "Relatiemanager",
     image: "/martijn-verhuurbeheer-fuengirola.webp",
-    alt: "Martijn, relatiemanager van Verhuurbeheer Spanje aan de Costa del Sol",
+    alt: "Martijn, relatiemanager van Verhuurbeheer Fuengirola aan de Costa del Sol",
   },
   {
     name: "Geert",
     role: "Manager Bouw",
     image: "/geert-vastgoedbeheer-fuengirola.webp",
-    alt: "Geert, manager bouw en vastgoedbeheer bij Verhuurbeheer Spanje",
+    alt: "Geert, manager bouw en vastgoedbeheer bij Verhuurbeheer Fuengirola",
   },
   {
     name: "Sophie",
     role: "Backoffice",
     image: "/sophie-fuengirola.webp",
-    alt: "Sophie, Nederlandstalig aanspreekpunt bij Verhuurbeheer Spanje",
+    alt: "Sophie, Nederlandstalig aanspreekpunt bij Verhuurbeheer Fuengirola",
   },
   {
     name: "Päivi",
     role: "Administratie",
     image: "/paivi-administratie-verhuurbeheer.webp",
-    alt: "Päivi van de administratie van Verhuurbeheer Spanje",
+    alt: "Päivi van de administratie van Verhuurbeheer Fuengirola",
   },
 ];
 
@@ -135,13 +134,8 @@ export default function Home() {
     "@type": ["Organization", "ProfessionalService"],
     "@id": `${siteConfig.domain}/#organization`,
     name: siteConfig.brand.name,
-    legalName: siteConfig.brand.legalName,
     description:
       "Nederlandstalig fullservice verhuurbeheer, vakantieverhuurbeheer en vastgoedbeheer voor woningeigenaren in Fuengirola.",
-    parentOrganization: {
-      "@type": "Organization",
-      name: "Verhuurbeheer Spanje",
-    },
     areaServed: [
       { "@type": "City", name: "Fuengirola" },
       { "@type": "Place", name: "Fuengirola Centro" },
@@ -152,14 +146,10 @@ export default function Home() {
       { "@type": "Place", name: "Los Pacos" },
       { "@type": "Place", name: "El Castillo" },
     ],
-    email: siteConfig.contact.email,
+    telephone: siteConfig.contact.phone,
     url: absoluteUrl(),
     logo: absoluteUrl("/vbs-logo-fuengirola.webp"),
     image: absoluteUrl("/luxe-woning-fuengirola-zeezicht.webp"),
-    sameAs: [
-      siteConfig.social.instagram,
-      siteConfig.social.facebook,
-    ],
     knowsLanguage: ["nl", "en", "es"],
     knowsAbout: [
       "Verhuurbeheer Fuengirola",
@@ -662,31 +652,8 @@ export default function Home() {
               Verhuurbeheer <b>Fuengirola</b>
             </span>
           </Link>
-          <p>
-            Verhuurbeheer Fuengirola is onderdeel van{" "}
-            <span>
-              Verhuurbeheer Spanje
-            </span>
-            .
-          </p>
-          <div className="social-links">
-            <Link
-              href={siteConfig.social.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Verhuurbeheer Spanje op Instagram"
-            >
-              <Instagram aria-hidden="true" /> Instagram
-            </Link>
-            <Link
-              href={siteConfig.social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Verhuurbeheer Spanje op Facebook"
-            >
-              <Facebook aria-hidden="true" /> Facebook
-            </Link>
-          </div>
+          
+          
         </div>
         <div>
           <b>Diensten</b>
@@ -711,7 +678,7 @@ export default function Home() {
           <Link href={whatsappHref()}>
             WhatsApp
           </Link>
-          <Link href={emailHref}>E-mail</Link>
+          <Link href={phoneHref}>Telefoon</Link>
           <small>© 2026 · Fuengirola · Costa del Sol</small>
         </div>
       </footer>

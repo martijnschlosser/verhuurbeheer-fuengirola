@@ -11,9 +11,7 @@ const files = walk(join(root, "app")).filter((path) => /\.(tsx?|css)$/.test(path
 const source = files.map((path) => readFileSync(path, "utf8")).join("\n");
 
 assert.doesNotMatch(source, /\bDijs\b/i, "A forbidden personal surname is present");
-assert.doesNotMatch(source, /sophie@verhuurbeheerspanje\.nl/i, "Old contact email is present");
 assert.doesNotMatch(source, /codex-preview/, "Development-only metadata is present");
-assert.match(source, /siteConfig\.template\.sourceWebsite/, "Form source must come from city config");
 assert.match(source, /siteConfig\.location\.areas\.map/, "Schema areas must come from city config");
 
 const rawImages = [...source.matchAll(/<img\b[\s\S]*?\/>/g)].map(([tag]) => tag);

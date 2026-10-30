@@ -43,25 +43,13 @@ test("all owner CTAs use the dedicated signup route", async () => {
   assert.doesNotMatch(html, /href=["']\/(?:contact\/)?#(?:contact|woningformulier)["']/);
 });
 
-test("signup page contains accessible, conversion-ready form", async () => {
-  const response = await render("/woning-aanmelden");
-  assert.equal(response.status, 200);
-  const html = await response.text();
-  assert.match(html, /<form[^>]+action=["']https:\/\/formsubmit\.co\//);
-  assert.match(html, /name=["']_next["'][^>]+\/bedankt\//);
-  assert.match(html, /<input(?=[^>]*name=["']email["'])(?=[^>]*required)[^>]*>/);
-  assert.match(html, /<input(?=[^>]*name=["']locatie["'])(?=[^>]*required)[^>]*>/);
-  assert.match(html, /binnen twee werkdagen/i);
-});
-
-test("thank-you page confirms the application and response time", async () => {
-  const response = await render("/bedankt");
-  assert.equal(response.status, 200);
-  const html = await response.text();
-  assert.match(html, /Je casa is succesvol/i);
-  assert.match(html, /twee werkdagen/i);
-  assert.match(html, /Muchas gracias/i);
-  assert.match(html, /aria-label=["']zon["']/i);
+test("contact paths use direct contact without an email form or removed parent reference", async () => {
+ const forbidden = new RegExp(["verhuurbeheer", "spanje"].join("[_ -]?"), "i");
+ for (const path of ["/", "/en", "/es", "/woning-aanmelden", "/contact", "/privacyverklaring", "/bedankt", "/blog"]) {
+  const response=await render(path);assert.equal(response.status,200,path);
+  const html=await response.text();assert.doesNotMatch(html,forbidden,path);assert.doesNotMatch(html,/<form\b|mailto:|formsubmit\.co/i,path);
+  assert.match(html,/href=["'](?:tel:|https:\/\/wa\.me\/)/,path);
+ }
 });
 
 test("rendered images have meaningful alt text", async () => {

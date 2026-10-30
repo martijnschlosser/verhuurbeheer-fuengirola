@@ -126,7 +126,7 @@ export default async function LocalizedServicePage({
       "@id": `${siteConfig.domain}/#organization`,
       name: siteConfig.brand.name,
       url: siteConfig.domain,
-      email: siteConfig.contact.email,
+      telephone: siteConfig.contact.phone,
     },
   };
   const faqSchema = {
@@ -189,7 +189,7 @@ export default async function LocalizedServicePage({
       <section className="related"><p className="eyebrow">{copy.related}</p><div>{related.map((item) => <a key={item.key} href={localizedPath(item, locale)}><b>{item.title}</b><span>→</span></a>)}</div></section>
       {nearbyCities.length > 0 && <section className="related"><p className="eyebrow">Costa del Sol</p><h2>{copy.otherCities}</h2><div>{nearbyCities.map((item) => <a key={item.url} href={item.url}><b>{item.name}</b><span>→</span></a>)}</div></section>}
       <section className="content-cta"><p className="eyebrow">{copy.contact}</p><h2>{copy.ctaTitle}</h2><p>{copy.ctaText}</p><a className="button button-primary" href={`/${locale}/#woningformulier`}>{copy.cta} →</a></section>
-      <footer className="site-footer"><div className="footer-brand"><a className="brand" href={`/${locale}/`}><span className="brand-mark">●</span></a><p>{siteConfig.brand.name}</p></div><div><b>{copy.contact}</b><a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a></div><small>© {new Date().getFullYear()} {siteConfig.brand.legalName}</small></footer>
+      <footer className="site-footer"><div className="footer-brand"><a className="brand" href={`/${locale}/`}><span className="brand-mark">●</span></a><p>{siteConfig.brand.name}</p></div><div><b>{copy.contact}</b><a href={`tel:${siteConfig.contact.phone}`}>{siteConfig.contact.phone}</a></div><small>© {new Date().getFullYear()} {siteConfig.brand.name}</small></footer>
       <a className="to-top" href="#top" aria-label="Back to top">↑</a>
     </main>
   );

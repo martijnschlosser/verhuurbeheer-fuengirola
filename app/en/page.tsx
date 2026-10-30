@@ -13,8 +13,7 @@ import {
 } from "lucide-react";
 import {
   absoluteUrl,
-  emailHref,
-  leadFormAction,
+  phoneHref,
   siteConfig,
   whatsappHref,
 } from "../site-config";
@@ -24,25 +23,25 @@ const homepageTeam = [
     name: "Martijn",
     role: "Relationship manager",
     image: "/martijn-verhuurbeheer-fuengirola.webp",
-    alt: "Martijn, relationship manager at Verhuurbeheer Spanje on the Costa del Sol",
+    alt: "Martijn, relationship manager at Verhuurbeheer Fuengirola on the Costa del Sol",
   },
   {
     name: "Geert",
     role: "Construction manager",
     image: "/geert-vastgoedbeheer-fuengirola.webp",
-    alt: "Geert, construction and property management manager at Verhuurbeheer Spanje",
+    alt: "Geert, construction and property management manager at Verhuurbeheer Fuengirola",
   },
   {
     name: "Sophie",
     role: "Operations",
     image: "/sophie-fuengirola.webp",
-    alt: "Sophie, owner support contact at Verhuurbeheer Spanje",
+    alt: "Sophie, owner support contact at Verhuurbeheer Fuengirola",
   },
   {
     name: "Päivi",
     role: "Administration",
     image: "/paivi-administratie-verhuurbeheer.webp",
-    alt: "Päivi from the administration team at Verhuurbeheer Spanje",
+    alt: "Päivi from the administration team at Verhuurbeheer Fuengirola",
   },
 ];
 
@@ -133,13 +132,8 @@ function LocalizedHome() {
     "@type": ["Organization", "ProfessionalService"],
     "@id": `${siteConfig.domain}/en/#organization`,
     name: siteConfig.brand.name,
-    legalName: siteConfig.brand.legalName,
     description:
       "Full-service property management, holiday rental management and second-home care for owners in Fuengirola.",
-    parentOrganization: {
-      "@type": "Organization",
-      name: "Verhuurbeheer Spanje",
-    },
     areaServed: [
       { "@type": "City", name: "Fuengirola" },
       { "@type": "Place", name: "Fuengirola Pueblo" },
@@ -153,14 +147,10 @@ function LocalizedHome() {
       { "@type": "City", name: "Fuengirola" },
       { "@type": "City", name: "Benalmádena" },
     ],
-    email: siteConfig.contact.email,
+    telephone: siteConfig.contact.phone,
     url: absoluteUrl("/en/"),
     logo: absoluteUrl("/vbs-logo-fuengirola.webp"),
     image: absoluteUrl("/terras-zonsondergang-fuengirola.webp"),
-    sameAs: [
-      siteConfig.social.instagram,
-      siteConfig.social.facebook,
-    ],
     knowsLanguage: ["nl", "en", "es"],
     knowsAbout: [
       "Property Management Fuengirola",
@@ -553,70 +543,13 @@ function LocalizedHome() {
             Tell us where the property is, what type it is and how you want to use it. We will then discuss which approach and rental model are realistic.
           </p>
           <p>
-            <Link href={emailHref}>
-              {siteConfig.contact.email}
+            <Link href={phoneHref}>
+              {siteConfig.contact.phone}
             </Link>
             <br />
           </p>
         </div>
-        <form
-          action={leadFormAction}
-          method="post"
-        >
-          <input type="hidden" name="_subject" value={`Nieuwe aanvraag via ${siteConfig.brand.name} (EN)`} />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value={absoluteUrl(`/bedankt/?lang=en`)} />
-          <input type="hidden" name="bron_taal" value="en" />
-          <label>
-            Name
-            <input name="naam" required />
-          </label>
-          <label>
-            Email address
-            <input type="email" name="email" required />
-          </label>
-          <label>
-            Property type
-            <select name="type">
-              <option>Apartment</option>
-              <option>Villa</option>
-              <option>Townhouse</option>
-              <option>Anders</option>
-            </select>
-          </label>
-          <label>
-            Preferred rental model
-            <select name="verhuurvorm">
-              <option>Holiday rental management</option>
-              <option>Mid-term</option>
-              <option>Langetermijn</option>
-              <option>Property management</option>
-            </select>
-          </label>
-          <label className="wide">
-            Does the property already have a rental licence?
-            <select name="verhuurlicentie" defaultValue="">
-              <option value="" disabled>
-                Select an answer
-              </option>
-              <option>Yes</option>
-              <option>No</option>
-              <option>Pending</option>
-              <option>Not applicable / I don’t know</option>
-            </select>
-          </label>
-          <label className="wide">
-            Location and short description
-            <textarea name="woning" rows={4} />
-          </label>
-          <button className="btn wide form-cta" type="submit">
-            Request your forecast →
-          </button>
-          <small className="wide privacy-note">
-            We process your data according to our{" "}
-            <Link href="/privacy policy/">privacy policy</Link>.
-          </small>
-        </form>
+        <div className="contact-options"><h3>Contact us directly</h3><p><a className="btn" href={`tel:${siteConfig.contact.phone}`}>Call us · {siteConfig.contact.phone}</a></p><p><a className="btn" href={whatsappHref()}>Send a WhatsApp message →</a></p></div>
       </section>
       <footer className="site-footer">
         <div className="footer-brand">
@@ -632,31 +565,8 @@ function LocalizedHome() {
               Verhuurbeheer <b>Fuengirola</b>
             </span>
           </Link>
-          <p>
-            Property Management Fuengirola is part of{" "}
-            <span>
-              Verhuurbeheer Spanje
-            </span>
-            .
-          </p>
-          <div className="social-links">
-            <Link
-              href={siteConfig.social.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Verhuurbeheer Spanje op Instagram"
-            >
-              <Instagram aria-hidden="true" /> Instagram
-            </Link>
-            <Link
-              href={siteConfig.social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Verhuurbeheer Spanje op Facebook"
-            >
-              <Facebook aria-hidden="true" /> Facebook
-            </Link>
-          </div>
+          
+          
         </div>
         <div>
           <b>Services</b>
@@ -681,7 +591,7 @@ function LocalizedHome() {
           <Link href={whatsappHref()}>
             WhatsApp
           </Link>
-          <Link href={emailHref}>E-mail</Link>
+          <Link href={phoneHref}>Telefoon</Link>
           <small>© 2026 · Fuengirola · Costa del Sol</small>
         </div>
       </footer>
