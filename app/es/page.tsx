@@ -130,7 +130,7 @@ function LocalizedHome() {
   const schema = {
     "@context": "https://schema.org",
     "@type": ["Organization", "ProfessionalService"],
-    "@id": `${siteConfig.domain}/es/#organization`,
+    "@id": `${siteConfig.domain}/es#organization`,
     name: siteConfig.brand.name,
     description:
       "Gestión integral de propiedades, alquiler vacacional y cuidado de segundas residencias para propietarios en Fuengirola.",
@@ -148,7 +148,7 @@ function LocalizedHome() {
       { "@type": "City", name: "Benalmádena" },
     ],
     telephone: siteConfig.contact.phone,
-    url: absoluteUrl("/es/"),
+    url: absoluteUrl("/es"),
     logo: absoluteUrl("/vbs-logo-fuengirola.webp"),
     image: absoluteUrl("/terras-zonsondergang-fuengirola.webp"),
     knowsLanguage: ["nl", "en", "es"],
@@ -166,11 +166,11 @@ function LocalizedHome() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${siteConfig.domain}/es/#website`,
-    url: absoluteUrl("/es/"),
+    "@id": `${siteConfig.domain}/es#website`,
+    url: absoluteUrl("/es"),
     name: siteConfig.brand.name,
     inLanguage: "es-ES",
-    publisher: { "@id": `${siteConfig.domain}/es/#organization` },
+    publisher: { "@id": `${siteConfig.domain}/es#organization` },
   };
   const faqSchema = {
     "@context": "https://schema.org",
@@ -213,27 +213,27 @@ function LocalizedHome() {
           <details className="services-menu">
             <summary>Servicios</summary>
             <div>
-              <Link href="/es/gestion-alquiler-vacacional/">Gestión de alquiler vacacional</Link>
-              <Link href="/es/alquiler-temporada/">
+              <Link href="/es/gestion-alquiler-vacacional">Gestión de alquiler vacacional</Link>
+              <Link href="/es/alquiler-temporada">
                 Alquiler de temporada
               </Link>
-              <Link href="/es/alquiler-larga-duracion/">Alquiler de larga duración</Link>
-              <Link href="/es/gestion-de-propiedades/">Gestión de propiedades</Link>
-              <Link href="/es/limpieza-mantenimiento/">
+              <Link href="/es/alquiler-larga-duracion">Alquiler de larga duración</Link>
+              <Link href="/es/gestion-de-propiedades">Gestión de propiedades</Link>
+              <Link href="/es/limpieza-mantenimiento">
                 Limpieza y mantenimiento
               </Link>
-              <Link href="/es/reformas-decoracion/">
+              <Link href="/es/reformas-decoracion">
                 Reforma y decoración
               </Link>
-              <Link href="/es/licencia-turistica/">Licencia de alquiler</Link>
+              <Link href="/es/licencia-turistica">Licencia de alquiler</Link>
             </div>
           </details>
-          <Link href="/werkwijze/">Cómo trabajamos</Link>
-          <Link href="/over-ons/">Quiénes somos</Link>
-          <Link href="/blog/">Guías</Link>
-          <Link href="/es/#contact">Contacto</Link>
+          <Link href="/werkwijze">Cómo trabajamos</Link>
+          <Link href="/over-ons">Quiénes somos</Link>
+          <Link href="/blog">Guías</Link>
+          <Link href="/es#contact">Contacto</Link>
         </nav>
-        <Link className="btn btn-small header-cta" href="/es/#contact">
+        <Link className="btn btn-small header-cta" href="/es#contact">
           Registrar vivienda
         </Link>
         <details className="mobile-menu">
@@ -245,19 +245,19 @@ function LocalizedHome() {
           <div>
             <Link href="/">Home</Link>
             <b>Servicios</b>
-            <Link href="/es/gestion-alquiler-vacacional/">Gestión de alquiler vacacional</Link>
-            <Link href="/es/alquiler-temporada/">Alquiler de temporada</Link>
-            <Link href="/es/alquiler-larga-duracion/">Alquiler de larga duración</Link>
-            <Link href="/es/gestion-de-propiedades/">Gestión de propiedades</Link>
-            <Link href="/es/limpieza-mantenimiento/">Limpieza y mantenimiento</Link>
-            <Link href="/es/reformas-decoracion/">Reforma y decoración</Link>
-            <Link href="/es/licencia-turistica/">Licencia de alquiler</Link>
+            <Link href="/es/gestion-alquiler-vacacional">Gestión de alquiler vacacional</Link>
+            <Link href="/es/alquiler-temporada">Alquiler de temporada</Link>
+            <Link href="/es/alquiler-larga-duracion">Alquiler de larga duración</Link>
+            <Link href="/es/gestion-de-propiedades">Gestión de propiedades</Link>
+            <Link href="/es/limpieza-mantenimiento">Limpieza y mantenimiento</Link>
+            <Link href="/es/reformas-decoracion">Reforma y decoración</Link>
+            <Link href="/es/licencia-turistica">Licencia de alquiler</Link>
             <b>Company</b>
-            <Link href="/werkwijze/">Cómo trabajamos</Link>
-            <Link href="/over-ons/">Quiénes somos</Link>
-            <Link href="/blog/">Guías y recursos</Link>
-            <Link href="/es/#contact">Contacto</Link>
-            <Link href="/es/#contact">Registrar vivienda</Link>
+            <Link href="/werkwijze">Cómo trabajamos</Link>
+            <Link href="/over-ons">Quiénes somos</Link>
+            <Link href="/blog">Guías y recursos</Link>
+            <Link href="/es#contact">Contacto</Link>
+            <Link href="/es#contact">Registrar vivienda</Link>
           </div>
         </details>
       </header>
@@ -273,7 +273,7 @@ function LocalizedHome() {
             Desde Los Boliches y La Cala hasta Fuengirola Pueblo, combinamos una gestión inteligente con profesionales locales de confianza. Tienes un único contacto para reservas, huéspedes, limpieza, mantenimiento y cuidado diario de la vivienda.
           </p>
           <div className="actions">
-            <Link className="btn hero-cta" href="/es/#contact">
+            <Link className="btn hero-cta" href="/es#contact">
               Registrar mi vivienda
             </Link>
             <Link className="link-light" href="#diensten">
@@ -341,7 +341,7 @@ function LocalizedHome() {
         </div>
         <div className="service-grid">
           {services.map((s, i) => (
-            <Link className="service-card" href={`/es/${s.slug}/`} key={s.slug}>
+            <Link className="service-card" href={`/es/${s.slug}`} key={s.slug}>
               <div className="service-card-top">
                 <span className="service-icon">
                   <s.icon aria-hidden="true" />
@@ -365,7 +365,7 @@ function LocalizedHome() {
             Consulta qué requisitos de registro y licencia pueden aplicarse a tu vivienda.
           </p>
         </div>
-        <Link href="/es/licencia-turistica/">Leer sobre la licencia turística →</Link>
+        <Link href="/es/licencia-turistica">Leer sobre la licencia turística →</Link>
       </aside>
 
       <section className="rental-band">
@@ -377,17 +377,17 @@ function LocalizedHome() {
           </p>
         </div>
         <div className="rental-options">
-          <Link href="/es/gestion-alquiler-vacacional/">
+          <Link href="/es/gestion-alquiler-vacacional">
             <small>Estancias cortas</small>
             <b>Gestión de alquiler vacacional</b>
             <span>20 % sin IVA →</span>
           </Link>
-          <Link href="/es/alquiler-temporada/">
+          <Link href="/es/alquiler-temporada">
             <small>Estancias temporales</small>
             <b>Temporada</b>
             <span>Un mes de alquiler →</span>
           </Link>
-          <Link href="/es/alquiler-larga-duracion/">
+          <Link href="/es/alquiler-larga-duracion">
             <small>Inquilino de larga duración</small>
             <b>Larga duración</b>
             <span>Un mes de alquiler →</span>
@@ -467,7 +467,7 @@ function LocalizedHome() {
           <p>
             Tu persona de contacto conoce los acuerdos y nuestro equipo local conoce la vivienda. Comunicación, administración y seguimiento práctico forman parte de un único proceso.
           </p>
-          <Link className="dark-link" href="/over-ons/">
+          <Link className="dark-link" href="/over-ons">
             Conoce a todo el equipo →
           </Link>
         </div>
@@ -493,23 +493,23 @@ function LocalizedHome() {
           </p>
         </div>
         <div className="knowledge-grid">
-          <Link href="/es/costes-de-gestion/">
+          <Link href="/es/costes-de-gestion">
             <small>Costes</small>
             <h3>¿Cuánto cuesta la gestión de propiedades?</h3>
             <span>Leer guía →</span>
           </Link>
-          <Link href="/es/gestion-alquiler-vacacional/">
+          <Link href="/es/gestion-alquiler-vacacional">
             <small>Rentabilidad</small>
             <h3>Precios dinámicos</h3>
             <span>Leer guía →</span>
           </Link>
-          <Link href="/es/gestion-de-propiedades/">
+          <Link href="/es/gestion-de-propiedades">
             <small>Guía de decisión</small>
             <h3>¿Gestionar por tu cuenta o delegar?</h3>
             <span>Leer guía →</span>
           </Link>
         </div>
-        <Link className="knowledge-all" href="/blog/">
+        <Link className="knowledge-all" href="/blog">
           Ver todas las guías y artículos →
         </Link>
       </section>
@@ -570,20 +570,20 @@ function LocalizedHome() {
         </div>
         <div>
           <b>Servicios</b>
-          <Link href="/es/gestion-alquiler-vacacional/">Gestión de alquiler vacacional</Link>
-          <Link href="/es/alquiler-temporada/">Alquiler de temporada</Link>
-          <Link href="/es/alquiler-larga-duracion/">Alquiler de larga duración</Link>
-          <Link href="/es/gestion-de-propiedades/">Gestión de propiedades</Link>
-          <Link href="/es/licencia-turistica/">Licencia de alquiler</Link>
+          <Link href="/es/gestion-alquiler-vacacional">Gestión de alquiler vacacional</Link>
+          <Link href="/es/alquiler-temporada">Alquiler de temporada</Link>
+          <Link href="/es/alquiler-larga-duracion">Alquiler de larga duración</Link>
+          <Link href="/es/gestion-de-propiedades">Gestión de propiedades</Link>
+          <Link href="/es/licencia-turistica">Licencia de alquiler</Link>
         </div>
         <div>
           <b>Más</b>
-          <Link href="/werkwijze/">Cómo trabajamos</Link>
-          <Link href="/over-ons/">Quiénes somos</Link>
-          <Link href="/blog/">Guías</Link>
-          <Link href="/es/#contact">Contacto</Link>
-          <Link href="/política de privacidad/">Política de privacidad</Link>
-          <Link href="/cookieverklaring/">Política de cookies</Link>
+          <Link href="/werkwijze">Cómo trabajamos</Link>
+          <Link href="/over-ons">Quiénes somos</Link>
+          <Link href="/blog">Guías</Link>
+          <Link href="/es#contact">Contacto</Link>
+          <Link href="/privacyverklaring">Política de privacidad</Link>
+          <Link href="/cookieverklaring">Política de cookies</Link>
           <CookiePreferencesButton />
         </div>
         <div>
@@ -609,5 +609,5 @@ function LocalizedHome() {
   );
 }
 
-export const metadata = { robots: { index: true, follow: true }, keywords: ["gestión de propiedades Fuengirola","gestión de alquiler vacacional Fuengirola","gestión de Airbnb Fuengirola","custodia de llaves Fuengirola","revisión de viviendas Fuengirola","gestión de segunda residencia Fuengirola","mantenimiento de viviendas Fuengirola","administración de propiedades Fuengirola"], title: "Gestión de Propiedades en Fuengirola | Alquiler Vacacional y Llaves", description: "Gestión local de propiedades en Fuengirola: alquiler vacacional, gestión de Airbnb, custodia de llaves, revisiones, limpieza y mantenimiento.", alternates: { canonical: "/es/", languages: { "nl-NL": "/", "en-GB": "/en/", "es-ES": "/es/", "x-default": "/" } }, openGraph: { locale: "es_ES", url: "/es/", type: "website" as const } };
+export const metadata = { robots: { index: true, follow: true }, keywords: ["gestión de propiedades Fuengirola","gestión de alquiler vacacional Fuengirola","gestión de Airbnb Fuengirola","custodia de llaves Fuengirola","revisión de viviendas Fuengirola","gestión de segunda residencia Fuengirola","mantenimiento de viviendas Fuengirola","administración de propiedades Fuengirola"], title: "Gestión de Propiedades en Fuengirola | Alquiler Vacacional y Llaves", description: "Gestión local de propiedades en Fuengirola: alquiler vacacional, gestión de Airbnb, custodia de llaves, revisiones, limpieza y mantenimiento.", alternates: { canonical: "/es", languages: { "nl-NL": "/", "en-GB": "/en", "es-ES": "/es", "x-default": "/" } }, openGraph: { locale: "es_ES", url: "/es", type: "website" as const } };
 export default LocalizedHome;

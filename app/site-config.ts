@@ -2,8 +2,8 @@ export const siteConfig = {
   template: {
     version: "1.0.0",
     citySlug: "fuengirola",
-    leadPath: "/woning-aanmelden/",
-    thankYouPath: "/bedankt/",
+    leadPath: "/woning-aanmelden",
+    thankYouPath: "/bedankt",
     sourceWebsite: "verhuurbeheerfuengirola.nl",
   },
   brand: {

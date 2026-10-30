@@ -39,9 +39,9 @@ function localizedHref(path: string, target: Locale) {
   const active: Locale = path.startsWith("/en/") || path === "/en" ? "en" : path.startsWith("/es/") || path === "/es" ? "es" : "nl";
   const slug = path.split("/").filter(Boolean).at(-1) ?? "";
   const match = services.find(([nl, en, es]) => active === "nl" ? slug === `${nl}-${citySlug}` : slug === (active === "en" ? en : es));
-  if (!match) return target === "nl" ? "/" : `/${target}/`;
-  if (target === "nl") return `/${match[0]}-${citySlug}/`;
-  return `/${target}/${target === "en" ? match[1] : match[2]}/`;
+  if (!match) return target === "nl" ? "/" : `/${target}`;
+  if (target === "nl") return `/${match[0]}-${citySlug}`;
+  return `/${target}/${target === "en" ? match[1] : match[2]}`;
 }
 
 export default function LanguageSwitcher() {

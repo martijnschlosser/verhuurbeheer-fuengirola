@@ -138,8 +138,8 @@ export default async function LocalizedServicePage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: copy.home, item: absoluteUrl(`/${locale}/`) },
-      { "@type": "ListItem", position: 2, name: copy.services, item: absoluteUrl(`/${locale}/#diensten`) },
+      { "@type": "ListItem", position: 1, name: copy.home, item: absoluteUrl(`/${locale}`) },
+      { "@type": "ListItem", position: 2, name: copy.services, item: absoluteUrl(`/${locale}#diensten`) },
       { "@type": "ListItem", position: 3, name: service.title, item: absoluteUrl(canonical) },
     ],
   };
@@ -150,23 +150,23 @@ export default async function LocalizedServicePage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <header className="content-header">
-        <a className="brand" href={`/${locale}/`} aria-label={`${siteConfig.brand.name} – ${copy.home}`}><span className="brand-mark">●</span></a>
+        <a className="brand" href={`/${locale}`} aria-label={`${siteConfig.brand.name} – ${copy.home}`}><span className="brand-mark">●</span></a>
         <nav>
-          <a href={`/${locale}/`}>{copy.home}</a>
-          <a href={`/${locale}/#diensten`}>{copy.services}</a>
-          <a href={`/${locale}/#woningformulier`}>{copy.contact}</a>
+          <a href={`/${locale}`}>{copy.home}</a>
+          <a href={`/${locale}#diensten`}>{copy.services}</a>
+          <a href={`/${locale}#woningformulier`}>{copy.contact}</a>
         </nav>
-        <a className="button button-outline header-cta" href={`/${locale}/#woningformulier`}>{copy.discuss}</a>
+        <a className="button button-outline header-cta" href={`/${locale}#woningformulier`}>{copy.discuss}</a>
       </header>
       <div className="breadcrumb">
-        <a href={`/${locale}/`}>{copy.home}</a><span>›</span><span>{copy.services}</span><span>›</span><b>{service.title}</b>
+        <a href={`/${locale}`}>{copy.home}</a><span>›</span><span>{copy.services}</span><span>›</span><b>{service.title}</b>
       </div>
       <section className="content-hero">
         <div>
           <p className="eyebrow">{service.eyebrow}</p>
           <h1>{service.title}</h1>
           <p>{service.intro}</p>
-          <a className="button button-primary" href={`/${locale}/#woningformulier`}>{copy.discuss} →</a>
+          <a className="button button-primary" href={`/${locale}#woningformulier`}>{copy.discuss} →</a>
         </div>
         <aside><small>{copy.local}</small><strong>{siteConfig.location.city} · Costa del Sol</strong><p>{service.description}</p></aside>
       </section>
@@ -188,8 +188,8 @@ export default async function LocalizedServicePage({
       <section className="page-faq"><p className="eyebrow">FAQ</p><h2>{copy.faq}</h2>{service.faqs.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</section>
       <section className="related"><p className="eyebrow">{copy.related}</p><div>{related.map((item) => <a key={item.key} href={localizedPath(item, locale)}><b>{item.title}</b><span>→</span></a>)}</div></section>
       {nearbyCities.length > 0 && <section className="related"><p className="eyebrow">Costa del Sol</p><h2>{copy.otherCities}</h2><div>{nearbyCities.map((item) => <a key={item.url} href={item.url}><b>{item.name}</b><span>→</span></a>)}</div></section>}
-      <section className="content-cta"><p className="eyebrow">{copy.contact}</p><h2>{copy.ctaTitle}</h2><p>{copy.ctaText}</p><a className="button button-primary" href={`/${locale}/#woningformulier`}>{copy.cta} →</a></section>
-      <footer className="site-footer"><div className="footer-brand"><a className="brand" href={`/${locale}/`}><span className="brand-mark">●</span></a><p>{siteConfig.brand.name}</p></div><div><b>{copy.contact}</b><a href={`tel:${siteConfig.contact.phone}`}>{siteConfig.contact.phone}</a></div><small>© {new Date().getFullYear()} {siteConfig.brand.name}</small></footer>
+      <section className="content-cta"><p className="eyebrow">{copy.contact}</p><h2>{copy.ctaTitle}</h2><p>{copy.ctaText}</p><a className="button button-primary" href={`/${locale}#woningformulier`}>{copy.cta} →</a></section>
+      <footer className="site-footer"><div className="footer-brand"><a className="brand" href={`/${locale}`}><span className="brand-mark">●</span></a><p>{siteConfig.brand.name}</p></div><div><b>{copy.contact}</b><a href={`tel:${siteConfig.contact.phone}`}>{siteConfig.contact.phone}</a></div><small>© {new Date().getFullYear()} {siteConfig.brand.name}</small></footer>
       <a className="to-top" href="#top" aria-label="Back to top">↑</a>
     </main>
   );

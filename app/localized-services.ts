@@ -210,7 +210,7 @@ export function findLocalizedService(locale: PublicLocale, slug: string) {
 }
 
 export function localizedPath(service: LocalizedService, locale: "nl" | PublicLocale) {
-  if (locale === "nl") return `/${service.nlSlug}/`;
-  return `/${locale}/${locale === "en" ? service.enSlug : service.esSlug}/`;
+  if (locale === "nl") return `/${service.nlSlug}`;
+  return `/${locale}/${locale === "en" ? service.enSlug : service.esSlug}`;
 }
 

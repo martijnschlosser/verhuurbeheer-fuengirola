@@ -33,7 +33,7 @@ export default function CookieConsent() {
 
   if (!visible) return null;
   return <aside className="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
-    <div><strong id="cookie-title">Je privacy, je keuze</strong><p>We gebruiken noodzakelijke opslag om je keuze te onthouden. Analytics- en marketingcookies worden alleen geplaatst als je daarvoor toestemming geeft.</p><Link href="/cookieverklaring/">Lees de cookieverklaring</Link></div>
+    <div><strong id="cookie-title">Je privacy, je keuze</strong><p>We gebruiken noodzakelijke opslag om je keuze te onthouden. Analytics- en marketingcookies worden alleen geplaatst als je daarvoor toestemming geeft.</p><Link href="/cookieverklaring">Lees de cookieverklaring</Link></div>
     <div className="cookie-actions"><button type="button" className="cookie-reject" onClick={() => save(false, false)}>Alleen noodzakelijk</button><button type="button" className="cookie-accept" onClick={() => save(true, true)}>Alles accepteren</button></div>
   </aside>;
 }

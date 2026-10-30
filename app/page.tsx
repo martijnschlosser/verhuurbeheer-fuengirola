@@ -231,25 +231,25 @@ export default function Home() {
           <details className="services-menu">
             <summary>Diensten</summary>
             <div>
-              <Link href="/vakantieverhuur-fuengirola/">Vakantieverhuur</Link>
-              <Link href="/midterm-verhuur-fuengirola/">
+              <Link href="/vakantieverhuur-fuengirola">Vakantieverhuur</Link>
+              <Link href="/midterm-verhuur-fuengirola">
                 Seizoens- en midtermverhuur
               </Link>
-              <Link href="/langetermijnverhuur-fuengirola/">Langetermijnverhuur</Link>
-              <Link href="/vastgoedbeheer-fuengirola/">Vastgoedbeheer</Link>
-              <Link href="/schoonmaak-onderhoud-fuengirola/">
+              <Link href="/langetermijnverhuur-fuengirola">Langetermijnverhuur</Link>
+              <Link href="/vastgoedbeheer-fuengirola">Vastgoedbeheer</Link>
+              <Link href="/schoonmaak-onderhoud-fuengirola">
                 Schoonmaak & onderhoud
               </Link>
-              <Link href="/renovatie-inrichting-fuengirola/">
+              <Link href="/renovatie-inrichting-fuengirola">
                 Renovatie & inrichting
               </Link>
-              <Link href="/verhuurlicentie-fuengirola/">Verhuurlicentie</Link>
+              <Link href="/verhuurlicentie-fuengirola">Verhuurlicentie</Link>
             </div>
           </details>
-          <Link href="/werkwijze/">Werkwijze</Link>
-          <Link href="/over-ons/">Over ons</Link>
-          <Link href="/blog/">Blog</Link>
-          <Link href="/contact/">Contact</Link>
+          <Link href="/werkwijze">Werkwijze</Link>
+          <Link href="/over-ons">Over ons</Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
           <Link className="btn btn-small header-cta" href={leadHref}>
           Woning aanmelden
@@ -263,19 +263,19 @@ export default function Home() {
           <div>
             <Link href="/">Home</Link>
             <b>Diensten</b>
-            <Link href="/vakantieverhuur-fuengirola/">Vakantieverhuur</Link>
-            <Link href="/midterm-verhuur-fuengirola/">Seizoens- en midtermverhuur</Link>
-            <Link href="/langetermijnverhuur-fuengirola/">Langetermijnverhuur</Link>
-            <Link href="/vastgoedbeheer-fuengirola/">Vastgoedbeheer</Link>
-            <Link href="/schoonmaak-onderhoud-fuengirola/">Schoonmaak & onderhoud</Link>
-            <Link href="/renovatie-inrichting-fuengirola/">Renovatie & inrichting</Link>
-            <Link href="/verhuurlicentie-fuengirola/">Verhuurlicentie</Link>
+            <Link href="/vakantieverhuur-fuengirola">Vakantieverhuur</Link>
+            <Link href="/midterm-verhuur-fuengirola">Seizoens- en midtermverhuur</Link>
+            <Link href="/langetermijnverhuur-fuengirola">Langetermijnverhuur</Link>
+            <Link href="/vastgoedbeheer-fuengirola">Vastgoedbeheer</Link>
+            <Link href="/schoonmaak-onderhoud-fuengirola">Schoonmaak & onderhoud</Link>
+            <Link href="/renovatie-inrichting-fuengirola">Renovatie & inrichting</Link>
+            <Link href="/verhuurlicentie-fuengirola">Verhuurlicentie</Link>
             <b>Bedrijf</b>
-            <Link href="/werkwijze/">Werkwijze</Link>
-            <Link href="/over-ons/">Over ons</Link>
-            <Link href="/blog/">Blog & kennisbank</Link>
-            <Link href="/contact/">Contact</Link>
-            <Link href="/woning-aanmelden/">Woning aanmelden</Link>
+            <Link href="/werkwijze">Werkwijze</Link>
+            <Link href="/over-ons">Over ons</Link>
+            <Link href="/blog">Blog & kennisbank</Link>
+            <Link href="/contact">Contact</Link>
+            <Link href="/woning-aanmelden">Woning aanmelden</Link>
           </div>
         </details>
       </header>
@@ -382,7 +382,7 @@ export default function Home() {
         </div>
         <div className="service-grid">
           {services.map((s, i) => (
-            <Link className="service-card" href={`/${s.slug}/`} key={s.slug}>
+            <Link className="service-card" href={`/${s.slug}`} key={s.slug}>
               <div className="service-card-top">
                 <span className="service-icon">
                   <s.icon aria-hidden="true" />
@@ -407,7 +407,7 @@ export default function Home() {
             relevant kunnen zijn.
           </p>
         </div>
-        <Link href="/verhuurlicentie-fuengirola/">Lees over de verhuurlicentie →</Link>
+        <Link href="/verhuurlicentie-fuengirola">Lees over de verhuurlicentie →</Link>
       </aside>
 
       <section className="rental-band">
@@ -420,17 +420,17 @@ export default function Home() {
           </p>
         </div>
         <div className="rental-options">
-          <Link href="/vakantieverhuur-fuengirola/">
+          <Link href="/vakantieverhuur-fuengirola">
             <small>Korte verblijven</small>
             <b>Vakantieverhuur</b>
             <span>20% excl. btw →</span>
           </Link>
-          <Link href="/midterm-verhuur-fuengirola/">
+          <Link href="/midterm-verhuur-fuengirola">
             <small>Tijdelijk verblijf</small>
             <b>Midterm</b>
             <span>1 maand huur →</span>
           </Link>
-          <Link href="/langetermijnverhuur-fuengirola/">
+          <Link href="/langetermijnverhuur-fuengirola">
             <small>Vaste huurder</small>
             <b>Langetermijn</b>
             <span>1 maand huur →</span>
@@ -496,7 +496,7 @@ export default function Home() {
             we bewaken de uitstraling én de praktische details die het verschil
             maken voor gasten en eigenaren.
           </p>
-          <Link className="dark-link" href="/woning-aanmelden/">
+          <Link className="dark-link" href="/woning-aanmelden">
             Bespreek je woning met ons →
           </Link>
         </div>
@@ -550,7 +550,7 @@ export default function Home() {
             Samen verzorgen we verhuur, administratie, vastgoedbeheer en
             praktische opvolging ter plaatse.
           </p>
-          <Link className="dark-link" href="/over-ons/">
+          <Link className="dark-link" href="/over-ons">
             Maak kennis met het volledige team →
           </Link>
         </div>
@@ -577,23 +577,23 @@ export default function Home() {
           </p>
         </div>
         <div className="knowledge-grid">
-          <Link href="/kosten-verhuurbeheer-fuengirola/">
+          <Link href="/kosten-verhuurbeheer-fuengirola">
             <small>Kosten</small>
             <h3>Wat kost verhuurbeheer?</h3>
             <span>Lees blog →</span>
           </Link>
-          <Link href="/dynamische-prijzen-vakantiewoning/">
+          <Link href="/dynamische-prijzen-vakantiewoning">
             <small>Opbrengst</small>
             <h3>Dynamische prijsstelling</h3>
             <span>Lees blog →</span>
           </Link>
-          <Link href="/zelf-verhuren-of-verhuurbeheer/">
+          <Link href="/zelf-verhuren-of-verhuurbeheer">
             <small>Keuzehulp</small>
             <h3>Zelf verhuren of uitbesteden?</h3>
             <span>Lees blog →</span>
           </Link>
         </div>
-        <Link className="knowledge-all" href="/blog/">
+        <Link className="knowledge-all" href="/blog">
           Bekijk alle blogs en artikelen →
         </Link>
       </section>
@@ -657,20 +657,20 @@ export default function Home() {
         </div>
         <div>
           <b>Diensten</b>
-          <Link href="/vakantieverhuur-fuengirola/">Vakantieverhuur</Link>
-          <Link href="/midterm-verhuur-fuengirola/">Seizoens- en midtermverhuur</Link>
-          <Link href="/langetermijnverhuur-fuengirola/">Langetermijnverhuur</Link>
-          <Link href="/vastgoedbeheer-fuengirola/">Vastgoedbeheer</Link>
-          <Link href="/verhuurlicentie-fuengirola/">Verhuurlicentie</Link>
+          <Link href="/vakantieverhuur-fuengirola">Vakantieverhuur</Link>
+          <Link href="/midterm-verhuur-fuengirola">Seizoens- en midtermverhuur</Link>
+          <Link href="/langetermijnverhuur-fuengirola">Langetermijnverhuur</Link>
+          <Link href="/vastgoedbeheer-fuengirola">Vastgoedbeheer</Link>
+          <Link href="/verhuurlicentie-fuengirola">Verhuurlicentie</Link>
         </div>
         <div>
           <b>Meer</b>
-          <Link href="/werkwijze/">Werkwijze</Link>
-          <Link href="/over-ons/">Over ons</Link>
-          <Link href="/blog/">Blog</Link>
-          <Link href="/contact/">Contact</Link>
-          <Link href="/privacyverklaring/">Privacyverklaring</Link>
-          <Link href="/cookieverklaring/">Cookieverklaring</Link>
+          <Link href="/werkwijze">Werkwijze</Link>
+          <Link href="/over-ons">Over ons</Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/contact">Contact</Link>
+          <Link href="/privacyverklaring">Privacyverklaring</Link>
+          <Link href="/cookieverklaring">Cookieverklaring</Link>
           <CookiePreferencesButton />
         </div>
         <div>

@@ -39,7 +39,7 @@ test("renders production-safe metadata", async () => {
 
 test("all owner CTAs use the dedicated signup route", async () => {
   const html = await (await render()).text();
-  assert.match(html, /href=["']\/woning-aanmelden\/["']/);
+  assert.match(html, /href=["']\/woning-aanmelden["']/);
   assert.doesNotMatch(html, /href=["']\/(?:contact\/)?#(?:contact|woningformulier)["']/);
 });
 
@@ -63,4 +63,44 @@ test("rendered images have meaningful alt text", async () => {
       assert.match(tag, /\bheight=["']?\d+/i, `Missing height: ${tag}`);
     }
   }
+});
+
+
+test("sitemap and page URL signals agree without redirecting internal links", async () => {
+  const { default: worker } = await import(new URL("../dist/server/index.js", import.meta.url));
+  const env = { ASSETS: { fetch: async () => new Response('Not found', { status: 404 }) } };
+  const ctx = { waitUntil() {}, passThroughOnException() {} };
+  const request = (path) => worker.fetch(new Request(`http://localhost${path}`, { headers: { accept: 'text/html' } }), env, ctx);
+  const sitemap = await request('/sitemap.xml');
+  assert.equal(sitemap.status, 200, 'sitemap response');
+  const urls = [...(await sitemap.text()).matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
+  assert.ok(urls.length > 40, 'complete sitemap');
+  const alternatePaths = new Set();
+  const links = new Set();
+  for (const url of urls) {
+    const path = new URL(url).pathname;
+    const response = await request(path);
+    assert.equal(response.status, 200, `sitemap URL must not redirect: ${url}`);
+    const html = await response.text();
+    const canonical = html.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/);
+    assert.equal(canonical?.[1], url, `self canonical: ${url}`);
+    assert.doesNotMatch(html.match(/<meta[^>]+name="robots"[^>]+>/)?.[0] ?? '', /noindex/i, url);
+    for (const match of html.matchAll(/<link[^>]+rel="alternate"[^>]+href="([^"]+)"/g)) alternatePaths.add(new URL(match[1]).pathname);
+    for (const match of html.matchAll(/<a\b[^>]+href="([^"]+)"/g)) {
+      const target = new URL(match[1], url);
+      if (target.origin === new URL(url).origin) links.add(target.pathname);
+    }
+    if (path !== '/') {
+      const redirect = await request(path + '/?utm_source=url-check');
+      assert.equal(redirect.status, 308, `old slash variant must redirect: ${path}`);
+      assert.equal(new URL(redirect.headers.get('location'), 'http://localhost').pathname, path);
+      assert.equal(new URL(redirect.headers.get('location'), 'http://localhost').search, '?utm_source=url-check');
+    }
+  }
+  const failures = [];
+  for (const path of new Set([...alternatePaths, ...links])) {
+    const response = await request(path);
+    if (response.status !== 200) failures.push({path,status:response.status,location:response.headers.get('location')});
+  }
+  assert.deepEqual(failures, [], 'internal links and hreflang must be direct 200');
 });
