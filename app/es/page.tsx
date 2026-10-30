@@ -149,7 +149,7 @@ function LocalizedHome() {
     ],
     telephone: siteConfig.contact.phone,
     url: absoluteUrl("/es"),
-    logo: absoluteUrl("/vbs-logo-fuengirola.webp"),
+    logo: absoluteUrl("/verhuurbeheer-fuengirola-logo.webp"),
     image: absoluteUrl("/terras-zonsondergang-fuengirola.webp"),
     knowsLanguage: ["nl", "en", "es"],
     knowsAbout: [
@@ -202,7 +202,7 @@ function LocalizedHome() {
           aria-label="Gestión de propiedades Fuengirola – Home"
         >
           <img
-            src="/vbs-logo-fuengirola.webp"
+            src="/verhuurbeheer-fuengirola-logo.webp"
             alt="Gestión de propiedades Fuengirola logo"
             width="54"
             height="54"
@@ -555,7 +555,7 @@ function LocalizedHome() {
         <div className="footer-brand">
           <Link className="logo-lockup" href="/" aria-label="Home">
             <img
-              src="/vbs-logo-fuengirola.webp"
+              src="/verhuurbeheer-fuengirola-logo.webp"
               alt="Gestión de propiedades Fuengirola"
               width={640}
               height={640}

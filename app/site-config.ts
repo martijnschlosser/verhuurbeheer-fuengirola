@@ -16,7 +16,7 @@ export const siteConfig = {
     areas: ["Fuengirola Centro","Los Boliches","Torreblanca","Carvajal","Miramar","Los Pacos","El Castillo"],
   },
   assets: {
-    logo: "/vbs-logo-fuengirola.webp",
+    logo: "/verhuurbeheer-fuengirola-logo.webp",
     hero: "/fuengirola-hero.webp",
     social: "/luxe-woning-fuengirola-zeezicht.webp",
     signup: "/zonnig-terras-zeezicht-fuengirola.webp",

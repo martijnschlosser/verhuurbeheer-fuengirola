@@ -10,6 +10,6 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: "#ffffff",
     theme_color: "#071d3a",
     lang: "nl",
-    icons: [{ src: "/vbs-logo-fuengirola.webp", sizes: "640x640", type: "image/webp" }],
+    icons: [{ src: "/verhuurbeheer-fuengirola-logo.webp", sizes: "640x640", type: "image/webp" }],
   };
 }

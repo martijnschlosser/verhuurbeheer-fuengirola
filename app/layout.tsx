@@ -59,7 +59,7 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  icons: { icon: "/favicon-fuengirola.png", apple: "/vbs-logo-fuengirola.webp" },
+  icons: { icon: "/favicon-fuengirola.png", apple: "/verhuurbeheer-fuengirola-logo.webp" },
   manifest: "/manifest.webmanifest",
   category: "vastgoedbeheer",
   verification: siteConfig.analytics.searchConsoleVerification

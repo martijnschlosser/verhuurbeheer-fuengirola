@@ -1,3 +1,8 @@
+import type { Metadata } from "next";
+import { homeLanguageAlternates } from "./language-alternates";
+
+export const metadata: Metadata = { alternates: homeLanguageAlternates };
+
 import Link from "next/link";
 import { CookiePreferencesButton } from "./CookieConsent";
 import GeoAuthority, { geoLastReviewed, geoSources } from "./GeoAuthority";
@@ -148,7 +153,7 @@ export default function Home() {
     ],
     telephone: siteConfig.contact.phone,
     url: absoluteUrl(),
-    logo: absoluteUrl("/vbs-logo-fuengirola.webp"),
+    logo: absoluteUrl("/verhuurbeheer-fuengirola-logo.webp"),
     image: absoluteUrl("/luxe-woning-fuengirola-zeezicht.webp"),
     knowsLanguage: ["nl", "en", "es"],
     knowsAbout: [
@@ -220,7 +225,7 @@ export default function Home() {
           aria-label="Verhuurbeheer Fuengirola – naar Home"
         >
           <img
-            src="/vbs-logo-fuengirola.webp"
+            src="/verhuurbeheer-fuengirola-logo.webp"
             alt="Logo Verhuurbeheer Fuengirola"
             width="54"
             height="54"
@@ -642,7 +647,7 @@ export default function Home() {
         <div className="footer-brand">
           <Link className="logo-lockup" href="/" aria-label="Naar Home">
             <img
-              src="/vbs-logo-fuengirola.webp"
+              src="/verhuurbeheer-fuengirola-logo.webp"
               alt="Verhuurbeheer Fuengirola"
               width={640}
               height={640}
